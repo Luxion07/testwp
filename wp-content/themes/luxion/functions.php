@@ -7,6 +7,14 @@
 
 add_theme_support('title-tag');
 
+add_theme_support( 'custom-logo', [
+	'height'      => 102,
+	'width'       => 283,
+	'flex-width'  => false,
+	'flex-height' => false,
+	'header-text' => '',
+] );
+
 register_nav_menus(array(
 	'top' => 'Верхнее',
 	'bottom' => 'Внизу'
@@ -106,7 +114,7 @@ add_action('wp_print_styles', 'add_styles');
 if (!function_exists('add_styles')) {
 	function add_styles() {
 	    if(is_admin()) return false;
-	    wp_enqueue_style( 'bs', get_template_directory_uri().'/css/bootstrap.min.css' );
+	    wp_enqueue_style( 'maincss', get_template_directory_uri().'/css/main.css' );
 		wp_enqueue_style( 'main', get_template_directory_uri().'/style.css' );
 	}
 }
