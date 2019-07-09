@@ -10,7 +10,6 @@ $break-extra-small: 320px;
 
 // fonts
 $font-family: 'Roboto';
-$font-size: 32px;
 $font-weight: normal;
 $font-weight-light: 300;
 
@@ -19,15 +18,126 @@ $font-weight-light: 300;
 $white: #ffffff;
 $grey: #3d3935;
 $crimson: #bc204b;
+$thin-white: #f9f9f9;
 
 
 // logo style
 $logo_height: 102px;
 $logo_width: 283px;
 
-//header style
 
-$navbar_height: 167px;
+// variables based on width device
+
+:root {
+
+  //main
+
+  --container-width: 2340px;
+  --main-font-size: 32px;
+
+  // header
+
+  --navbar-height: 167px;
+
+  --lang-left: 66px;
+  --lang-width: 88px;
+  --dropbtn-size: 14px;
+
+  --dropdown-border-radius: 10px;
+  --dropdown-a-padding: 12px 16px;
+
+  --menu-item-padding:40px;
+  --menu-item-a-height:88px;
+  --menu-item-a-last-radius:44px;
+  --menu-item-a-last-padding: 0 44px;
+
+  // archive-template
+
+  --career-description-top: 180px;
+  --career-description-width: 1358px;
+
+}
 
 
+@media only screen and (min-width: $break-large) and (max-width: $break-extra-large) {
+
+}
+
+@media only screen and (min-width: $break-desktop) and (max-width: $break-large) {
+
+  :root {
+
+    //main
+
+    --container-width: 1170px;
+    --main-font-size: 16px;
+
+    // header
+
+    --navbar-height: 83.5px;
+
+    --lang-left:33px;
+    --lang-width:44px;
+    --dropbtn-size:7px;
+
+    --dropdown-border-radius: 5px;
+    --dropdown-a-padding: 12px 16px;
+
+    --menu-item-padding:20px;
+    --menu-item-a-height:44px;
+    --menu-item-a-last-radius:28px;
+    --menu-item-a-last-padding: 0 22px;
+
+    // archive-template
+
+    --career-description-top: 90px;
+    --career-description-width: 679px;
+
+  }
+
+}
+
+@media only screen and (min-width: $break-tablet) and (max-width: $break-desktop) {
+
+  :root {
+
+    //main
+
+    --container-width: 800px;
+
+  }
+}
+
+@media only screen and (min-width: $break-medium) and (max-width: $break-tablet) {
+
+  :root {
+
+    //main
+
+    --container-width: 600px;
+
+  }
+}
+
+@media only screen and (min-width: $break-small) and (max-width: $break-medium) {
+  :root {
+
+    //main
+
+    --container-width: 500px;
+
+  }
+
+}
+
+@media only screen and (min-width: $break-extra-small) and (max-width: $break-small) {
+
+  :root {
+
+    //main
+
+    --container-width: 100%;
+
+  }
+}
 

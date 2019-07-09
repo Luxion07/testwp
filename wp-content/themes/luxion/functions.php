@@ -105,7 +105,6 @@ if (!function_exists('add_scripts')) {
 	    if(is_admin()) return false;
 	    wp_deregister_script('jquery');
 	    wp_enqueue_script('jquery','//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js','','',true);
-	    wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.min.js','','',true);
 	    wp_enqueue_script('main', get_template_directory_uri().'/js/main.js','','',true);
 	}
 }
@@ -165,4 +164,17 @@ if (!function_exists('content_class_by_sidebar')) {
 	}
 }
 
+
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Archive Jobs',
+		'menu_title'	=> 'Archive Jobs',
+		'menu_slug' 	=> 'archive-jobs',
+		'capability'	=> 'edit_posts',
+		'parent_slug'	=> 'edit.php?post_type=jobs',
+		'redirect'		=> false
+	));
+
+}
 ?>
