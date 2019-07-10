@@ -17,8 +17,165 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
+
+            <section class="jobs-filter container">
+                <div class="jobs-filter__row jobs-filter-search">
+
+                    <div class="jobs-filter-search__input-wrap">
+                        <input class="jobs-filter-search__input" type="text" placeholder="Search job openings">
+                    </div>
+
+                    <div class="jobs-filter-search__dropdown-wrap">
+
+                        <div class="jobs-filter-search__dropdown jobs-filter-search__dropdown--first">
+                            All departments
+                        </div>
+                        <div class="choice-list">
+                            <section class="choice-list__wrap">
+                                <h3 class="choice-list__title">Departments</h3>
+
+                                <ul class="choice-list__menu departments" role="menu">
+
+                                    <li class="choice-list__item" role="menuitem">
+                                        <input id="department-checkbox-0" type="checkbox"
+                                               class="choice-list__input" data-filter="development"
+                                               data-filter-type="department">
+                                        <label for="department-checkbox-0"
+                                               class="choice-list__label">
+                                            <span class="choice-list__label-name">Development</span>
+                                        </label>
+                                        <span class="choice-list__vac-count">15</span>
+                                    </li>
+
+                                    <li class="choice-list__item" role="menuitem">
+                                        <input id="department-checkbox-0" type="checkbox"
+                                               class="choice-list__input" data-filter="development"
+                                               data-filter-type="department">
+                                        <label for="department-checkbox-0"
+                                               class="choice-list__label">
+                                            <span class="choice-list__label-name">Development</span>
+                                        </label>
+                                        <span class="choice-list__vac-count">15</span>
+                                    </li>
+
+                                    <li class="choice-list__item" role="menuitem">
+                                        <input id="department-checkbox-0" type="checkbox"
+                                               class="choice-list__input" data-filter="development"
+                                               data-filter-type="department">
+                                        <label for="department-checkbox-0"
+                                               class="choice-list__label">
+                                            <span class="choice-list__label-name">Development</span>
+                                        </label>
+                                        <span class="choice-list__vac-count">15</span>
+                                    </li>
+
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+
+                    <div class="jobs-filter-search__dropdown-wrap">
+
+                        <div class="jobs-filter-search__dropdown jobs-filter-search__dropdown--first">
+                            All locations
+                        </div>
+                        <div class="choice-list choice-list--last">
+                            <section class="choice-list__wrap all-locations">
+                                <div class="choice-list__wrap--column">
+
+                                    <h3 class="choice-list__title">Offices</h3>
+                                    <ul class="choice-list__menu locations" role="menu">
+
+                                        <li class="choice-list__item" role="menuitem">
+                                            <input id="location-checkbox-0" type="checkbox"
+                                                   class="choice-list__input" data-filter="development"
+                                                   data-filter-type="location">
+                                            <label for="location-checkbox-0"
+                                                   class="choice-list__label">
+                                                <span class="choice-list__label-name">Development</span>
+                                            </label>
+                                            <span class="choice-list__vac-count">15</span>
+                                        </li>
+
+                                        <li class="choice-list__item" role="menuitem">
+                                            <input id="location-checkbox-0" type="checkbox"
+                                                   class="choice-list__input" data-filter="development"
+                                                   data-filter-type="location">
+                                            <label for="location-checkbox-0"
+                                                   class="choice-list__label">
+                                                <span class="choice-list__label-name">Development</span>
+                                            </label>
+                                            <span class="choice-list__vac-count">15</span>
+                                        </li>
+
+                                        <li class="choice-list__item" role="menuitem">
+                                            <input id="location-checkbox-0" type="checkbox"
+                                                   class="choice-list__input" data-filter="development"
+                                                   data-filter-type="location">
+                                            <label for="location-checkbox-0"
+                                                   class="choice-list__label">
+                                                <span class="choice-list__label-name">Development</span>
+                                            </label>
+                                            <span class="choice-list__vac-count">15</span>
+                                        </li>
+
+                                    </ul>
+
+                                </div>
+                                <div class="choice-list__wrap--column choice-list__wrap--column-right">
+
+                                    <h3 class="choice-list__title">Academies</h3>
+
+                                    <ul class="choice-list__menu locations" role="menu">
+
+                                        <li class="choice-list__item" role="menuitem">
+                                            <input id="location-checkbox-0" type="checkbox"
+                                                   class="choice-list__input" data-filter="development"
+                                                   data-filter-type="location">
+                                            <label for="location-checkbox-0"
+                                                   class="choice-list__label">
+                                                <span class="choice-list__label-name">Development</span>
+                                            </label>
+                                            <span class="choice-list__vac-count">15</span>
+                                        </li>
+
+                                        <li class="choice-list__item" role="menuitem">
+                                            <input id="location-checkbox-0" type="checkbox"
+                                                   class="choice-list__input" data-filter="development"
+                                                   data-filter-type="location">
+                                            <label for="location-checkbox-0"
+                                                   class="choice-list__label">
+                                                <span class="choice-list__label-name">Development</span>
+                                            </label>
+                                            <span class="choice-list__vac-count">15</span>
+                                        </li>
+
+                                        <li class="choice-list__item" role="menuitem">
+                                            <input id="location-checkbox-0" type="checkbox"
+                                                   class="choice-list__input" data-filter="development"
+                                                   data-filter-type="location">
+                                            <label for="location-checkbox-0"
+                                                   class="choice-list__label">
+                                                <span class="choice-list__label-name">Development</span>
+                                            </label>
+                                            <span class="choice-list__vac-count">15</span>
+                                        </li>
+
+                                    </ul>
+
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <!--                end search buttons-->
+
+
+            </section>
         </section>
     </main>
+
+    <!--delete bottom-->
     <section>
         <div class="container">
             <div class="row">

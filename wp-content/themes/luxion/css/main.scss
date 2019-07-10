@@ -8,10 +8,17 @@ html {
   font-family: $font-family;
   font-weight: $font-weight;
   color: $grey;
+  background-color: $bg-grey;
 }
 
 body {
   padding-top: var(--navbar-height);
+}
+
+input{
+  font-family: $font-family;
+  font-weight: $font-weight;
+  color: $grey;
 }
 
 .container {

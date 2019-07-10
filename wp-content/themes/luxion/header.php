@@ -24,7 +24,7 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header>
+<header class="main-header">
     <div class="navbar container">
         <div class="logo">
             <?php the_custom_logo($blog_id); ?>
