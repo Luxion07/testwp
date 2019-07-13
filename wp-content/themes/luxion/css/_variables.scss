@@ -16,6 +16,7 @@ $font-weight-light: 300;
 
 // colors
 $grey: #3d3935;
+$sub-grey: #989693;
 $bg-grey: #f4f4f1;
 $light-grey: #e1e1de;
 $crimson: #bc204b;
@@ -61,7 +62,7 @@ $logo_width: 283px;
   --career-description-top: 180px;
   --career-description-width: 1358px;
 
-  --filter-search-pb: 120px;
+  --filter-search-pb: 60px;
   --filter-inputs-height: 130px;
   --filter-input-padding: 50px;
   --filter-choice-list-width: 912px;
@@ -71,6 +72,15 @@ $logo_width: 283px;
   --filter-choice-list-label-br: 12px;
   --filter-choice-list-wrap-ml: 80px;
 
+  --filter-tabs-list-m: 40px;
+  --filter-tabs-list-btns-w: 80px;
+  --filter-tabs-list-btns-h: 60px;
+  --filter-tabs-list-btns-bqsize: 30px 26px;
+
+  --free-vac-grid-space: 60px;
+  --free-vac-grid-article-br: 40px;
+  --free-vac-grid-article-p: 50px;
+  --free-vac-grid-article-title-m: 25px;
 
 }
 
@@ -110,7 +120,7 @@ $logo_width: 283px;
     --career-description-top: 90px;
     --career-description-width: 679px;
 
-    --filter-search-pb: 60px;
+    --filter-search-pb: 30px;
     --filter-inputs-height: 65px;
     --filter-input-padding: 25px;
     --filter-choice-list-width: 456px;
@@ -119,6 +129,18 @@ $logo_width: 283px;
     --filter-choice-list-name-pl: 10px;
     --filter-choice-list-label-br: 6px;
     --filter-choice-list-wrap-ml: 40px;
+
+    --filter-tabs-list-m: 20px;
+    --filter-tabs-list-btns-w: 40px;
+    --filter-tabs-list-btns-h: 30px;
+    --filter-tabs-list-btns-bqsize: 15px 13px;
+
+    --free-vac-grid-space: 30px;
+    --free-vac-grid-article-br: 20px;
+    --free-vac-grid-article-p: 25px;
+    --free-vac-grid-article-title-m: 12px;
+
+
   }
 
 }

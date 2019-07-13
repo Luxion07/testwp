@@ -20,6 +20,7 @@
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="https://kit.fontawesome.com/795892e7f7.js"></script>
     <![endif]-->
     <?php wp_head(); ?>
 </head>

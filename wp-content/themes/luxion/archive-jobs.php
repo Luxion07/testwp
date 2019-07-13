@@ -69,6 +69,11 @@ get_header(); ?>
                                         <span class="choice-list__vac-count">15</span>
                                     </li>
 
+                                    <li class="choice-list__item selecting" role="menuitem">
+                                        <span class="choice-list-select-all">Select all</span>
+                                        <span class="choice-list-deselect-all">Deselect all</span>
+                                    </li>
+
                                 </ul>
                             </section>
                         </div>
@@ -79,6 +84,7 @@ get_header(); ?>
                         <div class="jobs-filter-search__dropdown jobs-filter-search__dropdown--first">
                             All locations
                         </div>
+
                         <div class="choice-list choice-list--last">
                             <section class="choice-list__wrap all-locations">
                                 <div class="choice-list__wrap--column">
@@ -119,6 +125,10 @@ get_header(); ?>
                                             <span class="choice-list__vac-count">15</span>
                                         </li>
 
+                                        <li class="choice-list__item selecting" role="menuitem">
+                                            <span class="choice-list-select-all">Select all</span>
+                                            <span class="choice-list-deselect-all">Deselect all</span>
+                                        </li>
                                     </ul>
 
                                 </div>
@@ -161,16 +171,473 @@ get_header(); ?>
                                             <span class="choice-list__vac-count">15</span>
                                         </li>
 
+                                        <li class="choice-list__item selecting" role="menuitem">
+                                            <span class="choice-list-select-all">Select all</span>
+                                            <span class="choice-list-deselect-all">Deselect all</span>
+                                        </li>
+
                                     </ul>
 
                                 </div>
                             </section>
                         </div>
                     </div>
+
                 </div>
-                <!--                end search buttons-->
+
+                <div class="jobs-filter__row">
+                    <ul class="tabs-list tabs-list">
+                        <li class="tabs-list__item">
+                            <button class="tabs-list__button">
+                                <span class="tabs-list__name">JavaScript</span>
+                                <span class="tabs-list__count">5</span>
+                            </button>
+                        </li>
+                        <li class="tabs-list__item">
+                            <button class="tabs-list__button">
+                                <span class="tabs-list__name">JavaScript</span>
+                                <span class="tabs-list__count">5</span>
+                            </button>
+                        </li>
+                        <li class="tabs-list__item">
+                            <button class="tabs-list__button">
+                                <span class="tabs-list__name">JavaScript</span>
+                                <span class="tabs-list__count">5</span>
+                            </button>
+                        </li>
+                        <li class="tabs-list__item">
+                            <button class="tabs-list__button">
+                                <span class="tabs-list__name">JavaScript</span>
+                                <span class="tabs-list__count">5</span>
+                            </button>
+                        </li>
+                        <li class="tabs-list__item">
+                            <button class="tabs-list__button">
+                                <span class="tabs-list__name">JavaScript</span>
+                                <span class="tabs-list__count">5</span>
+                            </button>
+                        </li>
+                        <li class="tabs-list__item">
+                            <button class="tabs-list__button">
+                                <span class="tabs-list__name">More</span>
+                            </button>
+                        </li>
+                        <li class="tabs-list__item view-buttons">
+                            <button class="view-buttons__btn view-buttons__grid on">
+
+                            </button>
+                            <button class="view-buttons__btn view-buttons__list">
+
+                            </button>
+                        </li>
+                    </ul>
+
+                    <section class="free-vacancies__items-wrap open-vac open-vac--grid">
+
+                        <article class="free-vacancy">
+
+                            <header class="free-vacancy__header">
+                                <h2 class="free-vacancy__title">
+                                    <a href="#" class="free-vacancy__title-link">IT Business Developer</a>
+                                </h2>
+                                <div class="client">
+                                    <img src="" alt="">
+                                </div>
+                            </header>
+
+                            <main class="free-vacancy__description">
+                                <p>Experienced IT Business Developer
+                                    Nordics for 300 people strong Beetroot in Stockholm. Help hot and established tech
+                                    companies in the Nordics solve their software development needs, while contributing
+                                    to positive societal impact in Ukraine.
+                                </p>
+                            </main>
+
+                            <footer class="free-vacancy__footer">
+                                <a class="free-vacancy__details" href="#">
+                                    <img src="<?= get_template_directory_uri(); ?>/images/icons/-e-location.png"
+                                         alt="Location">
+                                    <span class="free-vacancy__details-city">Stockholm</span>
+                                </a>
+                                <div class="cpt-item__tags">
+                                    <ul class="tags">
+                                        <li class="tags__item">
+                                            <div class="tags__name info-shape">
+                                                <span class="info-shape__text">JavaScript</span>
+                                                <div class="info-shape__arrow"></div>
+                                            </div>
+                                            <img class="tags__icon"
+                                                 src=""
+                                                 alt="">
+                                        </li>
+                                        <li class="tags__item">
+                                            <div class="tags__name info-shape">
+                                                <span class="info-shape__text">JavaScript</span>
+                                                <div class="info-shape__arrow"></div>
+                                            </div>
+                                            <img class="tags__icon"
+                                                 src=""
+                                                 alt="">
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </footer>
+                        </article>
+
+                        <article class="free-vacancy">
+
+                            <header class="free-vacancy__header">
+                                <h2 class="free-vacancy__title">
+                                    <a href="#" class="free-vacancy__title-link">IT Business Developer, Nordics</a>
+                                </h2>
+                                <div class="client">
+                                    <img src="" alt="">
+                                </div>
+                            </header>
+
+                            <main class="free-vacancy__description free-vacancy__main">
+                                <p>Experienced IT Business Developer
+                                    Nordics for 300 people strong Beetroot in Stockholm. Help hot and established tech
+                                    companies in the Nordics solve their software development needs, while contributing
+                                    to positive societal impact in Ukraine.
+                                </p>
+                            </main>
+
+                            <footer class="free-vacancy__footer">
+                                <a class="free-vacancy__details" href="#">
+                                    <img src="" alt="">
+                                    Stockholm
+                                </a>
+                                <div class="cpt-item__tags">
+                                    <ul class="tags">
+                                        <li class="tags__item">
+                                            <div class="tags__name info-shape">
+                                                <span class="info-shape__text">JavaScript</span>
+                                                <div class="info-shape__arrow"></div>
+                                            </div>
+                                            <img class="tags__icon"
+                                                 src=""
+                                                 alt="">
+                                        </li>
+                                        <li class="tags__item">
+                                            <div class="tags__name info-shape">
+                                                <span class="info-shape__text">JavaScript</span>
+                                                <div class="info-shape__arrow"></div>
+                                            </div>
+                                            <img class="tags__icon"
+                                                 src=""
+                                                 alt="">
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </footer>
+                        </article>
+
+                        <article class="free-vacancy">
+
+                            <header class="free-vacancy__header">
+                                <h2 class="free-vacancy__title">
+                                    <a href="#" class="free-vacancy__title-link">IT Business Developer, Nordics</a>
+                                </h2>
+                                <div class="client">
+                                    <img src="" alt="">
+                                </div>
+                            </header>
+
+                            <main class="free-vacancy__description free-vacancy__main">
+                                <p>Experienced IT Business Developer
+                                    Nordics for 300 people strong Beetroot in Stockholm. Help hot and established tech
+                                    companies in the Nordics solve their software development needs, while contributing
+                                    to positive societal impact in Ukraine.
+                                </p>
+                            </main>
+
+                            <footer class="free-vacancy__footer">
+                                <a class="free-vacancy__details" href="#">
+                                    <img src="" alt="">
+                                    Stockholm
+                                </a>
+                                <div class="cpt-item__tags">
+                                    <ul class="tags">
+                                        <li class="tags__item">
+                                            <div class="tags__name info-shape">
+                                                <span class="info-shape__text">JavaScript</span>
+                                                <div class="info-shape__arrow"></div>
+                                            </div>
+                                            <img class="tags__icon"
+                                                 src=""
+                                                 alt="">
+                                        </li>
+                                        <li class="tags__item">
+                                            <div class="tags__name info-shape">
+                                                <span class="info-shape__text">JavaScript</span>
+                                                <div class="info-shape__arrow"></div>
+                                            </div>
+                                            <img class="tags__icon"
+                                                 src=""
+                                                 alt="">
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </footer>
+                        </article>
+
+                        <article class="free-vacancy">
+
+                            <header class="free-vacancy__header">
+                                <h2 class="free-vacancy__title">
+                                    <a href="#" class="free-vacancy__title-link">IT Business Developer, Nordics</a>
+                                </h2>
+                                <div class="client">
+                                    <img src="" alt="">
+                                </div>
+                            </header>
+
+                            <main class="free-vacancy__description free-vacancy__main">
+                                <p>Experienced IT Business Developer
+                                    Nordics for 300 people strong Beetroot in Stockholm. Help hot and established tech
+                                    companies in the Nordics solve their software development needs, while contributing
+                                    to positive societal impact in Ukraine.
+                                </p>
+                            </main>
+
+                            <footer class="free-vacancy__footer">
+                                <a class="free-vacancy__details" href="#">
+                                    <img src="" alt="">
+                                    Stockholm
+                                </a>
+                                <div class="cpt-item__tags">
+                                    <ul class="tags">
+                                        <li class="tags__item">
+                                            <div class="tags__name info-shape">
+                                                <span class="info-shape__text">JavaScript</span>
+                                                <div class="info-shape__arrow"></div>
+                                            </div>
+                                            <img class="tags__icon"
+                                                 src=""
+                                                 alt="">
+                                        </li>
+                                        <li class="tags__item">
+                                            <div class="tags__name info-shape">
+                                                <span class="info-shape__text">JavaScript</span>
+                                                <div class="info-shape__arrow"></div>
+                                            </div>
+                                            <img class="tags__icon"
+                                                 src=""
+                                                 alt="">
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </footer>
+                        </article>
+
+                        <article class="free-vacancy">
+
+                            <header class="free-vacancy__header">
+                                <h2 class="free-vacancy__title">
+                                    <a href="#" class="free-vacancy__title-link">IT Business Developer, Nordics</a>
+                                </h2>
+                                <div class="client">
+                                    <img src="" alt="">
+                                </div>
+                            </header>
+
+                            <main class="free-vacancy__description free-vacancy__main">
+                                <p>Experienced IT Business Developer
+                                    Nordics for 300 people strong Beetroot in Stockholm. Help hot and established tech
+                                    companies in the Nordics solve their software development needs, while contributing
+                                    to positive societal impact in Ukraine.
+                                </p>
+                            </main>
+
+                            <footer class="free-vacancy__footer">
+                                <a class="free-vacancy__details" href="#">
+                                    <img src="" alt="">
+                                    Stockholm
+                                </a>
+                                <div class="cpt-item__tags">
+                                    <ul class="tags">
+                                        <li class="tags__item">
+                                            <div class="tags__name info-shape">
+                                                <span class="info-shape__text">JavaScript</span>
+                                                <div class="info-shape__arrow"></div>
+                                            </div>
+                                            <img class="tags__icon"
+                                                 src=""
+                                                 alt="">
+                                        </li>
+                                        <li class="tags__item">
+                                            <div class="tags__name info-shape">
+                                                <span class="info-shape__text">JavaScript</span>
+                                                <div class="info-shape__arrow"></div>
+                                            </div>
+                                            <img class="tags__icon"
+                                                 src=""
+                                                 alt="">
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </footer>
+                        </article>
+
+                        <article class="free-vacancy">
+
+                            <header class="free-vacancy__header">
+                                <h2 class="free-vacancy__title">
+                                    <a href="#" class="free-vacancy__title-link">IT Business Developer, Nordics</a>
+                                </h2>
+                                <div class="client">
+                                    <img src="" alt="">
+                                </div>
+                            </header>
+
+                            <main class="free-vacancy__description free-vacancy__main">
+                                <p>Experienced IT Business Developer
+                                    Nordics for 300 people strong Beetroot in Stockholm. Help hot and established tech
+                                    companies in the Nordics solve their software development needs, while contributing
+                                    to positive societal impact in Ukraine.
+                                </p>
+                            </main>
+
+                            <footer class="free-vacancy__footer">
+                                <a class="free-vacancy__details" href="#">
+                                    <img src="" alt="">
+                                    Stockholm
+                                </a>
+                                <div class="cpt-item__tags">
+                                    <ul class="tags">
+                                        <li class="tags__item">
+                                            <div class="tags__name info-shape">
+                                                <span class="info-shape__text">JavaScript</span>
+                                                <div class="info-shape__arrow"></div>
+                                            </div>
+                                            <img class="tags__icon"
+                                                 src=""
+                                                 alt="">
+                                        </li>
+                                        <li class="tags__item">
+                                            <div class="tags__name info-shape">
+                                                <span class="info-shape__text">JavaScript</span>
+                                                <div class="info-shape__arrow"></div>
+                                            </div>
+                                            <img class="tags__icon"
+                                                 src=""
+                                                 alt="">
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </footer>
+                        </article>
+
+                        <article class="free-vacancy">
+
+                            <header class="free-vacancy__header">
+                                <h2 class="free-vacancy__title">
+                                    <a href="#" class="free-vacancy__title-link">IT Business Developer, Nordics</a>
+                                </h2>
+                                <div class="client">
+                                    <img src="" alt="">
+                                </div>
+                            </header>
+
+                            <main class="free-vacancy__description free-vacancy__main">
+                                <p>Experienced IT Business Developer
+                                    Nordics for 300 people strong Beetroot in Stockholm. Help hot and established tech
+                                    companies in the Nordics solve their software development needs, while contributing
+                                    to positive societal impact in Ukraine.
+                                </p>
+                            </main>
+
+                            <footer class="free-vacancy__footer">
+                                <a class="free-vacancy__details" href="#">
+                                    <img src="" alt="">
+                                    Stockholm
+                                </a>
+                                <div class="cpt-item__tags">
+                                    <ul class="tags">
+                                        <li class="tags__item">
+                                            <div class="tags__name info-shape">
+                                                <span class="info-shape__text">JavaScript</span>
+                                                <div class="info-shape__arrow"></div>
+                                            </div>
+                                            <img class="tags__icon"
+                                                 src=""
+                                                 alt="">
+                                        </li>
+                                        <li class="tags__item">
+                                            <div class="tags__name info-shape">
+                                                <span class="info-shape__text">JavaScript</span>
+                                                <div class="info-shape__arrow"></div>
+                                            </div>
+                                            <img class="tags__icon"
+                                                 src=""
+                                                 alt="">
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </footer>
+                        </article>
+
+                        <article class="free-vacancy">
+
+                            <header class="free-vacancy__header">
+                                <h2 class="free-vacancy__title">
+                                    <a href="#" class="free-vacancy__title-link">IT Business Developer, Nordics</a>
+                                </h2>
+                                <div class="client">
+                                    <img src="" alt="">
+                                </div>
+                            </header>
+
+                            <main class="free-vacancy__description free-vacancy__main">
+                                <p>Experienced IT Business Developer
+                                    Nordics for 300 people strong Beetroot in Stockholm. Help hot and established tech
+                                    companies in the Nordics solve their software development needs, while contributing
+                                    to positive societal impact in Ukraine.
+                                </p>
+                            </main>
+
+                            <footer class="free-vacancy__footer">
+                                <a class="free-vacancy__details" href="#">
+                                    <img src="" alt="">
+                                    Stockholm
+                                </a>
+                                <div class="cpt-item__tags">
+                                    <ul class="tags">
+                                        <li class="tags__item">
+                                            <div class="tags__name info-shape">
+                                                <span class="info-shape__text">JavaScript</span>
+                                                <div class="info-shape__arrow"></div>
+                                            </div>
+                                            <img class="tags__icon"
+                                                 src=""
+                                                 alt="">
+                                        </li>
+                                        <li class="tags__item">
+                                            <div class="tags__name info-shape">
+                                                <span class="info-shape__text">JavaScript</span>
+                                                <div class="info-shape__arrow"></div>
+                                            </div>
+                                            <img class="tags__icon"
+                                                 src=""
+                                                 alt="">
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </footer>
+                        </article>
+                    </section>
 
 
+                </div>
             </section>
         </section>
     </main>
@@ -197,3 +664,10 @@ get_header(); ?>
         </div>
     </section>
 <?php get_footer(); ?>
+
+
+<?php
+
+do_action('test', 1, 2 );
+
+?>

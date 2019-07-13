@@ -28,7 +28,7 @@
   --menu-item-a-last-padding: 0 44px;
   --career-description-top: 180px;
   --career-description-width: 1358px;
-  --filter-search-pb: 120px;
+  --filter-search-pb: 60px;
   --filter-inputs-height: 130px;
   --filter-input-padding: 50px;
   --filter-choice-list-width: 912px;
@@ -37,6 +37,14 @@
   --filter-choice-list-name-pl: 20px;
   --filter-choice-list-label-br: 12px;
   --filter-choice-list-wrap-ml: 80px;
+  --filter-tabs-list-m: 40px;
+  --filter-tabs-list-btns-w: 80px;
+  --filter-tabs-list-btns-h: 60px;
+  --filter-tabs-list-btns-bqsize: 30px 26px;
+  --free-vac-grid-space: 60px;
+  --free-vac-grid-article-br: 40px;
+  --free-vac-grid-article-p: 50px;
+  --free-vac-grid-article-title-m: 25px;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 2000px) {
@@ -56,7 +64,7 @@
     --menu-item-a-last-padding: 0 22px;
     --career-description-top: 90px;
     --career-description-width: 679px;
-    --filter-search-pb: 60px;
+    --filter-search-pb: 30px;
     --filter-inputs-height: 65px;
     --filter-input-padding: 25px;
     --filter-choice-list-width: 456px;
@@ -65,6 +73,14 @@
     --filter-choice-list-name-pl: 10px;
     --filter-choice-list-label-br: 6px;
     --filter-choice-list-wrap-ml: 40px;
+    --filter-tabs-list-m: 20px;
+    --filter-tabs-list-btns-w: 40px;
+    --filter-tabs-list-btns-h: 30px;
+    --filter-tabs-list-btns-bqsize: 15px 13px;
+    --free-vac-grid-space: 30px;
+    --free-vac-grid-article-br: 20px;
+    --free-vac-grid-article-p: 25px;
+    --free-vac-grid-article-title-m: 12px;
   }
 }
 @media only screen and (min-width: 967px) and (max-width: 1200px) {
@@ -232,9 +248,11 @@ input {
   font-weight: 300;
   line-height: 1.875rem;
 }
+.career-description .jobs-filter .jobs-filter__row {
+  padding-bottom: var(--filter-search-pb);
+}
 .career-description .jobs-filter .jobs-filter-search {
   display: flex;
-  padding-bottom: var(--filter-search-pb);
 }
 .career-description .jobs-filter .jobs-filter-search > div {
   height: var(--filter-inputs-height);
@@ -305,6 +323,8 @@ input {
 .career-description .jobs-filter .jobs-filter-search .jobs-filter-search__dropdown-wrap:hover {
   border-color: #bc204b;
   cursor: pointer;
+  opacity: 1;
+  z-index: 2;
 }
 .career-description .jobs-filter .jobs-filter-search .jobs-filter-search__dropdown-wrap:hover .choice-list {
   display: flex;
@@ -400,6 +420,14 @@ input {
   opacity: 0.4;
   margin-left: auto;
 }
+.career-description .jobs-filter .jobs-filter-search .choice-list .choice-list__wrap .choice-list__menu .choice-list__item.selecting {
+  opacity: 0.6;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+.career-description .jobs-filter .jobs-filter-search .choice-list .choice-list__wrap .choice-list__menu .choice-list__item .choice-list-deselect-all {
+  display: none;
+}
 .career-description .jobs-filter .jobs-filter-search .choice-list .choice-list__wrap .choice-list__wrap--column-right .choice-list__title {
   color: #7bceb1;
 }
@@ -411,6 +439,107 @@ input {
 }
 .career-description .jobs-filter .jobs-filter-search .choice-list .choice-list__wrap.all-locations {
   display: flex;
+}
+.career-description .tabs-list {
+  display: flex;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: var(--filter-tabs-list-m);
+}
+.career-description .tabs-list .tabs-list__item.view-buttons {
+  margin-left: auto;
+}
+.career-description .tabs-list .tabs-list__item .tabs-list__button {
+  margin-right: 0.5625rem;
+  border-width: var(--border-width);
+  border-style: solid;
+  border-radius: 30px;
+  background-color: transparent;
+  font-size: 0.875rem;
+  padding: 6px 10px;
+}
+.career-description .tabs-list .tabs-list__item .tabs-list__button .tabs-list__count {
+  color: #989693;
+  font-size: 0.8125rem;
+  font-weight: 300;
+}
+.career-description .tabs-list .tabs-list__item .tabs-list__button:hover {
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #bc204b;
+  border-color: #bc204b;
+}
+.career-description .tabs-list .tabs-list__item .tabs-list__button:hover .tabs-list__count {
+  color: #ffffff;
+}
+.career-description .tabs-list .tabs-list__item.view-buttons .view-buttons__btn {
+  height: var(--filter-tabs-list-btns-h);
+  width: var(--filter-tabs-list-btns-w);
+  background-color: transparent;
+  outline: 0;
+  border-width: var(--border-width);
+  border-style: solid;
+  background-repeat: no-repeat;
+  background-size: var(--filter-tabs-list-btns-bqsize);
+}
+.career-description .tabs-list .tabs-list__item.view-buttons .view-buttons__btn:hover {
+  cursor: pointer;
+}
+.career-description .tabs-list .tabs-list__item.view-buttons .view-buttons__btn.on {
+  background-color: #ffffff;
+}
+.career-description .tabs-list .tabs-list__item.view-buttons .view-buttons__btn.view-buttons__grid {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-right-width: 0;
+  background-position: 60% 50%;
+  background-image: url("../images/icons/-e-grid.png");
+}
+.career-description .tabs-list .tabs-list__item.view-buttons .view-buttons__btn.view-buttons__list {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  margin-left: -2px;
+  background-position: 40% 50%;
+  background-image: url("../images/icons/-e-list.png");
+}
+.career-description .open-vac.open-vac--grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: var(--free-vac-grid-space);
+  grid-row-gap: var(--free-vac-grid-space);
+}
+.career-description .open-vac.open-vac--grid .free-vacancy {
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: var(--free-vac-grid-article-br);
+  padding: var(--free-vac-grid-article-p);
+}
+.career-description .open-vac.open-vac--grid .free-vacancy:hover {
+  cursor: pointer;
+  cursor: pointer;
+}
+.career-description .open-vac.open-vac--grid .free-vacancy__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.career-description .open-vac.open-vac--grid .free-vacancy__header .free-vacancy__title {
+  font-size: 1.125rem;
+  margin-top: 0;
+  margin-bottom: var(--free-vac-grid-article-title-m);
+}
+.career-description .open-vac.open-vac--grid .free-vacancy__description {
+  opacity: 0.8;
+  font-weight: 300;
+  line-height: 1.406rem;
+  margin-bottom: calc(var(--free-vac-grid-article-title-m) * 2);
+}
+.career-description .open-vac.open-vac--grid .free-vacancy__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0.6;
+  font-weight: 300;
 }
 
 /*# sourceMappingURL=main.css.map */
