@@ -428,6 +428,9 @@ input {
 .career-description .jobs-filter .jobs-filter-search .choice-list .choice-list__wrap .choice-list__menu .choice-list__item .choice-list-deselect-all {
   display: none;
 }
+.career-description .jobs-filter .jobs-filter-search .choice-list .choice-list__wrap .choice-list__menu .choice-list__item.checked .choice-list__label:before {
+  background-color: #bc204b;
+}
 .career-description .jobs-filter .jobs-filter-search .choice-list .choice-list__wrap .choice-list__wrap--column-right .choice-list__title {
   color: #7bceb1;
 }
@@ -449,7 +452,16 @@ input {
 .career-description .tabs-list .tabs-list__item.view-buttons {
   margin-left: auto;
 }
+.career-description .tabs-list .tabs-list__item.checked .tabs-list__button {
+  background-color: #bc204b;
+  border-color: #bc204b;
+  color: #ffffff;
+}
+.career-description .tabs-list .tabs-list__item.checked .tabs-list__button .tabs-list__count {
+  color: #ffffff;
+}
 .career-description .tabs-list .tabs-list__item .tabs-list__button {
+  outline: none;
   margin-right: 0.5625rem;
   border-width: var(--border-width);
   border-style: solid;

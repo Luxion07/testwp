@@ -16,19 +16,19 @@
             <ul class="choice-list__menu departments" role="menu">
 
                 <?php
-                foreach ($departments as $department => $count) { ?>
-
-                    <li class="choice-list__item" role="menuitem">
+                foreach ($departments as $department_name => $department_coll) { ?>
+                    <li class="choice-list__item" role="menuitem" data-filter-tax="<?= $department_coll['taxonomy']; ?>"
+                        data-filter-termId="<?= $department_coll['term_id']; ?>">
                         <input id="department-checkbox-0" type="checkbox"
                                class="choice-list__input">
                         <label for="department-checkbox-0"
                                class="choice-list__label">
-                            <span class="choice-list__label-name"><?= $department; ?></span>
+                            <span class="choice-list__label-name"><?= $department_name; ?></span>
                         </label>
-                        <span class="choice-list__vac-count"><?= $count; ?></span>
+                        <span class="choice-list__vac-count"><?= $department_coll['job_count']; ?></span>
                     </li>
 
-                <?php
+                    <?php
                 }
                 ?>
                 <li class="choice-list__item selecting" role="menuitem">

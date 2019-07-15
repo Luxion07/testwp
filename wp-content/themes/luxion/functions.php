@@ -5,6 +5,9 @@
  * @subpackage
  */
 
+require_once 'classes/AjaxHelper.php';
+AjaxHelper::init();
+
 add_theme_support('title-tag');
 
 add_theme_support('custom-logo', [
@@ -116,6 +119,8 @@ if (!function_exists('add_scripts')) {
         wp_deregister_script('jquery');
         wp_enqueue_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', '', '', true);
         wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', '', '', true);
+        wp_localize_script('main', 'MyAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
+
     }
 }
 

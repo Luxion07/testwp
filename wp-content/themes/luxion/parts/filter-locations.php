@@ -7,7 +7,7 @@
 <?php
 
 $choice_right = '';
-$location_parents = array_reverse ($location_parents, true);
+$location_parents = array_reverse($location_parents, true);
 ?>
 
 <div class="jobs-filter-search__dropdown-wrap">
@@ -29,17 +29,19 @@ $location_parents = array_reverse ($location_parents, true);
                     <ul class="choice-list__menu locations" role="menu">
 
                         <?php
-                        foreach ($locations[$location_parent_key] as $key => $value) { ?>
+                        foreach ($locations[$location_parent_key] as $location_name => $location_coll) { ?>
 
-                            <li class="choice-list__item" role="menuitem">
+                            <li class="choice-list__item" role="menuitem"
+                                data-filter-tax="<?= $location_coll['taxonomy']; ?>"
+                                data-filter-termId="<?= $location_coll['term_id']; ?>">
                                 <input id="location-checkbox-0" type="checkbox"
                                        class="choice-list__input" data-filter="development"
                                        data-filter-type="location">
                                 <label for="location-checkbox-0"
                                        class="choice-list__label">
-                                    <span class="choice-list__label-name"><?= $key; ?></span>
+                                    <span class="choice-list__label-name"><?= $location_name; ?></span>
                                 </label>
-                                <span class="choice-list__vac-count"><?= $value ?></span>
+                                <span class="choice-list__vac-count"><?= $location_coll['job_count'] ?></span>
                             </li>
 
                             <?php

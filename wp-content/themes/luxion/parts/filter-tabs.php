@@ -7,12 +7,13 @@
 
 <ul class="tabs-list tabs-list">
     <?php
-    foreach ($job_tags as $job_tag => $count) { ?>
+    foreach ($job_tags as $tag_name => $tag_coll) { ?>
 
-        <li class="tabs-list__item">
+        <li class="tabs-list__item" data-filter-tax="<?= $tag_coll['taxonomy']; ?>"
+            data-filter-termId="<?= $tag_coll['term_id']; ?>">
             <button class="tabs-list__button">
-                <span class="tabs-list__name"><?= $job_tag; ?></span>
-                <span class="tabs-list__count"><?= $count; ?></span>
+                <span class="tabs-list__name"><?= $tag_name; ?></span>
+                <span class="tabs-list__count"><?= $tag_coll['job_count']; ?></span>
             </button>
         </li>
 

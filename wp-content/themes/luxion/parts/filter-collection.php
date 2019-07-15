@@ -63,6 +63,7 @@ $post_query = new WP_Query($args);
 
             <?php
         }
+        wp_reset_postdata();
     }
     ?>
 </section>

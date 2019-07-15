@@ -237,6 +237,14 @@
                 display: none;
               }
 
+              &.checked{
+                .choice-list__label {
+                  &:before{
+                    background-color: $crimson;
+                  }
+
+                }
+              }
             }
           }
 
@@ -288,8 +296,19 @@
       &.view-buttons{
         margin-left: auto;
       }
+      &.checked{
+        .tabs-list__button{
+          background-color: $crimson;
+          border-color: $crimson;
+          color: $white;
+          .tabs-list__count{
+            color: $white;
+          }
+        }
+      }
 
       .tabs-list__button{
+        outline: none;
         margin-right: 0.5625rem;
         border-width: var(--border-width);
         border-style: solid;
