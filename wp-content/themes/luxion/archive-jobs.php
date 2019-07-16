@@ -103,5 +103,10 @@ set_query_var('job_tags', $job_tags);
     </section>
 </main>
 
+<?php
+
+
+?>
+
 <?php get_footer(); ?>
 

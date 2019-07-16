@@ -7,6 +7,7 @@
 
 require_once 'classes/AjaxHelper.php';
 AjaxHelper::init();
+require_once 'classes/Filter.php';
 
 add_theme_support('title-tag');
 
@@ -201,3 +202,5 @@ if (function_exists('acf_add_options_page')) {
     ));
 
 }
+
+add_action( 'ajax_filter_jobs', array( 'Filter', 'search_filter_method' ) );
