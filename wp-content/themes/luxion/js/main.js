@@ -1,25 +1,55 @@
 jQuery(document).ready(function ($) {
     var queryTaxArray = {},
-        dropdownNewName = [];
+        departmentNewName = [],
+        locationNewName = [];
+
+    // filter by tabs and dropdowns
+
     $('.choice-list__label, .tabs-list__button').on('click', function () {
         var i = 0;
 
-        let filterDropdown = $(this).closest('.jobs-filter-search__dropdown-wrap').find('.jobs-filter-search__dropdown'),
-            currentList = $(this).closest('li');
+        let filterDropdown = $(this).closest('.jobs-filter-search__dropdown-wrap'),
+            currentList = $(this).closest('li'),
+            filterDropdownName = filterDropdown.data('filter-category'); // get original name of field (const)
 
         currentList.toggleClass('checked'); // if click current list add checked className
 
-        const filterDropdownName = filterDropdown.text(); // get original name of field (const)
+        labelName = $(this).find('.choice-list__label-name').text();
 
-        let labelName = $(this).find('.choice-list__label-name').text();
+        if (filterDropdownName === 'All departments') {
+            var idx = $.inArray(labelName, departmentNewName);
 
-        // dropdownNewName.push();
+            if (idx == -1) {
+                departmentNewName.push(labelName);
+            } else {
+                departmentNewName.splice(idx, 1);
+            }
 
-        var idx = $.inArray(labelName, dropdownNewName);
-        if (idx == -1) {
-            dropdownNewName.push(labelName);
-        } else {
-            dropdownNewName.splice(idx, 1);
+            let newDropdown = departmentNewName.sort().join(", ");
+
+            if (newDropdown != '') {
+                $("[data-filter-category='All departments'] .jobs-filter-search__dropdown").text(newDropdown);
+            } else {
+                $("[data-filter-category='All departments'] .jobs-filter-search__dropdown").text("All departments");
+            }
+
+        } else if (filterDropdownName === 'All locations') {
+            var idx = $.inArray(labelName, locationNewName);
+
+            if (idx == -1) {
+                locationNewName.push(labelName);
+            } else {
+                locationNewName.splice(idx, 1);
+            }
+
+            let newLocation = locationNewName.sort().join(", ");
+
+            if (newLocation != '') {
+                $("[data-filter-category='All locations'] .jobs-filter-search__dropdown").text(newLocation);
+            } else {
+                $("[data-filter-category='All locations'] .jobs-filter-search__dropdown").text("All locations");
+            }
+
         }
 
         $('.jobs-filter__row .checked').each(function () { // get all checked items
@@ -36,17 +66,10 @@ jQuery(document).ready(function ($) {
             i++;
         });
 
-        let newFilterName = dropdownNewName.join(", ");
+        if ($(".jobs-filter__row .checked")[0]) {
 
-        if ($(".jobs-filter__row .checked")[0]){
-
-            // add list names to array for dropdowns
-            filterDropdown.text(newFilterName);
-            console.log(filterDropdownName);
         } else {
             queryTaxArray = {};
-            filterDropdown.text(1);
-            console.log(filterDropdownName);
         }
 
         queryTaxArray['relation'] = 'OR'; // add relation for multiply filter posts
@@ -55,6 +78,7 @@ jQuery(document).ready(function ($) {
 
     });
 
+    // filter by search input
 
     $('.jobs-filter-search__input').on('keyup', function () {
 
@@ -65,6 +89,7 @@ jQuery(document).ready(function ($) {
     });
 
 
+    //live search function (ajax call)
     function liveSearch($keyword) {
 
         let data = {
@@ -74,10 +99,10 @@ jQuery(document).ready(function ($) {
         };
 
         $.post(MyAjax.ajaxurl, data, function (response) {
-            // console.log('Получено с сервера: ' + response);
-            $('.free-vacancies__items-wrap').html(response);
+            $('.free-vacancies__items-wrap').html(response); // Set data to page as search result
         });
 
     }
+
 
 });

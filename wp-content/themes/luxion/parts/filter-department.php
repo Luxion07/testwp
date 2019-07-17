@@ -4,9 +4,9 @@
  */
 ?>
 
-<div class="jobs-filter-search__dropdown-wrap">
+<div class="jobs-filter-search__dropdown-wrap" data-filter-category="All departments">
 
-    <div class="jobs-filter-search__dropdown jobs-filter-search__dropdown--first">
+    <div class="jobs-filter-search__dropdown jobs-filter-search__dropdown--first" >
         All departments
     </div>
     <div class="choice-list">

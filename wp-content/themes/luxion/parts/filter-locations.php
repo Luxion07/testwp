@@ -10,9 +10,9 @@ $choice_right = '';
 $location_parents = array_reverse($location_parents, true);
 ?>
 
-<div class="jobs-filter-search__dropdown-wrap">
+<div class="jobs-filter-search__dropdown-wrap" data-filter-category="All locations">
 
-    <div class="jobs-filter-search__dropdown jobs-filter-search__dropdown--first">
+    <div class="jobs-filter-search__dropdown jobs-filter-search__dropdown--first" >
         All locations
     </div>
 
