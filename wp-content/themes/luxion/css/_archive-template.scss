@@ -28,7 +28,7 @@
 
   .jobs-filter {
 
-    .jobs-filter__row{
+    .jobs-filter__row {
       padding-bottom: var(--filter-search-pb);
     }
 
@@ -227,19 +227,19 @@
                 margin-left: auto;
               }
 
-              &.selecting{
+              &.selecting {
                 opacity: 0.6;
                 font-size: 0.75rem;
                 font-weight: 400;
               }
 
-              .choice-list-deselect-all{
+              .choice-list-deselect-all {
                 display: none;
               }
 
-              &.checked{
+              &.checked {
                 .choice-list__label {
-                  &:before{
+                  &:before {
                     background-color: $crimson;
                   }
 
@@ -271,6 +271,15 @@
                     }
                   }
                 }
+
+                &.checked {
+                  .choice-list__label {
+                    &:before {
+                      background-color: $light-green;
+                    }
+
+                  }
+                }
               }
             }
           }
@@ -285,29 +294,31 @@
 
   //  filter active tabs
 
-  .tabs-list{
+  .tabs-list {
     display: flex;
     padding-left: 0;
     margin-top: 0;
     margin-bottom: var(--filter-tabs-list-m);
 
-    .tabs-list__item{
+    .tabs-list__item {
 
-      &.view-buttons{
+      &.view-buttons {
         margin-left: auto;
       }
-      &.checked{
-        .tabs-list__button{
+
+      &.checked {
+        .tabs-list__button {
           background-color: $crimson;
           border-color: $crimson;
           color: $white;
-          .tabs-list__count{
+
+          .tabs-list__count {
             color: $white;
           }
         }
       }
 
-      .tabs-list__button{
+      .tabs-list__button {
         outline: none;
         margin-right: 0.5625rem;
         border-width: var(--border-width);
@@ -316,25 +327,27 @@
         background-color: transparent;
         font-size: 0.875rem;
         padding: 6px 10px;
-        .tabs-list__count{
+
+        .tabs-list__count {
           color: $sub-grey;
           font-size: 0.8125rem;
           font-weight: 300;
         }
 
-        &:hover{
+        &:hover {
           cursor: pointer;
           color: $white;
           background-color: $crimson;
           border-color: $crimson;
-          .tabs-list__count{
+
+          .tabs-list__count {
             color: $white;
           }
         }
       }
 
-      &.view-buttons{
-        .view-buttons__btn{
+      &.view-buttons {
+        .view-buttons__btn {
           height: var(--filter-tabs-list-btns-h);
           width: var(--filter-tabs-list-btns-w);
           background-color: transparent;
@@ -344,15 +357,15 @@
           background-repeat: no-repeat;
           background-size: var(--filter-tabs-list-btns-bqsize);
 
-          &:hover{
-            cursor:pointer;
+          &:hover {
+            cursor: pointer;
           }
 
-          &.on{
+          &.on {
             background-color: $white;
           }
 
-          &.view-buttons__grid{
+          &.view-buttons__grid {
             border-top-left-radius: 30px;
             border-bottom-left-radius: 30px;
             border-right-width: 0;
@@ -360,7 +373,7 @@
             background-image: url('../images/icons/-e-grid.png');
           }
 
-          &.view-buttons__list{
+          &.view-buttons__list {
             border-top-right-radius: 30px;
             border-bottom-right-radius: 30px;
             margin-left: -2px;
@@ -376,55 +389,308 @@
 
   //  filter list of jobs
 
-  .open-vac{
+  .open-vac {
 
-    &.open-vac--grid{
+    // grid view of vacancies
+    .filter__row-headline {
+      display: none;
+    }
+
+
+    .free-vacancy {
+
+
+      &:hover {
+        cursor: pointer;
+
+        .free-vacancy__details-city,
+        .free-vacancy__details-location {
+          display: none;
+        }
+
+        .free-vacancy__details-btn,
+        .free-vacancy__details-arrow {
+          display: block !important;
+        }
+
+      }
+
+      .free-vacancy__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: var(--free-vac-grid-article-title-m);
+
+
+        .free-vacancy__title {
+          font-size: 1.125rem;
+          margin-top: 0;
+          margin-bottom: 0;
+
+        }
+
+        .client {
+          img {
+            width: var(--free-vac-client-w);
+          }
+        }
+      }
+
+      .free-vacancy__description {
+        opacity: 0.8;
+        font-weight: 300;
+        line-height: 1.406rem;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+
+        .free-vacancy__description-info {
+          display: none;
+        }
+      }
+
+      .free-vacancy__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 300;
+
+        .free-vacancy__details {
+          display: flex;
+          align-items: center;
+
+          .free-vacancy__details-location {
+            width: var(--free-vac-grid-icon-w);
+            height: var(--free-vac-grid-icon-h);
+            margin-right: 0.3rem;
+          }
+
+          .free-vacancy__details-btn {
+            display: none;
+            color: $crimson;
+            opacity: 1;
+          }
+
+          .free-vacancy__details-arrow {
+            display: none;
+            margin-left: 0.3rem;
+            width: var(--free-vac-grid-array-w);
+            height: var(--free-vac-grid-array-h);
+          }
+
+        }
+
+        .cpt-item__tags {
+
+          .tags {
+            display: flex;
+            align-items: center;
+            padding: 0;
+
+            .tags__item {
+              position: relative;
+              margin-left: 0.3125rem;
+
+              &:hover {
+                .tags__name {
+                  opacity: 1;
+                  z-index: 1;
+                }
+              }
+
+              .tags__name {
+                position: absolute;
+                opacity: 0;
+                z-index: -1;
+                background-color: $crimson;
+                top: -100%;
+                color: $white;
+              }
+
+              .info-shape {
+                padding: 0 12px;
+                line-height: 26px;
+                -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .05);
+                box-shadow: 0 0 20px rgba(0, 0, 0, .05);
+                border-radius: 28px;
+                left: -50%;
+
+                &:before {
+                  content: '';
+                  border-top-color: $crimson;
+                  left: 40%;
+                  position: absolute;
+                  bottom: -6px;
+                  width: 0;
+                  height: 0;
+                  border-left: 10px solid transparent;
+                  border-right: 10px solid transparent;
+                  border-top-width: 10px;
+                  border-top-style: solid;
+                }
+              }
+
+              .tags__icon {
+                width: var(--free-vac-grid-vac-icon-s);
+                height: var(--free-vac-grid-vac-icon-s);
+              }
+            }
+          }
+        }
+      }
+
+      &.green {
+        .free-vacancy__footer {
+          .free-vacancy__details {
+            .free-vacancy__details-btn {
+              color: $light-green;
+            }
+          }
+
+          .cpt-item__tags {
+            .tags {
+              .tags__item {
+                .tags__name {
+                  background-color: $light-green;
+                }
+
+                .info-shape {
+                  padding: 0 12px;
+                  line-height: 26px;
+                  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .05);
+                  box-shadow: 0 0 20px rgba(0, 0, 0, .05);
+                  border-radius: 28px;
+                  left: -50%;
+
+                  &:before {
+                    border-top-color: $light-green;
+
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+
+    &.open-vac--grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-column-gap: var(--free-vac-grid-space);
       grid-row-gap: var(--free-vac-grid-space);
 
-      .free-vacancy{
+      .free-vacancy {
         background-color: $white;
         border: 1px solid transparent;
         border-radius: var(--free-vac-grid-article-br);
         padding: var(--free-vac-grid-article-p);
 
-        &:hover{
-          cursor: pointer;
-          cursor: pointer;
+        .free-vacancy__footer {
+          flex: var(--flex-50);
 
+          .cpt-item__client {
+            display: none;
+          }
         }
       }
 
-      .free-vacancy__header{
+
+    }
+
+    // grid view of vacancies
+
+    &.open-vac--list {
+
+      .filter__row-headline {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        padding: 14px 0;
+        border-bottom: var(--border-width) solid $border-grey-opacity;
+        flex: var(--flex-100);
 
-        .free-vacancy__title{
-          font-size: 1.125rem;
-          margin-top: 0;
-          margin-bottom: var(--free-vac-grid-article-title-m);
+        .filter__row-headline--total {
+          flex: var(--flex-33);
+        }
 
+        .filter__row-headline--category {
+          flex: var(--flex-16);
+
+        }
+
+        .filter__row-headline--info {
+          flex: var(--flex-50);
+          display: flex;
+
+          .filter__row-headline--location {
+            flex: var(--flex-33);
+          }
+
+          .filter__row-headline--tags {
+            flex: var(--flex-50);
+          }
+
+          .filter__row-headline--client {
+            flex: var(--flex-16);
+          }
+
+        }
+
+      }
+
+      .free-vacancy {
+        border-bottom: var(--border-width) solid $border-grey-opacity;
+        display: flex;
+        min-height: 77px;
+
+        .free-vacancy__header {
+          flex: var(--flex-33);
+          margin: 0;
+
+          .free-vacancy__title {
+            margin: 0;
+          }
+
+          .client {
+            display: none;
+          }
+        }
+
+        .free-vacancy__description {
+          flex: var(--flex-16);
+
+          .free-vacancy__description-content {
+            display: none;
+          }
+
+          .free-vacancy__description-info {
+            display: block;
+          }
+        }
+
+        .free-vacancy__footer {
+          flex: var(--flex-50);
+
+          .free-vacancy__details {
+            flex: var(--flex-33);
+          }
+
+          .cpt-item__tags {
+            flex: var(--flex-50);
+          }
+
+          .cpt-item__client {
+            display: block;
+            flex: var(--flex-16);
+
+            img {
+              width: var(--free-vac-client-w);
+            }
+          }
         }
       }
 
-      .free-vacancy__description{
-        opacity: 0.8;
-        font-weight: 300;
-        line-height: 1.406rem;
-        margin-bottom: calc(var(--free-vac-grid-article-title-m) * 2) ;
-      }
-
-      .free-vacancy__footer{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        opacity: 0.6;
-        font-weight: 300;
-
-      }
     }
   }
 

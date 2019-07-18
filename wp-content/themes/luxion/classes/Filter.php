@@ -3,69 +3,146 @@
 class Filter
 {
 
-    public function __construct() {
+    public function __construct()
+    {
 
-        add_action( 'search_filter', array( __CLASS__, 'search_filter_method' ) );
+        add_action('search_filter', array(__CLASS__, 'search_filter_method'));
 
     }
 
-    static function search_filter_method($post_query) {
-        if ($post_query) {
-            if ($post_query->have_posts()) {
-                while ($post_query->have_posts()) {
-                    $post_query->the_post();
-                    $tags_array = wp_get_post_terms( $post_query->post->ID, 'job_tags', array('fields' => 'ids') );
-                    ?>
-                    <article class="free-vacancy">
+    static function search_filter_method($post_query)
+    {
+        ?>
 
-                        <header class="free-vacancy__header">
-                            <h2 class="free-vacancy__title">
-                                <a href="#" class="free-vacancy__title-link"><?php the_title();?></a>
-                            </h2>
-                            <div class="client">
-                                <img src="" alt="">
-                            </div>
-                        </header>
+        <div class="filter__row-headline">
 
-                        <main class="free-vacancy__description">
-                            <?php the_content();?>
-                        </main>
+            <div class="filter__row-headline--total">
+                <p class="filter__row-headline-name">
+                    <span class="filter__row-headline-counter">0</span> openings
+                </p>
+            </div>
 
-                        <footer class="free-vacancy__footer">
-                            <a class="free-vacancy__details" href="#">
-                                <img src="<?= get_template_directory_uri(); ?>/images/icons/-e-location.png"
-                                     alt="Location">
-                                <span class="free-vacancy__details-city">Stockholm</span>
-                            </a>
-                            <div class="cpt-item__tags">
-                                <ul class="tags">
-                                    <?php
-                                    foreach ($tags_array as $tag_item){
-                                        $tag_icon = get_field('tags_icon', 'job_tags_' . $tag_item);
+            <div class="filter__row-headline--category">
+                <p class="filter__row-headline-name">Department</p>
+            </div>
 
-                                        ?>
-                                        <li class="tags__item">
-                                            <div class="tags__name info-shape">
-                                                <span class="info-shape__text"><?= $tag_icon['alt']?></span>
-                                                <div class="info-shape__arrow"></div>
-                                            </div>
-                                            <img class="tags__icon"
-                                                 src="<?= $tag_icon['url'];?>"
-                                                 alt="<?= $tag_icon['alt'];?>">
-                                        </li>
-                                        <?php
-                                    }
-                                    ?>
-                                </ul>
-                            </div>
-                        </footer>
-                    </article>
+            <div class="filter__row-headline--info">
+                <div class="filter__row-headline--location">
+                    <p class="filter__row-headline-text">Location</p>
+                </div>
+                <div class="filter__row-headline--tags">
+                    <p class="filter__row-headline-text">Tags</p>
+                </div>
+                <div class="filter__row-headline--client">
+                    <p class="filter__row-headline-text">Client</p>
+                </div>
+            </div>
 
-                    <?php
+        </div>
+
+        <?php if ($post_query) {
+        if ($post_query->have_posts()) {
+            while ($post_query->have_posts()) {
+                $post_query->the_post();
+                $tags_array = wp_get_post_terms($post_query->post->ID, 'job_tags', array('fields' => 'ids'));
+                $cat_array = wp_get_post_terms($post_query->post->ID, 'department', array('fields' => 'names'));
+                $loc_array = wp_get_post_terms($post_query->post->ID, 'location', array('fields' => 'all'));
+
+                $term_parent = $loc_array[0]->parent;
+                $loc_parent_name = get_term($term_parent, 'location')->name;
+
+                if ($loc_parent_name === 'Academies') {
+                    $loc_class_color = 'green';
+                } else {
+                    $loc_class_color = 'red';
                 }
-                wp_reset_postdata();
+
+                $job_client = get_field('job_client');
+
+
+                ?>
+                <article class="free-vacancy <?= $loc_class_color ?>">
+
+                    <header class="free-vacancy__header">
+                        <h2 class="free-vacancy__title">
+                            <a href="#" class="free-vacancy__title-link"><?php the_title(); ?></a>
+                        </h2>
+                        <div class="client">
+                            <?php
+
+                            if ($job_client) { ?>
+                                <img src="<?= $job_client ?>" alt="Jobs Client">
+                                <?php
+                            }
+
+                            ?>
+                        </div>
+                    </header>
+
+                    <main class="free-vacancy__description">
+                        <div class="free-vacancy__description-content">
+                            <?php
+                            $content = get_the_content();
+                            $trimmed_content = wp_trim_words($content, 20, '...');
+                            echo $trimmed_content;
+                            ?>
+                        </div>
+                        <div class="free-vacancy__description-info">
+                            <?= $cat_array[0] ?>
+                        </div>
+                    </main>
+
+                    <footer class="free-vacancy__footer">
+                        <a class="free-vacancy__details" href="#">
+                            <img class="free-vacancy__details-location"
+                                 src="<?= get_template_directory_uri(); ?>/images/icons/-e-location.png"
+                                 alt="Location">
+                            <span class="free-vacancy__details-city"><?= $loc_array[0]->name; ?></span>
+                            <span class="free-vacancy__details-btn">Details </span>
+                            <img class="free-vacancy__details-arrow"
+                                 src="<?= get_template_directory_uri(); ?>/images/icons/arrow_details.png"
+                                 alt="Location">
+                        </a>
+                        <div class="cpt-item__tags">
+                            <ul class="tags">
+                                <?php
+                                foreach ($tags_array as $tag_item) {
+                                    $tag_icon = get_field('tags_icon', 'job_tags_' . $tag_item);
+
+                                    ?>
+                                    <li class="tags__item">
+                                        <div class="tags__name info-shape">
+                                            <span class="info-shape__text"><?= $tag_icon['alt'] ?></span>
+                                        </div>
+                                        <img class="tags__icon"
+                                             src="<?= $tag_icon['url']; ?>"
+                                             alt="<?= $tag_icon['alt']; ?>">
+                                    </li>
+                                    <?php
+                                }
+                                ?>
+                            </ul>
+                        </div>
+                        <div class="cpt-item__client">
+                            <?php
+
+                            if ($job_client) { ?>
+                                <img src="<?= $job_client ?>" alt="Jobs Client">
+                                <?php
+                            }
+
+                            ?>
+
+
+                        </div>
+                    </footer>
+                </article>
+
+                <?php
             }
+            wp_reset_postdata();
         }
+    }
     }
 }
 

@@ -16,6 +16,10 @@
   --container-width: 2340px;
   --main-font-size: 32px;
   --border-width: 2px;
+  --flex-100: 0 0 100%;
+  --flex-50: 0 0 50%;
+  --flex-33: 0 0 33.33333%;
+  --flex-16: 0 0 16.66666%;
   --navbar-height: 167px;
   --lang-left: 66px;
   --lang-width: 88px;
@@ -45,6 +49,13 @@
   --free-vac-grid-article-br: 40px;
   --free-vac-grid-article-p: 50px;
   --free-vac-grid-article-title-m: 25px;
+  --free-vac-grid-icon-w: auto;
+  --free-vac-grid-icon-h: auto;
+  --free-vac-grid-array-w: auto;
+  --free-vac-grid-array-h: auto;
+  --free-vac-grid-vac-icon-s: auto;
+  --free-vac-client-w: auto;
+  --free-vac-client-h: auto;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 2000px) {
@@ -81,6 +92,13 @@
     --free-vac-grid-article-br: 20px;
     --free-vac-grid-article-p: 25px;
     --free-vac-grid-article-title-m: 12px;
+    --free-vac-grid-icon-w: 10px;
+    --free-vac-grid-icon-h: 15px;
+    --free-vac-grid-array-w: 36px;
+    --free-vac-grid-array-h: 5px;
+    --free-vac-grid-vac-icon-s: 40px;
+    --free-vac-client-w: 65px;
+    --free-vac-client-h: 35px;
   }
 }
 @media only screen and (min-width: 967px) and (max-width: 1200px) {
@@ -440,6 +458,9 @@ input {
 .career-description .jobs-filter .jobs-filter-search .choice-list .choice-list__wrap .choice-list__wrap--column-right .choice-list__menu .choice-list__item .choice-list__label:hover:before {
   background-color: #7bceb1;
 }
+.career-description .jobs-filter .jobs-filter-search .choice-list .choice-list__wrap .choice-list__wrap--column-right .choice-list__menu .choice-list__item.checked .choice-list__label:before {
+  background-color: #7bceb1;
+}
 .career-description .jobs-filter .jobs-filter-search .choice-list .choice-list__wrap.all-locations {
   display: flex;
 }
@@ -514,6 +535,134 @@ input {
   background-position: 40% 50%;
   background-image: url("../images/icons/-e-list.png");
 }
+.career-description .open-vac .filter__row-headline {
+  display: none;
+}
+.career-description .open-vac .free-vacancy:hover {
+  cursor: pointer;
+}
+.career-description .open-vac .free-vacancy:hover .free-vacancy__details-city,
+.career-description .open-vac .free-vacancy:hover .free-vacancy__details-location {
+  display: none;
+}
+.career-description .open-vac .free-vacancy:hover .free-vacancy__details-btn,
+.career-description .open-vac .free-vacancy:hover .free-vacancy__details-arrow {
+  display: block !important;
+}
+.career-description .open-vac .free-vacancy .free-vacancy__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--free-vac-grid-article-title-m);
+}
+.career-description .open-vac .free-vacancy .free-vacancy__header .free-vacancy__title {
+  font-size: 1.125rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.career-description .open-vac .free-vacancy .free-vacancy__header .client img {
+  width: var(--free-vac-client-w);
+}
+.career-description .open-vac .free-vacancy .free-vacancy__description {
+  opacity: 0.8;
+  font-weight: 300;
+  line-height: 1.406rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+.career-description .open-vac .free-vacancy .free-vacancy__description .free-vacancy__description-info {
+  display: none;
+}
+.career-description .open-vac .free-vacancy .free-vacancy__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 300;
+}
+.career-description .open-vac .free-vacancy .free-vacancy__footer .free-vacancy__details {
+  display: flex;
+  align-items: center;
+}
+.career-description .open-vac .free-vacancy .free-vacancy__footer .free-vacancy__details .free-vacancy__details-location {
+  width: var(--free-vac-grid-icon-w);
+  height: var(--free-vac-grid-icon-h);
+  margin-right: 0.3rem;
+}
+.career-description .open-vac .free-vacancy .free-vacancy__footer .free-vacancy__details .free-vacancy__details-btn {
+  display: none;
+  color: #bc204b;
+  opacity: 1;
+}
+.career-description .open-vac .free-vacancy .free-vacancy__footer .free-vacancy__details .free-vacancy__details-arrow {
+  display: none;
+  margin-left: 0.3rem;
+  width: var(--free-vac-grid-array-w);
+  height: var(--free-vac-grid-array-h);
+}
+.career-description .open-vac .free-vacancy .free-vacancy__footer .cpt-item__tags .tags {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.career-description .open-vac .free-vacancy .free-vacancy__footer .cpt-item__tags .tags .tags__item {
+  position: relative;
+  margin-left: 0.3125rem;
+}
+.career-description .open-vac .free-vacancy .free-vacancy__footer .cpt-item__tags .tags .tags__item:hover .tags__name {
+  opacity: 1;
+  z-index: 1;
+}
+.career-description .open-vac .free-vacancy .free-vacancy__footer .cpt-item__tags .tags .tags__item .tags__name {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  background-color: #bc204b;
+  top: -100%;
+  color: #ffffff;
+}
+.career-description .open-vac .free-vacancy .free-vacancy__footer .cpt-item__tags .tags .tags__item .info-shape {
+  padding: 0 12px;
+  line-height: 26px;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  border-radius: 28px;
+  left: -50%;
+}
+.career-description .open-vac .free-vacancy .free-vacancy__footer .cpt-item__tags .tags .tags__item .info-shape:before {
+  content: "";
+  border-top-color: #bc204b;
+  left: 40%;
+  position: absolute;
+  bottom: -6px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top-width: 10px;
+  border-top-style: solid;
+}
+.career-description .open-vac .free-vacancy .free-vacancy__footer .cpt-item__tags .tags .tags__item .tags__icon {
+  width: var(--free-vac-grid-vac-icon-s);
+  height: var(--free-vac-grid-vac-icon-s);
+}
+.career-description .open-vac .free-vacancy.green .free-vacancy__footer .free-vacancy__details .free-vacancy__details-btn {
+  color: #7bceb1;
+}
+.career-description .open-vac .free-vacancy.green .free-vacancy__footer .cpt-item__tags .tags .tags__item .tags__name {
+  background-color: #7bceb1;
+}
+.career-description .open-vac .free-vacancy.green .free-vacancy__footer .cpt-item__tags .tags .tags__item .info-shape {
+  padding: 0 12px;
+  line-height: 26px;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  border-radius: 28px;
+  left: -50%;
+}
+.career-description .open-vac .free-vacancy.green .free-vacancy__footer .cpt-item__tags .tags .tags__item .info-shape:before {
+  border-top-color: #7bceb1;
+}
 .career-description .open-vac.open-vac--grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -526,32 +675,76 @@ input {
   border-radius: var(--free-vac-grid-article-br);
   padding: var(--free-vac-grid-article-p);
 }
-.career-description .open-vac.open-vac--grid .free-vacancy:hover {
-  cursor: pointer;
-  cursor: pointer;
+.career-description .open-vac.open-vac--grid .free-vacancy .free-vacancy__footer {
+  flex: var(--flex-50);
 }
-.career-description .open-vac.open-vac--grid .free-vacancy__header {
+.career-description .open-vac.open-vac--grid .free-vacancy .free-vacancy__footer .cpt-item__client {
+  display: none;
+}
+.career-description .open-vac.open-vac--list .filter__row-headline {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: var(--border-width) solid rgba(61, 57, 53, 0.1);
+  flex: var(--flex-100);
 }
-.career-description .open-vac.open-vac--grid .free-vacancy__header .free-vacancy__title {
-  font-size: 1.125rem;
-  margin-top: 0;
-  margin-bottom: var(--free-vac-grid-article-title-m);
+.career-description .open-vac.open-vac--list .filter__row-headline .filter__row-headline--total {
+  flex: var(--flex-33);
 }
-.career-description .open-vac.open-vac--grid .free-vacancy__description {
-  opacity: 0.8;
-  font-weight: 300;
-  line-height: 1.406rem;
-  margin-bottom: calc(var(--free-vac-grid-article-title-m) * 2);
+.career-description .open-vac.open-vac--list .filter__row-headline .filter__row-headline--category {
+  flex: var(--flex-16);
 }
-.career-description .open-vac.open-vac--grid .free-vacancy__footer {
+.career-description .open-vac.open-vac--list .filter__row-headline .filter__row-headline--info {
+  flex: var(--flex-50);
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  opacity: 0.6;
-  font-weight: 300;
+}
+.career-description .open-vac.open-vac--list .filter__row-headline .filter__row-headline--info .filter__row-headline--location {
+  flex: var(--flex-33);
+}
+.career-description .open-vac.open-vac--list .filter__row-headline .filter__row-headline--info .filter__row-headline--tags {
+  flex: var(--flex-50);
+}
+.career-description .open-vac.open-vac--list .filter__row-headline .filter__row-headline--info .filter__row-headline--client {
+  flex: var(--flex-16);
+}
+.career-description .open-vac.open-vac--list .free-vacancy {
+  border-bottom: var(--border-width) solid rgba(61, 57, 53, 0.1);
+  display: flex;
+  min-height: 77px;
+}
+.career-description .open-vac.open-vac--list .free-vacancy .free-vacancy__header {
+  flex: var(--flex-33);
+  margin: 0;
+}
+.career-description .open-vac.open-vac--list .free-vacancy .free-vacancy__header .free-vacancy__title {
+  margin: 0;
+}
+.career-description .open-vac.open-vac--list .free-vacancy .free-vacancy__header .client {
+  display: none;
+}
+.career-description .open-vac.open-vac--list .free-vacancy .free-vacancy__description {
+  flex: var(--flex-16);
+}
+.career-description .open-vac.open-vac--list .free-vacancy .free-vacancy__description .free-vacancy__description-content {
+  display: none;
+}
+.career-description .open-vac.open-vac--list .free-vacancy .free-vacancy__description .free-vacancy__description-info {
+  display: block;
+}
+.career-description .open-vac.open-vac--list .free-vacancy .free-vacancy__footer {
+  flex: var(--flex-50);
+}
+.career-description .open-vac.open-vac--list .free-vacancy .free-vacancy__footer .free-vacancy__details {
+  flex: var(--flex-33);
+}
+.career-description .open-vac.open-vac--list .free-vacancy .free-vacancy__footer .cpt-item__tags {
+  flex: var(--flex-50);
+}
+.career-description .open-vac.open-vac--list .free-vacancy .free-vacancy__footer .cpt-item__client {
+  display: block;
+  flex: var(--flex-16);
+}
+.career-description .open-vac.open-vac--list .free-vacancy .free-vacancy__footer .cpt-item__client img {
+  width: var(--free-vac-client-w);
 }
 
 /*# sourceMappingURL=main.css.map */

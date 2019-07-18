@@ -1,4 +1,7 @@
 jQuery(document).ready(function ($) {
+
+    /* Search functional*/
+
     var queryTaxArray = {},
         departmentNewName = [],
         locationNewName = [];
@@ -99,10 +102,39 @@ jQuery(document).ready(function ($) {
         };
 
         $.post(MyAjax.ajaxurl, data, function (response) {
-            $('.free-vacancies__items-wrap').html(response); // Set data to page as search result
+            $('.free-vacancies__items-wrap').html(response);// Set data to page as search result
+            countVacancies();
         });
 
+        // setTimeout(countVacancies, 400);
+
     }
+
+    /* Other functional*/
+
+    $('.tabs-list .view-buttons__grid').on('click', function () {
+        $(this).addClass('on');
+        $('.tabs-list .view-buttons__list').removeClass('on');
+        $('.open-vac').removeClass('open-vac--list').addClass('open-vac--grid');
+    })
+
+    $('.tabs-list .view-buttons__list').on('click', function () {
+        $(this).addClass('on');
+        $('.tabs-list .view-buttons__grid').removeClass('on');
+        $('.open-vac').removeClass('open-vac--grid').addClass('open-vac--list');
+    })
+
+    // count free vacancies
+
+    function countVacancies() {
+
+        let freeVacancies = $('.open-vac .free-vacancy');
+
+        $('.filter__row-headline-counter').text(freeVacancies.length);
+
+    }
+
+    countVacancies();
 
 
 });

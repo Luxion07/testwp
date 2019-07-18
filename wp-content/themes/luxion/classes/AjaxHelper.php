@@ -28,9 +28,9 @@ class AjaxHelper
             $args['s'] = esc_attr( $filter_search_data);
         }
 
-        $post_query = new WP_Query($args);
+        $post_query = new WP_Query($args);?>
 
-        do_action('ajax_filter_jobs', $post_query);
+       <?php do_action('ajax_filter_jobs', $post_query);
 
         die();
     }
