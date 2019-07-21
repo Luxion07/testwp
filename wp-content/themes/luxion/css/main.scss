@@ -1,6 +1,7 @@
 @import "fonts";
 @import "variables";
 @import "functions";
+@import "mixins";
 
 
 html {
@@ -21,9 +22,19 @@ input{
   color: $grey;
 }
 
+ul{
+  padding-left: 0;
+  outline: none;
+}
+
 .container {
   margin: 0 auto;
   width: var(--container-width);
+}
+
+.single-container {
+  margin: 0 auto;
+  width: var(--single-container-width);
 }
 
 .logged-in {
@@ -58,6 +69,7 @@ input{
 
 @import "header";
 @import "archive-template";
+@import "single-template";
 
 @import "footer";
 

@@ -1,4 +1,108 @@
 <?php
-echo 'single job';
+/**
+ * Page single job (single-jobs.php)
+ */
+get_header(); ?>
 
+<?php
+global $post;
+
+$loc_array = wp_get_post_terms($post->ID, 'location', array('fields' => 'names'));
+$tags_array = wp_get_post_terms($post->ID, 'job_tags', array('fields' => 'ids'));
+$job_client = get_field('job_client');
 ?>
+
+<main class="site-content job-single">
+    <section class="job-intro">
+        <div class="job-intro__row single-container">
+
+            <h1 class="job-intro__title"><?php the_title(); ?></h1>
+            <div class="job-intro__description">
+                <?php the_excerpt(); ?>
+            </div>
+            <div class="job-intro__actions">
+                <span class="job-intro__actions-apply">
+                    <a href="#" class="beetroot-btn">Apply now</a>
+                </span>
+                <span class="job-intro__actions-location">
+                    <?= $loc_array[0]; ?>
+                </span>
+                <ul class="job-intro__actions-job-tags">
+                    <?php
+                    foreach ($tags_array as $tag_item) {
+                        $tag_icon = get_field('tags_icon', 'job_tags_' . $tag_item);
+
+                        ?>
+                        <li class="tags__item">
+                            <div class="tags__name info-shape">
+                                <span class="info-shape__text"><?= $tag_icon['alt'] ?></span>
+                            </div>
+                            <img class="tags__icon"
+                                 src="<?= $tag_icon['url']; ?>"
+                                 alt="<?= $tag_icon['alt']; ?>">
+                        </li>
+                        <?php
+                    }
+                    ?>
+                </ul>
+                <div class="job-intro__actions-client">
+                    <?php
+
+                    if ($job_client) { ?>
+                        <img src="<?= $job_client ?>" alt="Jobs Client">
+                        <?php
+                    }
+
+                    ?>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="main" class="job-description" role="main">
+        <div class="job-description__row single-container">
+            <?php
+            if (have_posts()) : while (have_posts()) : the_post(); ?>
+                <div class="job-description__row-content">
+
+                    <?php the_content();?>
+
+                </div>
+            <?php
+            endwhile;
+
+            endif;
+
+            if (have_rows('job_description')):
+
+                while (have_rows('job_description')) : the_row(); ?>
+
+                <div class="job-description__row-info">
+                    <?php
+
+                    the_sub_field('description_type');
+                    the_sub_field('description_list');
+
+                    ?>
+                </div>
+
+
+            <?php
+            endwhile;
+
+            endif;
+
+            ?>
+
+        </div>
+
+
+    </section>
+
+    <section class="job-benefits">
+
+    </section>
+</main>
+
+<?php //get_footer(); ?>

@@ -240,3 +240,5 @@ if (function_exists('acf_add_options_page')) {
 
 }
 
+
+add_post_type_support( 'jobs', 'excerpt' );

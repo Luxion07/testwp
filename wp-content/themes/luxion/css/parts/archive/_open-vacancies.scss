@@ -98,54 +98,7 @@
           align-items: center;
           padding: 0;
 
-          .tags__item {
-            position: relative;
-            margin-left: 0.3125rem;
 
-            &:hover {
-              .tags__name {
-                opacity: 1;
-                z-index: 1;
-              }
-            }
-
-            .tags__name {
-              position: absolute;
-              opacity: 0;
-              z-index: -1;
-              background-color: $crimson;
-              top: -100%;
-              color: $white;
-            }
-
-            .info-shape {
-              padding: 0 12px;
-              line-height: 26px;
-              -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .05);
-              box-shadow: 0 0 20px rgba(0, 0, 0, .05);
-              border-radius: 28px;
-              left: -50%;
-
-              &:before {
-                content: '';
-                border-top-color: $crimson;
-                left: 40%;
-                position: absolute;
-                bottom: -6px;
-                width: 0;
-                height: 0;
-                border-left: 10px solid transparent;
-                border-right: 10px solid transparent;
-                border-top-width: 10px;
-                border-top-style: solid;
-              }
-            }
-
-            .tags__icon {
-              width: var(--free-vac-grid-vac-icon-s);
-              height: var(--free-vac-grid-vac-icon-s);
-            }
-          }
         }
       }
     }

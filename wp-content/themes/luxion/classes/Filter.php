@@ -75,7 +75,7 @@ class Filter
                     <main class="free-vacancy__description">
                         <div class="free-vacancy__description-content">
                             <?php
-                            $content = get_the_content();
+                            $content = get_the_excerpt();
                             $trimmed_content = wp_trim_words($content, 20, '...');
                             echo $trimmed_content;
                             ?>
@@ -86,7 +86,7 @@ class Filter
                     </main>
 
                     <footer class="free-vacancy__footer">
-                        <a class="free-vacancy__details" href="#">
+                        <a class="free-vacancy__details" href="<?= get_permalink();?>">
                             <img class="free-vacancy__details-location"
                                  src="<?= get_template_directory_uri(); ?>/images/icons/-e-location.png"
                                  alt="Location">

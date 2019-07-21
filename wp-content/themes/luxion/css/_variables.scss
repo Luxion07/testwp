@@ -26,6 +26,7 @@ $thin-white1: #fafaf8;
 $light-green: #7bceb1;
 $yellow: #f1b828;
 $border-grey-opacity: rgba(61, 57, 53, 0.1);
+$list-type-color-red: #e06287;
 
 
 // logo style
@@ -40,6 +41,7 @@ $logo_width: 283px;
   //main
 
   --container-width: 2340px;
+  --single-container-width: 1540px;
   --main-font-size: 32px;
   --border-width: 2px;
 
@@ -107,6 +109,19 @@ $logo_width: 283px;
   --footer-pb: 150px;
   --footer-subcribe-mt: 80px;
 
+
+  // single-template
+
+  --job-intro-mt: 180px;
+  --job-intro-mb: 220px;
+
+  --job-description-m: 200px;
+  --job-description-row-mb: 90px;
+  --job-description-row-ul-mb: 50px;
+  --job-description-list-type-b: 3px;
+  --job-description-list-type-size: 16px;
+  --job-description-list-type-lh: 50px;
+
 }
 
 
@@ -121,6 +136,7 @@ $logo_width: 283px;
     //main
 
     --container-width: 1170px;
+    --single-container-width: 770px;
     --main-font-size: 16px;
     --border-width: 1px;
 
@@ -183,6 +199,20 @@ $logo_width: 283px;
     --footer-pt: 100px;
     --footer-pb: 80px;
     --footer-subcribe-mt: 40px;
+
+
+    // single-template
+
+    --job-intro-mt: 90px;
+    --job-intro-mb: 110px;
+
+    --job-description-m: 100px;
+    --job-description-row-mb: 45px;
+    --job-description-row-ul-mb: 25px;
+    --job-description-list-type-b: 1.5px;
+    --job-description-list-type-size: 8px;
+    --job-description-list-type-lh: 25px;
+
   }
 
 }

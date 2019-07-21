@@ -1,0 +1,43 @@
+.job-description{
+  margin-top: var(--job-description-m);
+  margin-bottom: var(--job-description-m);
+  font-size:  1.25rem;
+  font-weight: 300;
+
+  .job-description__row{
+
+    .job-description__row-content{
+      margin-bottom: var(--job-description-row-mb);
+
+    }
+
+    .job-description__row-info{
+      font-size: 2.188rem;
+
+      ul{
+        opacity: 0.8;
+        font-size: 1.063rem;
+        margin-bottom: var(--job-description-row-ul-mb);
+
+        li{
+          position: relative;
+          padding-left: 2%;
+          line-height: var(--job-description-list-type-lh);
+
+          &:before{
+            content: '';
+            width: var(--job-description-list-type-size);
+            height: var(--job-description-list-type-size);;
+            left: 0;
+            position: absolute;
+            border: var(--job-description-list-type-b) solid $list-type-color-red;
+            opacity: 0.8;
+            border-radius: 50%;
+            top: var(--job-description-list-type-size);;
+          }
+        }
+      }
+    }
+  }
+
+}
