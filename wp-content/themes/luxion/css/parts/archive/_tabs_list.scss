@@ -1,0 +1,93 @@
+//  filter active tabs
+
+.tabs-list {
+  display: flex;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: var(--filter-tabs-list-m);
+
+  .tabs-list__item {
+
+    &.view-buttons {
+      margin-left: auto;
+    }
+
+    &.checked {
+      .tabs-list__button {
+        background-color: $crimson;
+        border-color: $crimson;
+        color: $white;
+
+        .tabs-list__count {
+          color: $white;
+        }
+      }
+    }
+
+    .tabs-list__button {
+      outline: none;
+      margin-right: 0.5625rem;
+      border-width: var(--border-width);
+      border-style: solid;
+      border-radius: 30px;
+      background-color: transparent;
+      font-size: 0.875rem;
+      padding: 6px 10px;
+
+      .tabs-list__count {
+        color: $sub-grey;
+        font-size: 0.8125rem;
+        font-weight: 300;
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: $white;
+        background-color: $crimson;
+        border-color: $crimson;
+
+        .tabs-list__count {
+          color: $white;
+        }
+      }
+    }
+
+    &.view-buttons {
+      .view-buttons__btn {
+        height: var(--filter-tabs-list-btns-h);
+        width: var(--filter-tabs-list-btns-w);
+        background-color: transparent;
+        outline: 0;
+        border-width: var(--border-width);
+        border-style: solid;
+        background-repeat: no-repeat;
+        background-size: var(--filter-tabs-list-btns-bqsize);
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &.on {
+          background-color: $white;
+        }
+
+        &.view-buttons__grid {
+          border-top-left-radius: 30px;
+          border-bottom-left-radius: 30px;
+          border-right-width: 0;
+          background-position: 60% 50%;
+          background-image: url('../images/icons/-e-grid.png');
+        }
+
+        &.view-buttons__list {
+          border-top-right-radius: 30px;
+          border-bottom-right-radius: 30px;
+          margin-left: -2px;
+          background-position: 40% 50%;
+          background-image: url('../images/icons/-e-list.png');
+        }
+      }
+
+    }
+  }
+}

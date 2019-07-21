@@ -8,6 +8,8 @@
 require_once 'classes/AjaxHelper.php';
 AjaxHelper::init();
 require_once 'classes/Filter.php';
+require_once 'classes/ActionHook.php';
+
 
 add_theme_support('title-tag');
 
@@ -37,6 +39,41 @@ register_sidebar(array(
     'before_title' => '<span class="widgettitle">',
     'after_title' => "</span>\n",
 ));
+
+
+function beetroot_widgets_init() {
+
+
+    register_sidebar( array(
+        'name' => 'Footer Sidebar 1',
+        'id' => 'footer-sidebar-1',
+        'description' => 'Appears in the footer area',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+    register_sidebar( array(
+        'name' => 'Footer Sidebar 2',
+        'id' => 'footer-sidebar-2',
+        'description' => 'Appears in the footer area',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+    register_sidebar( array(
+        'name' => 'Footer Sidebar 3',
+        'id' => 'footer-sidebar-3',
+        'description' => 'Appears in the footer area',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+}
+add_action( 'widgets_init', 'beetroot_widgets_init' );
+
 
 if (!class_exists('clean_comments_constructor')) {
     class clean_comments_constructor extends Walker_Comment
@@ -130,6 +167,7 @@ if (!function_exists('add_styles')) {
     function add_styles()
     {
         if (is_admin()) return false;
+        wp_enqueue_style('load-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
         wp_enqueue_style('maincss', get_template_directory_uri() . '/css/main.css');
         wp_enqueue_style('main', get_template_directory_uri() . '/style.css');
     }
@@ -189,7 +227,6 @@ if (!function_exists('content_class_by_sidebar')) {
     }
 }
 
-
 if (function_exists('acf_add_options_page')) {
 
     acf_add_options_page(array(
@@ -203,4 +240,3 @@ if (function_exists('acf_add_options_page')) {
 
 }
 
-add_action( 'ajax_filter_jobs', array( 'Filter', 'search_filter_method' ) );

@@ -24,6 +24,7 @@ $white: #ffffff;
 $thin-white: #f9f9f9;
 $thin-white1: #fafaf8;
 $light-green: #7bceb1;
+$yellow: #f1b828;
 $border-grey-opacity: rgba(61, 57, 53, 0.1);
 
 
@@ -68,7 +69,7 @@ $logo_width: 283px;
   --career-description-top: 180px;
   --career-description-width: 1358px;
 
-  --filter-search-pb: 60px;
+  --filter-search-pb: 220px;
   --filter-inputs-height: 130px;
   --filter-input-padding: 50px;
   --filter-choice-list-width: 912px;
@@ -97,6 +98,15 @@ $logo_width: 283px;
 
   --free-vac-client-w: auto;
   --free-vac-client-h: auto;
+
+  --jobs-contact-pt: 130px;
+  --jobs-contact-pb: 180px;
+  --jobs-contact-ml: 60px;
+
+  --footer-pt: 231px;
+  --footer-pb: 150px;
+  --footer-subcribe-mt: 80px;
+
 }
 
 
@@ -135,7 +145,7 @@ $logo_width: 283px;
     --career-description-top: 90px;
     --career-description-width: 679px;
 
-    --filter-search-pb: 30px;
+    --filter-search-pb: 110px;
     --filter-inputs-height: 65px;
     --filter-input-padding: 25px;
     --filter-choice-list-width: 456px;
@@ -165,6 +175,14 @@ $logo_width: 283px;
 
     --free-vac-client-w: 65px;
     --free-vac-client-h: 35px;
+
+    --jobs-contact-pt: 80px;
+    --jobs-contact-pb: 100px;
+    --jobs-contact-ml: 50px;
+
+    --footer-pt: 100px;
+    --footer-pb: 80px;
+    --footer-subcribe-mt: 40px;
   }
 
 }

@@ -3,13 +3,6 @@
 class Filter
 {
 
-    public function __construct()
-    {
-
-        add_action('search_filter', array(__CLASS__, 'search_filter_method'));
-
-    }
-
     static function search_filter_method($post_query)
     {
         ?>

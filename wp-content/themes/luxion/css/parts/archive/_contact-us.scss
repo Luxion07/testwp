@@ -1,0 +1,41 @@
+.jobs-contact-us{
+  position: relative;
+
+
+  text-align: center;
+  background-color: $white;
+  padding-top: var(--jobs-contact-pt);
+  padding-bottom: var(--jobs-contact-pb);
+
+  .jobs-contact-us__row{
+
+    .jobs-contact-us__title{
+      font-size: 1.25rem;
+    }
+
+    .jobs-contact-us__action{
+      margin-left: var(--jobs-contact-ml);
+    }
+
+    &:after{
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: $white;
+      -webkit-transform: skewY(-1deg);
+      -ms-transform: skewY(-1deg);
+      transform: skewY(-1deg);
+      -webkit-backface-visibility: initial;
+      backface-visibility: initial;
+      -webkit-transform-origin: 100% 100%;
+      -ms-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+      overflow: visible;
+      z-index: -1;
+    }
+
+  }
+}

@@ -137,4 +137,9 @@ jQuery(document).ready(function ($) {
     countVacancies();
 
 
+    // get height footer variable
+
+    let footerHeight =  $('.footer').outerHeight();
+    $('.career-description').css({'margin-bottom' : footerHeight});
+
 });

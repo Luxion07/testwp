@@ -32,7 +32,33 @@ input{
   }
 }
 
+//btns
+
+.beetroot-btn{
+  border: var(--border-width) solid $crimson;
+  background-color: transparent;
+  color: $crimson;
+  font-size: 0.9375rem;
+  border-radius: var(--menu-item-a-last-radius);
+  padding: var(--menu-item-a-last-padding);
+  display: inline-block;
+  height: var(--menu-item-a-height);
+  line-height: var(--menu-item-a-height);
+
+  &:hover{
+    background-color: $crimson;
+    color: $white;
+  }
+}
+
+.thank-you{
+  text-align: center;
+  margin-top: 5%;
+}
+
 @import "header";
 @import "archive-template";
+
+@import "footer";
 
 

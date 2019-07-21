@@ -1,0 +1,129 @@
+.footer {
+  background-color: $grey;
+  color: $white;
+  padding-top: var(--footer-pt);
+  padding-bottom: var(--footer-pb);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  a {
+    color: $white;
+    opacity: 0.6;
+    font-weight: 300;
+    line-height: 1.875rem;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  h3 {
+    opacity: 0.2;
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0;
+    letter-spacing: 1.78px;
+
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  .footer__row {
+    display: grid;
+    grid-template-columns: 50% 40%;
+    grid-column-gap: 10%;
+
+    .footer__menu {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .footer__menu-column {
+        #menu-footer-menu-3 {
+          margin-top: 1.875rem;
+        }
+      }
+    }
+
+    .footer__info {
+      .footer__info-socials {
+        .social {
+          display: flex;
+          margin-top: 0;
+
+          .social__item {
+            margin-right: 0.516rem;
+
+            .social__link {
+              background-color: rgba(255, 255, 255, .3);
+              font-size: 1.5625rem;
+              width: 2.8125rem;
+              height: 2.8125rem;
+              line-height: 2.875rem;
+              text-align: center;
+              color: $grey;
+              border-radius: 1.563rem;
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    .footer__info-subscribe {
+      margin-top: var(--footer-subcribe-mt);
+
+      .footer__info-subscribe-title {
+        color: $yellow;
+        font-size: 0.625rem;
+        font-weight: 400;
+        line-height: 0.9375rem;
+        text-transform: uppercase;
+        letter-spacing: 1.6px;
+        margin-top: 0;
+      }
+
+      .footer__info-subscribe-form__wrap {
+        position: relative;
+
+        .footer__info-subscribe-input {
+          width: 100%;
+          background-color: transparent;
+          border-top: none;
+          border-right: none;
+          border-left: none;
+          border-bottom: var(--border-width) solid rgba(241, 184, 40, .2);
+          outline: none;
+          color: $white;
+          font-size: 1.063rem;
+          height: 2.25rem;
+          line-height: 1.563rem;
+        }
+
+        .footer__info-subscribe-submit {
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-color: transparent;
+          background-position: center;
+          border: 0;
+          z-index: 1;
+          position: absolute;
+          color: transparent;
+          bottom: 0.5rem;
+          right: 0;
+          width: 2rem;
+          background-image: url(../images/icons/footer-arrow.png);
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

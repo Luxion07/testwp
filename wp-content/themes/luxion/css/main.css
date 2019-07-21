@@ -32,7 +32,7 @@
   --menu-item-a-last-padding: 0 44px;
   --career-description-top: 180px;
   --career-description-width: 1358px;
-  --filter-search-pb: 60px;
+  --filter-search-pb: 220px;
   --filter-inputs-height: 130px;
   --filter-input-padding: 50px;
   --filter-choice-list-width: 912px;
@@ -56,6 +56,12 @@
   --free-vac-grid-vac-icon-s: auto;
   --free-vac-client-w: auto;
   --free-vac-client-h: auto;
+  --jobs-contact-pt: 130px;
+  --jobs-contact-pb: 180px;
+  --jobs-contact-ml: 60px;
+  --footer-pt: 231px;
+  --footer-pb: 150px;
+  --footer-subcribe-mt: 80px;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 2000px) {
@@ -75,7 +81,7 @@
     --menu-item-a-last-padding: 0 22px;
     --career-description-top: 90px;
     --career-description-width: 679px;
-    --filter-search-pb: 30px;
+    --filter-search-pb: 110px;
     --filter-inputs-height: 65px;
     --filter-input-padding: 25px;
     --filter-choice-list-width: 456px;
@@ -99,6 +105,12 @@
     --free-vac-grid-vac-icon-s: 40px;
     --free-vac-client-w: 65px;
     --free-vac-client-h: 35px;
+    --jobs-contact-pt: 80px;
+    --jobs-contact-pb: 100px;
+    --jobs-contact-ml: 50px;
+    --footer-pt: 100px;
+    --footer-pb: 80px;
+    --footer-subcribe-mt: 40px;
   }
 }
 @media only screen and (min-width: 967px) and (max-width: 1200px) {
@@ -146,6 +158,27 @@ input {
 
 .logged-in header {
   top: 32px;
+}
+
+.beetroot-btn {
+  border: var(--border-width) solid #bc204b;
+  background-color: transparent;
+  color: #bc204b;
+  font-size: 0.9375rem;
+  border-radius: var(--menu-item-a-last-radius);
+  padding: var(--menu-item-a-last-padding);
+  display: inline-block;
+  height: var(--menu-item-a-height);
+  line-height: var(--menu-item-a-height);
+}
+.beetroot-btn:hover {
+  background-color: #bc204b;
+  color: #ffffff;
+}
+
+.thank-you {
+  text-align: center;
+  margin-top: 5%;
 }
 
 .main-header {
@@ -246,6 +279,9 @@ input {
 }
 .career-description {
   padding-top: var(--career-description-top);
+  position: relative;
+  z-index: 2;
+  background-color: #f4f4f1;
 }
 .career-description .career-description__row {
   display: flex;
@@ -268,6 +304,9 @@ input {
 }
 .career-description .jobs-filter .jobs-filter__row {
   padding-bottom: var(--filter-search-pb);
+}
+.career-description .jobs-filter .jobs-filter__row.jobs-filter-search {
+  padding-bottom: 30px;
 }
 .career-description .jobs-filter .jobs-filter-search {
   display: flex;
@@ -745,6 +784,145 @@ input {
 }
 .career-description .open-vac.open-vac--list .free-vacancy .free-vacancy__footer .cpt-item__client img {
   width: var(--free-vac-client-w);
+}
+.career-description .jobs-contact-us {
+  position: relative;
+  text-align: center;
+  background-color: #ffffff;
+  padding-top: var(--jobs-contact-pt);
+  padding-bottom: var(--jobs-contact-pb);
+}
+.career-description .jobs-contact-us .jobs-contact-us__row .jobs-contact-us__title {
+  font-size: 1.25rem;
+}
+.career-description .jobs-contact-us .jobs-contact-us__row .jobs-contact-us__action {
+  margin-left: var(--jobs-contact-ml);
+}
+.career-description .jobs-contact-us .jobs-contact-us__row:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #ffffff;
+  -webkit-transform: skewY(-1deg);
+  -ms-transform: skewY(-1deg);
+  transform: skewY(-1deg);
+  -webkit-backface-visibility: initial;
+  backface-visibility: initial;
+  -webkit-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  overflow: visible;
+  z-index: -1;
+}
+
+.footer {
+  background-color: #3d3935;
+  color: #ffffff;
+  padding-top: var(--footer-pt);
+  padding-bottom: var(--footer-pb);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.footer a {
+  color: #ffffff;
+  opacity: 0.6;
+  font-weight: 300;
+  line-height: 1.875rem;
+}
+.footer a:hover {
+  opacity: 1;
+}
+.footer h3 {
+  opacity: 0.2;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 1.78px;
+}
+.footer ul {
+  padding: 0;
+}
+.footer .footer__row {
+  display: grid;
+  grid-template-columns: 50% 40%;
+  grid-column-gap: 10%;
+}
+.footer .footer__row .footer__menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.footer .footer__row .footer__menu .footer__menu-column #menu-footer-menu-3 {
+  margin-top: 1.875rem;
+}
+.footer .footer__row .footer__info .footer__info-socials .social {
+  display: flex;
+  margin-top: 0;
+}
+.footer .footer__row .footer__info .footer__info-socials .social .social__item {
+  margin-right: 0.516rem;
+}
+.footer .footer__row .footer__info .footer__info-socials .social .social__item .social__link {
+  background-color: rgba(255, 255, 255, 0.3);
+  font-size: 1.5625rem;
+  width: 2.8125rem;
+  height: 2.8125rem;
+  line-height: 2.875rem;
+  text-align: center;
+  color: #3d3935;
+  border-radius: 1.563rem;
+  display: block;
+}
+.footer .footer__row .footer__info-subscribe {
+  margin-top: var(--footer-subcribe-mt);
+}
+.footer .footer__row .footer__info-subscribe .footer__info-subscribe-title {
+  color: #f1b828;
+  font-size: 0.625rem;
+  font-weight: 400;
+  line-height: 0.9375rem;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  margin-top: 0;
+}
+.footer .footer__row .footer__info-subscribe .footer__info-subscribe-form__wrap {
+  position: relative;
+}
+.footer .footer__row .footer__info-subscribe .footer__info-subscribe-form__wrap .footer__info-subscribe-input {
+  width: 100%;
+  background-color: transparent;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: var(--border-width) solid rgba(241, 184, 40, 0.2);
+  outline: none;
+  color: #ffffff;
+  font-size: 1.063rem;
+  height: 2.25rem;
+  line-height: 1.563rem;
+}
+.footer .footer__row .footer__info-subscribe .footer__info-subscribe-form__wrap .footer__info-subscribe-submit {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  background-position: center;
+  border: 0;
+  z-index: 1;
+  position: absolute;
+  color: transparent;
+  bottom: 0.5rem;
+  right: 0;
+  width: 2rem;
+  background-image: url(../images/icons/footer-arrow.png);
+}
+.footer .footer__row .footer__info-subscribe .footer__info-subscribe-form__wrap .footer__info-subscribe-submit:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */
