@@ -71,6 +71,13 @@
   --job-description-list-type-b: 3px;
   --job-description-list-type-size: 16px;
   --job-description-list-type-lh: 50px;
+  --job-benefits-p: 200px;
+  --job-benefits-title-mb: 100px;
+  --job-apply-p: 240px;
+  --job-apply-input-pb: 24px;
+  --job-apply-item-mt: 88px;
+  --job-apply-ageement-mt: 40px;
+  --job-apply-category-mr: 60px;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 2000px) {
@@ -129,6 +136,13 @@
     --job-description-list-type-b: 1.5px;
     --job-description-list-type-size: 8px;
     --job-description-list-type-lh: 25px;
+    --job-benefits-p: 100px;
+    --job-benefits-title-mb: 50px;
+    --job-apply-p: 120px;
+    --job-apply-input-pb: 12px;
+    --job-apply-item-mt: 44px;
+    --job-apply-ageement-mt: 20px;
+    --job-apply-category-mr: 30px;
   }
 }
 @media only screen and (min-width: 967px) and (max-width: 1200px) {
@@ -167,6 +181,9 @@ input {
   font-family: "Roboto";
   font-weight: normal;
   color: #3d3935;
+}
+input:focus {
+  outline: none;
 }
 
 ul {
@@ -207,6 +224,10 @@ ul {
 .thank-you {
   text-align: center;
   margin-top: 5%;
+}
+
+.asterisk {
+  color: #e06287;
 }
 
 .main-header {
@@ -900,6 +921,156 @@ ul {
   border-radius: 50%;
   top: var(--job-description-list-type-size);
 }
+.job-single .job-benefits {
+  background-color: #f4f4f1;
+}
+.job-single .job-benefits .job-benefits__row {
+  padding-top: var(--job-benefits-p);
+  padding-bottom: var(--job-benefits-p);
+}
+.job-single .job-benefits .job-benefits__row .job-benefits__row-title {
+  font-size: 2.188rem;
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: var(--job-benefits-title-mb);
+}
+.job-single .job-benefits .job-benefits__row .job-benefits__row-collection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 25%;
+  grid-column-gap: 5%;
+}
+.job-single .job-benefits .job-benefits__row .job-benefits__row-collection .job-benefits__row-item {
+  display: flex;
+  align-items: center;
+}
+.job-single .job-benefits .job-benefits__row .job-benefits__row-collection .job-benefits__row-item .job-benefits__row-item-icon {
+  height: auto;
+  width: 60px;
+  margin-right: 5%;
+}
+.job-single .job-benefits .job-benefits__row .job-benefits__row-collection .job-benefits__row-item .job-benefits__row-item-text {
+  opacity: 0.8;
+  font-size: 1.063rem;
+  font-weight: 300;
+  line-height: 25px;
+}
+.job-single .job-apply {
+  padding-top: var(--job-apply-p);
+  padding-bottom: var(--job-apply-p);
+  font-size: 1.063rem;
+  background-color: #ffffff;
+}
+.job-single .job-apply .job-apply__row .job-apply__row-title {
+  font-size: 2.813rem;
+  font-weight: 300;
+  line-height: 55px;
+  margin-top: 0;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item {
+  margin-top: var(--job-apply-item-mt);
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.agreement {
+  margin-top: var(--job-apply-ageement-mt);
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.user-data {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 2%;
+  grid-column-gap: 2%;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.user-data .user-data__field {
+  position: relative;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.user-data .user-data__field label {
+  position: absolute;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.user-data .user-data__field input {
+  width: -webkit-fill-available;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item .apply-form__item-field {
+  position: relative;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item .apply-form__item-field label {
+  position: absolute;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item .apply-form__item-field .apply-form__item-message {
+  width: -webkit-fill-available;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item input {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: var(--border-width) solid rgba(61, 57, 53, 0.2);
+  font-size: 1.063rem;
+  line-height: 25px;
+  padding-bottom: var(--job-apply-input-pb);
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item input:focus {
+  border-color: #bc204b;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item .asterisk {
+  color: #e06287;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.agreement {
+  color: #948c85;
+  font-size: 0.875rem;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.agreement a {
+  color: #bc204b;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.apply__submit {
+  display: flex;
+  align-items: center;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.apply__submit .apply__submit-btn {
+  margin-right: 2%;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.apply__submit .apply__submit-response {
+  color: #7ccc6c;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  margin-left: 2%;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.apply__submit .agreement-success {
+  display: none;
+  width: 0.75rem;
+  height: 0.75rem;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.apply__submit .agreement-success.active {
+  display: block;
+}
+.job-single .job-apply .job-apply__row .apply-form .file {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.job-single .job-apply .job-apply__row .apply-form .file .file__item-main .file__item-category {
+  display: flex;
+  margin-bottom: var(--job-apply-ageement-mt);
+}
+.job-single .job-apply .job-apply__row .apply-form .file .file__item-main .file__item-category .file__items-title {
+  margin-right: 0.9375rem;
+}
+.job-single .job-apply .job-apply__row .apply-form .file .file__item-main .file__item-category .file__items {
+  display: flex;
+  margin: 0;
+}
+.job-single .job-apply .job-apply__row .apply-form .file .file__item-main .file__item-category .file__items .file__item {
+  color: #bc204b;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.job-single .job-apply .job-apply__row .apply-form .file .file__item-main .file__item-category span {
+  margin-right: var(--job-apply-category-mr);
+}
+.job-single .job-apply .job-apply__row .apply-form .file .file__item-main .file__item-upload {
+  border: none;
+  display: none;
+}
+.job-single .job-apply .job-apply__row .apply-form .file .file__item-main .file__item-upload.active {
+  display: block;
+}
 
 .tags__item {
   position: relative;
@@ -952,6 +1123,7 @@ ul {
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: -1;
 }
 .footer a {
   color: #ffffff;

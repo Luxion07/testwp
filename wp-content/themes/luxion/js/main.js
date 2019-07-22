@@ -22,7 +22,7 @@ jQuery(document).ready(function ($) {
         if (filterDropdownName === 'All departments') {
             var idx = $.inArray(labelName, departmentNewName);
 
-            if (idx == -1) {
+            if (idx === -1) {
                 departmentNewName.push(labelName);
             } else {
                 departmentNewName.splice(idx, 1);
@@ -30,7 +30,7 @@ jQuery(document).ready(function ($) {
 
             let newDropdown = departmentNewName.sort().join(", ");
 
-            if (newDropdown != '') {
+            if (newDropdown !== '') {
                 $("[data-filter-category='All departments'] .jobs-filter-search__dropdown").text(newDropdown);
             } else {
                 $("[data-filter-category='All departments'] .jobs-filter-search__dropdown").text("All departments");
@@ -39,7 +39,7 @@ jQuery(document).ready(function ($) {
         } else if (filterDropdownName === 'All locations') {
             var idx = $.inArray(labelName, locationNewName);
 
-            if (idx == -1) {
+            if (idx === -1) {
                 locationNewName.push(labelName);
             } else {
                 locationNewName.splice(idx, 1);
@@ -47,7 +47,7 @@ jQuery(document).ready(function ($) {
 
             let newLocation = locationNewName.sort().join(", ");
 
-            if (newLocation != '') {
+            if (newLocation !== '') {
                 $("[data-filter-category='All locations'] .jobs-filter-search__dropdown").text(newLocation);
             } else {
                 $("[data-filter-category='All locations'] .jobs-filter-search__dropdown").text("All locations");
@@ -106,7 +106,7 @@ jQuery(document).ready(function ($) {
             countVacancies();
         });
 
-        // setTimeout(countVacancies, 400);
+
 
     }
 
@@ -116,13 +116,13 @@ jQuery(document).ready(function ($) {
         $(this).addClass('on');
         $('.tabs-list .view-buttons__list').removeClass('on');
         $('.open-vac').removeClass('open-vac--list').addClass('open-vac--grid');
-    })
+    });
 
     $('.tabs-list .view-buttons__list').on('click', function () {
         $(this).addClass('on');
         $('.tabs-list .view-buttons__grid').removeClass('on');
         $('.open-vac').removeClass('open-vac--grid').addClass('open-vac--list');
-    })
+    });
 
     // count free vacancies
 
@@ -141,5 +141,24 @@ jQuery(document).ready(function ($) {
 
     let footerHeight =  $('.footer').outerHeight();
     $('.career-description').css({'margin-bottom' : footerHeight});
+
+
+    // APPLY FORM
+
+    $('.apply__submit-btn').on('click', function (event) {
+        event.preventDefault();
+
+        let applyArray = $(this).closest('form').serializeArray();
+
+        let data = {
+            action: 'job_apply',
+            applyData: applyArray
+        };
+
+        $.post(MyAjax.ajaxurl, data, function (response) {
+            $('.apply__submit-response').html(response);
+            $('.agreement-success').addClass('active');
+        });
+    });
 
 });

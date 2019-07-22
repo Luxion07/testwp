@@ -27,6 +27,9 @@ $light-green: #7bceb1;
 $yellow: #f1b828;
 $border-grey-opacity: rgba(61, 57, 53, 0.1);
 $list-type-color-red: #e06287;
+$asterisk-color: #e06287;
+$agreement-grey: #948c85;
+$agreement-green: #7ccc6c;
 
 
 // logo style
@@ -122,6 +125,14 @@ $logo_width: 283px;
   --job-description-list-type-size: 16px;
   --job-description-list-type-lh: 50px;
 
+  --job-benefits-p: 200px;
+  --job-benefits-title-mb: 100px;
+
+  --job-apply-p: 240px;
+  --job-apply-input-pb: 24px;
+  --job-apply-item-mt: 88px;
+  --job-apply-ageement-mt: 40px;
+  --job-apply-category-mr: 60px;
 }
 
 
@@ -213,6 +224,14 @@ $logo_width: 283px;
     --job-description-list-type-size: 8px;
     --job-description-list-type-lh: 25px;
 
+    --job-benefits-p: 100px;
+    --job-benefits-title-mb: 50px;
+
+    --job-apply-p: 120px;
+    --job-apply-input-pb: 12px;
+    --job-apply-item-mt: 44px;
+    --job-apply-ageement-mt: 20px;
+    --job-apply-category-mr: 30px;
   }
 
 }

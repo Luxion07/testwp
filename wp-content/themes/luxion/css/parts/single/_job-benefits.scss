@@ -1,0 +1,43 @@
+.job-benefits{
+  background-color: $bg-grey;
+
+  .job-benefits__row{
+    padding-top: var(--job-benefits-p);
+    padding-bottom: var(--job-benefits-p);
+
+    .job-benefits__row-title{
+      font-size: 2.188rem;
+      font-weight: 300;
+      margin-top: 0;
+      margin-bottom: var(--job-benefits-title-mb);
+
+    }
+
+    .job-benefits__row-collection{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 25%;
+        grid-column-gap: 5%;
+
+      .job-benefits__row-item{
+        display: flex;
+        align-items: center;
+
+        .job-benefits__row-item-icon{
+          height: auto;
+          width: 60px;
+          margin-right: 5%;
+        }
+
+        .job-benefits__row-item-text{
+          opacity: 0.8;
+          font-size:  1.063rem;
+          font-weight: 300;
+          line-height: 25px;
+        }
+      }
+    }
+
+
+  }
+}

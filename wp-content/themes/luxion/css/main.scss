@@ -20,6 +20,10 @@ input{
   font-family: $font-family;
   font-weight: $font-weight;
   color: $grey;
+
+  &:focus{
+    outline: none;
+  }
 }
 
 ul{
@@ -65,6 +69,9 @@ ul{
 .thank-you{
   text-align: center;
   margin-top: 5%;
+}
+.asterisk{
+  color: $asterisk-color;
 }
 
 @import "header";

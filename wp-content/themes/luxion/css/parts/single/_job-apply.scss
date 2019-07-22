@@ -1,0 +1,163 @@
+.job-apply {
+  padding-top: var(--job-apply-p);
+  padding-bottom: var(--job-apply-p);
+  font-size: 1.063rem;
+  background-color: $white;
+
+  .job-apply__row {
+
+    .job-apply__row-title {
+      font-size: 2.813rem;
+      font-weight: 300;
+      line-height: 55px;
+      margin-top: 0;
+    }
+
+    .apply-form {
+
+      .apply-form__item {
+        margin-top: var(--job-apply-item-mt);
+
+        &.agreement {
+          margin-top: var(--job-apply-ageement-mt);
+        }
+
+        &.user-data {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-row-gap: 2%;
+          grid-column-gap: 2%;
+
+          .user-data__field {
+            position: relative;
+
+            label {
+              position: absolute;
+            }
+
+            input {
+              width: -webkit-fill-available;
+            }
+          }
+        }
+
+        .apply-form__item-field {
+          position: relative;
+
+          label {
+            position: absolute;
+          }
+
+          .apply-form__item-message {
+            width: -webkit-fill-available;
+          }
+
+        }
+
+        input {
+          border-left: none;
+          border-right: none;
+          border-top: none;
+          border-bottom: var(--border-width) solid rgba(61, 57, 53, 0.2);
+          font-size: 1.063rem;
+          line-height: 25px;
+          padding-bottom: var(--job-apply-input-pb);
+
+
+          &:focus {
+            border-color: $crimson;
+
+          }
+        }
+
+        .asterisk {
+          color: $asterisk-color;
+        }
+
+        &.agreement {
+          color: $agreement-grey;
+          font-size: 0.875rem;
+
+          a {
+            color: $crimson;
+          }
+        }
+
+
+
+
+
+        &.apply__submit{
+          display: flex;
+          align-items: center;
+
+          .apply__submit-btn{
+            margin-right: 2%;
+
+          }
+
+          .apply__submit-response {
+            color: $agreement-green;
+            font-size: 0.9375rem;
+            font-weight: 400;
+            margin-left: 2%;
+
+          }
+          .agreement-success{
+            display: none;
+            width: 0.75rem;
+            height: 0.75rem;
+
+            &.active {
+              display: block;
+            }
+          }
+        }
+      }
+
+      .file {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .file__item-main {
+
+          .file__item-category {
+            display: flex;
+            margin-bottom: var(--job-apply-ageement-mt);
+
+            .file__items-title {
+              margin-right: 0.9375rem;
+            }
+
+            .file__items {
+              display: flex;
+              margin: 0;
+
+              .file__item {
+                color: $crimson;
+                font-size: 0.6875rem;
+                font-weight: 400;
+                text-transform: uppercase;
+              }
+            }
+
+            span {
+              margin-right: var(--job-apply-category-mr);
+            }
+          }
+
+          .file__item-upload {
+            border: none;
+            display: none;
+
+            &.active {
+              display: block;
+            }
+
+          }
+        }
+      }
+    }
+
+  }
+}
