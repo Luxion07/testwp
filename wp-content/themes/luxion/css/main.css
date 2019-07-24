@@ -961,11 +961,20 @@ ul {
   font-size: 1.063rem;
   background-color: #ffffff;
 }
+.job-single .job-apply .wpcf7-not-valid-tip {
+  color: #bc204b;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  line-height: 25px;
+}
 .job-single .job-apply .job-apply__row .job-apply__row-title {
   font-size: 2.813rem;
   font-weight: 300;
   line-height: 55px;
   margin-top: 0;
+}
+.job-single .job-apply .job-apply__row .apply-form .wpcf7-form-control-wrap {
+  position: unset;
 }
 .job-single .job-apply .job-apply__row .apply-form .apply-form__item {
   margin-top: var(--job-apply-item-mt);
@@ -1005,6 +1014,7 @@ ul {
   font-size: 1.063rem;
   line-height: 25px;
   padding-bottom: var(--job-apply-input-pb);
+  width: 100%;
 }
 .job-single .job-apply .job-apply__row .apply-form .apply-form__item input:focus {
   border-color: #bc204b;
@@ -1019,9 +1029,57 @@ ul {
 .job-single .job-apply .job-apply__row .apply-form .apply-form__item.agreement a {
   color: #bc204b;
 }
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.agreement input {
+  display: none;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.agreement label {
+  position: relative;
+  padding-left: 30px;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.agreement label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  border: var(--border-width) solid #bc204b;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.agreement label.checked:before {
+  background-color: #bc204b;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.agreement .wpcf7-list-item {
+  margin-left: 0;
+}
 .job-single .job-apply .job-apply__row .apply-form .apply-form__item.apply__submit {
   display: flex;
   align-items: center;
+  float: left;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.apply__submit input {
+  border-top: var(--border-width) solid rgba(61, 57, 53, 0.2);
+  border-left: var(--border-width) solid rgba(61, 57, 53, 0.2);
+  border-right: var(--border-width) solid rgba(61, 57, 53, 0.2);
+  width: auto;
+  font-size: 0.9375rem;
+  border-radius: var(--menu-item-a-last-radius);
+  padding: var(--menu-item-a-last-padding);
+  display: inline-block;
+  height: var(--menu-item-a-height);
+  line-height: var(--menu-item-a-height);
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.apply__submit input:hover {
+  cursor: pointer;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.apply__submit input:focus {
+  border-color: rgba(61, 57, 53, 0.2);
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.apply__submit input:disabled {
+  opacity: 0.4;
+}
+.job-single .job-apply .job-apply__row .apply-form .apply-form__item.apply__submit input:disabled:hover {
+  cursor: not-allowed;
 }
 .job-single .job-apply .job-apply__row .apply-form .apply-form__item.apply__submit .apply__submit-btn {
   margin-right: 2%;
@@ -1070,6 +1128,33 @@ ul {
 }
 .job-single .job-apply .job-apply__row .apply-form .file .file__item-main .file__item-upload.active {
   display: block;
+}
+.job-single .job-apply .job-apply__row .apply-form .wpcf7-response-output {
+  position: relative;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  display: inline-block;
+  border: none;
+  margin-top: var(--job-apply-item-mt);
+  line-height: 40px;
+  padding-left: 3%;
+}
+.job-single .job-apply .job-apply__row .apply-form .wpcf7-validation-errors {
+  color: #bc204b;
+}
+.job-single .job-apply .job-apply__row .apply-form .wpcf7-mail-sent-ok {
+  color: #7ccc6c;
+}
+.job-single .job-apply .job-apply__row .apply-form .wpcf7-mail-sent-ok:before {
+  content: "";
+  background-image: url(../images/icons/-e-yes.png);
+  position: absolute;
+  left: 0;
+  top: 30%;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .tags__item {

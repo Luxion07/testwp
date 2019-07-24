@@ -4,6 +4,13 @@
   font-size: 1.063rem;
   background-color: $white;
 
+  .wpcf7-not-valid-tip{
+    color: $crimson;
+    font-size: 0.6875rem;
+    font-weight: 400;
+    line-height: 25px;
+  }
+
   .job-apply__row {
 
     .job-apply__row-title {
@@ -14,6 +21,9 @@
     }
 
     .apply-form {
+      .wpcf7-form-control-wrap{
+        position: unset;
+      }
 
       .apply-form__item {
         margin-top: var(--job-apply-item-mt);
@@ -38,6 +48,8 @@
             input {
               width: -webkit-fill-available;
             }
+
+
           }
         }
 
@@ -62,7 +74,7 @@
           font-size: 1.063rem;
           line-height: 25px;
           padding-bottom: var(--job-apply-input-pb);
-
+          width: 100%;
 
           &:focus {
             border-color: $crimson;
@@ -81,6 +93,39 @@
           a {
             color: $crimson;
           }
+
+          input{
+            display: none;
+          }
+
+
+
+          label{
+            position: relative;
+            padding-left: 30px;
+
+            &:before{
+              content: '';
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 18px;
+              height: 18px;
+              border-radius: 6px;
+              border: var(--border-width) solid $crimson;
+            }
+
+            &.checked{
+              &:before{
+
+                background-color: $crimson;
+              }
+            }
+          }
+
+          .wpcf7-list-item{
+            margin-left: 0;
+          }
         }
 
 
@@ -90,9 +135,42 @@
         &.apply__submit{
           display: flex;
           align-items: center;
+          float: left;
 
+
+
+          input{
+            border-top: var(--border-width) solid rgba(61, 57, 53, 0.2);
+            border-left: var(--border-width) solid rgba(61, 57, 53, 0.2);
+            border-right: var(--border-width) solid rgba(61, 57, 53, 0.2);
+            width: auto;
+            font-size: 0.9375rem;
+            border-radius: var(--menu-item-a-last-radius);
+            padding: var(--menu-item-a-last-padding);
+            display: inline-block;
+            height: var(--menu-item-a-height);
+            line-height: var(--menu-item-a-height);
+
+            &:hover{
+              cursor: pointer;
+            }
+
+            &:focus {
+              border-color:  rgba(61, 57, 53, 0.2);
+
+            }
+
+            &:disabled{
+              opacity: 0.4;
+
+              &:hover{
+                cursor: not-allowed	;
+              }
+            }
+          }
           .apply__submit-btn{
             margin-right: 2%;
+
 
           }
 
@@ -155,6 +233,37 @@
             }
 
           }
+        }
+      }
+
+      .wpcf7-response-output{
+        position: relative;
+        font-size: 0.9375rem;
+        font-weight: 400;
+        display: inline-block;
+        border: none;
+        margin-top: var(--job-apply-item-mt);
+        line-height: 40px;
+        padding-left: 3%;
+      }
+
+      .wpcf7-validation-errors{
+        color: $crimson;
+      }
+
+      .wpcf7-mail-sent-ok{
+        color: $agreement-green;
+
+        &:before{
+          content: "";
+          background-image: url(../images/icons/-e-yes.png);
+          position: absolute;
+          left: 0;
+          top: 30%;
+          width: 18px;
+          height: 18px;
+          background-repeat: no-repeat;
+          background-size: contain;
         }
       }
     }

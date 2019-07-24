@@ -107,7 +107,6 @@ jQuery(document).ready(function ($) {
         });
 
 
-
     }
 
     /* Other functional*/
@@ -139,26 +138,35 @@ jQuery(document).ready(function ($) {
 
     // get height footer variable
 
-    let footerHeight =  $('.footer').outerHeight();
-    $('.career-description').css({'margin-bottom' : footerHeight});
+    let footerHeight = $('.footer').outerHeight();
+    $('.career-description').css({'margin-bottom': footerHeight});
 
 
-    // APPLY FORM
 
-    $('.apply__submit-btn').on('click', function (event) {
-        event.preventDefault();
+    // APPLY FORM  validation
 
-        let applyArray = $(this).closest('form').serializeArray();
+    $('.apply-form input').on('input', function () {
 
-        let data = {
-            action: 'job_apply',
-            applyData: applyArray
-        };
+        if ($(this).val() !== '') {
+            $(this).closest('.user-data__field').find('.apply-label').hide();
+        }else{
+            $(this).closest('.user-data__field').find('.apply-label').show();
 
-        $.post(MyAjax.ajaxurl, data, function (response) {
-            $('.apply__submit-response').html(response);
-            $('.agreement-success').addClass('active');
-        });
+        }
     });
 
+
+    $('.apply-form .attach').on('click', function () {
+        $(this).closest('.file__item-main').find('.file__item-upload').toggleClass('active');
+    });
+
+    $('.apply-form .agreement').on('click', function (e) {
+        e.preventDefault();
+        let agreementLabel = $(this).find('label'),
+            agreementCheckbox = $(this).find('input');
+
+        agreementCheckbox.prop("checked", !agreementCheckbox.prop("checked"));
+        agreementLabel.toggleClass('checked');
+
+    });
 });
