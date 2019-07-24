@@ -51,6 +51,11 @@
 
 
           }
+
+          &.message{
+            display: inline-block;
+            width: 100%;
+          }
         }
 
         .apply-form__item-field {

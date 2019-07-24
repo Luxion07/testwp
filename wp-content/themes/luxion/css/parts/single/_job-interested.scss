@@ -1,0 +1,45 @@
+.job-interested{
+  background-color: $bg-grey;
+  padding-top: var( --jobs-interested-pt);
+  padding-bottom: var( --jobs-interested-pb);
+
+  .job-interested__row{
+    display: flex;
+
+    .job-interested__title{
+      font-size: 1.75rem;
+      font-weight: 300;
+      line-height: 2.25rem;
+    }
+
+    .job-interested__social{
+      display: flex;
+      margin-left: auto;
+
+      .social{
+        display: flex;
+        align-items: center;
+
+        .social__item{
+          margin-right: 0.516rem;
+
+          .social__link{
+            font-size: 1rem;
+            width: 2.406rem;
+            height: 2.406rem;
+            line-height: 2.406rem;
+            text-align: center;
+            color: $white;
+            border-radius: 2rem;
+            display: block;
+          }
+        }
+      }
+    }
+
+    &:after{
+      @include incline();
+    }
+
+  }
+}

@@ -1,8 +1,9 @@
 .job-description{
-  margin-top: var(--job-description-m);
-  margin-bottom: var(--job-description-m);
+  padding-top: var(--job-description-m);
+  padding-bottom: var(--job-description-m);
   font-size:  1.25rem;
   font-weight: 300;
+  background-color: $white;
 
   .job-description__row{
 

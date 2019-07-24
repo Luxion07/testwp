@@ -2,11 +2,17 @@
   font-size: 1.063rem;
   background-color: $white;
 
+  .job-single__description{
+    position: relative;
+    z-index: 2;
+    background-color: $bg-grey;
+  }
 
   @import 'parts/single/job-intro';
   @import 'parts/single/job-description';
   @import 'parts/single/job-benefits';
   @import 'parts/single/job-apply';
+  @import 'parts/single/job-interested';
 }
 
 

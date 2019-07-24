@@ -140,6 +140,7 @@ jQuery(document).ready(function ($) {
 
     let footerHeight = $('.footer').outerHeight();
     $('.career-description').css({'margin-bottom': footerHeight});
+    $('.job-single__description').css({'margin-bottom': footerHeight});
 
 
 

@@ -58,7 +58,7 @@ class Filter
 
                     <header class="free-vacancy__header">
                         <h2 class="free-vacancy__title">
-                            <a href="#" class="free-vacancy__title-link"><?php the_title(); ?></a>
+                            <a href="<?= get_permalink();?>" class="free-vacancy__title-link"><?php the_title(); ?></a>
                         </h2>
                         <div class="client">
                             <?php

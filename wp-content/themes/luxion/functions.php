@@ -41,10 +41,11 @@ register_sidebar(array(
 ));
 
 
-function beetroot_widgets_init() {
+function beetroot_widgets_init()
+{
 
 
-    register_sidebar( array(
+    register_sidebar(array(
         'name' => 'Footer Sidebar 1',
         'id' => 'footer-sidebar-1',
         'description' => 'Appears in the footer area',
@@ -52,8 +53,8 @@ function beetroot_widgets_init() {
         'after_widget' => '</aside>',
         'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>',
-    ) );
-    register_sidebar( array(
+    ));
+    register_sidebar(array(
         'name' => 'Footer Sidebar 2',
         'id' => 'footer-sidebar-2',
         'description' => 'Appears in the footer area',
@@ -61,8 +62,8 @@ function beetroot_widgets_init() {
         'after_widget' => '</aside>',
         'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>',
-    ) );
-    register_sidebar( array(
+    ));
+    register_sidebar(array(
         'name' => 'Footer Sidebar 3',
         'id' => 'footer-sidebar-3',
         'description' => 'Appears in the footer area',
@@ -70,9 +71,10 @@ function beetroot_widgets_init() {
         'after_widget' => '</aside>',
         'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>',
-    ) );
+    ));
 }
-add_action( 'widgets_init', 'beetroot_widgets_init' );
+
+add_action('widgets_init', 'beetroot_widgets_init');
 
 
 if (!class_exists('clean_comments_constructor')) {
@@ -229,16 +231,29 @@ if (!function_exists('content_class_by_sidebar')) {
 
 if (function_exists('acf_add_options_page')) {
 
-    acf_add_options_page(array(
+    acf_add_options_page(
+        array(
         'page_title' => 'Archive Jobs',
         'menu_title' => 'Archive Jobs Settings',
         'menu_slug' => 'archive-jobs',
         'capability' => 'edit_posts',
         'parent_slug' => 'edit.php?post_type=jobs',
         'redirect' => false
-    ));
+        )
+    );
+
+    acf_add_options_page(
+        array(
+            'page_title' => 'Theme Options',
+            'menu_title' => 'Theme Options',
+            'menu_slug' => 'theme-options',
+            'capability' => 'edit_posts',
+            'redirect' => false
+        )
+    );
+
 
 }
 
 
-add_post_type_support( 'jobs', 'excerpt' );
+add_post_type_support('jobs', 'excerpt');

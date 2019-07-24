@@ -38,28 +38,7 @@
         <div class="footer__info">
             <div class="footer__info-socials">
 
-                <ul class="social">
-                    <li class="social__item">
-                        <a class="social__link" href="https://www.facebook.com/" title="Facebook">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li class="social__item">
-                        <a class="social__link" href="https://twitter.com/" title="Twitter">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="social__item">
-                        <a class="social__link" href="https://www.linkedin.com/" title="LinkedIn">
-                            <i class="fa fa-linkedin"></i>
-                        </a>
-                    </li>
-                    <li class="social__item">
-                        <a class="social__link" href="https://www.instagram.com/" title="Instagram">
-                            <i class="fa fa-instagram"></i>
-                        </a>
-                    </li>
-                </ul>
+                <?php  get_template_part('parts/footer', 'socials'); ?>
 
             </div>
             <div class="footer__info-subscribe">
