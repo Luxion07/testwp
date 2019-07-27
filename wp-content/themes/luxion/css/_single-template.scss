@@ -7,12 +7,20 @@
     z-index: 2;
     background-color: $bg-grey;
   }
+  .beetroot-btn{
+    background-color: $crimson;
+    color: $white;
+    font-weight: 300;
+    font-size: 1.063rem;
+  }
 
   @import 'parts/single/job-intro';
   @import 'parts/single/job-description';
   @import 'parts/single/job-benefits';
   @import 'parts/single/job-apply';
   @import 'parts/single/job-interested';
+
+
 }
 
 
@@ -37,26 +45,32 @@
   }
 
   .info-shape {
-    padding: 0 12px;
-    line-height: 26px;
+    padding: 0  calc(var(--x) * 24);
+    line-height: 1.625rem;
     -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .05);
     box-shadow: 0 0 20px rgba(0, 0, 0, .05);
     border-radius: 28px;
-    left: -50%;
+    left: var(--info-shape-left);
+    min-width: calc(var(--x) * 180);
+    text-align: center;
 
     &:before {
       content: '';
       border-top-color: $crimson;
-      left: 40%;
+      left: 43%;
       position: absolute;
-      bottom: -6px;
+      bottom: calc(var(--x) * (-12));
       width: 0;
       height: 0;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-top-width: 10px;
+      border-left: calc(var(--x) * 20) solid transparent;
+      border-right: calc(var(--x) * 20) solid transparent;
+      border-top-width: calc(var(--x) * 20);
       border-top-style: solid;
     }
+    .info-shape__text{
+      position: relative;
+    }
+
   }
 
   .tags__icon {

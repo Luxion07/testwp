@@ -12,25 +12,32 @@
     display: flex;
     align-items: center;
     position: relative;
-    height: var(--navbar-height);
+    height: calc(var(--x) * 167);
     font-weight: $font-weight-light;
 
+
+    &:hover{
+      cursor: pointer;
+    }
     .select-lang {
       position: relative;
-      margin-left: var(--lang-left);
-      width: var(--lang-width);
+      padding-left: calc(var(--x) * 66);
+      width: calc(var(--x) * 88);
       font-size: 0.93rem;
+      height: -webkit-fill-available;
+      display: flex;
+      align-items: center;
 
       .dropbtn {
         &:before {
           content: '';
           position: absolute;
-          width: var(--dropbtn-size);
-          height: var(--dropbtn-size);
+          width: calc(var(--x) * 14);
+          height: calc(var(--x) * 14);
           border-left: 1px solid $grey;
           border-top: 1px solid $grey;
           right: 0;
-          top: 25%;
+          top: 42%;
           -webkit-transform: rotate(225deg);
           -ms-transform: rotate(225deg);
           transform: rotate(225deg);
@@ -48,12 +55,13 @@
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
         width: auto;
-        border-radius: var(--dropdown-border-radius);
+        border-radius: calc(var(--x) * 10);
+        top: 100%;
 
         a {
           float: none;
           color: black;
-          padding: var(--dropdown-a-padding);
+          padding: calc(var(--x) * 12) calc(var(--x) * 16);
           text-decoration: none;
           display: block;
           text-align: left;
@@ -76,22 +84,27 @@
         padding: 0;
 
         .menu-item {
-          padding-right: var(--menu-item-padding);
+          padding-right: calc(var(--x) * 40);
 
           a {
             display: inline-block;
-            height: var(--menu-item-a-height);
-            line-height: var(--menu-item-a-height);
+            height: calc(var(--x) * 88);
+            line-height: calc(var(--x) * 88);
           }
 
           &:last-of-type {
             padding-right: 0;
 
             a {
-              border-radius: var(--menu-item-a-last-radius);
-              padding: var(--menu-item-a-last-padding);
+              border-radius: calc(var(--x) * 44);
+              padding: 0 calc(var(--x) * 44) ;
               border: 1px solid $crimson;
               color: $crimson;
+
+              &:hover{
+                background-color: $crimson;
+                color: $white;
+              }
             }
           }
         }

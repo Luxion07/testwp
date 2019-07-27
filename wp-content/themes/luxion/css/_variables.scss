@@ -38,11 +38,14 @@ $logo_height: 102px;
 $logo_width: 283px;
 
 
+
 // variables based on width device
 
 :root {
 
   //main
+
+  --x: 1px;
 
   --container-width: 2340px;
   --single-container-width: 1540px;
@@ -54,46 +57,7 @@ $logo_width: 283px;
   --flex-33: 0 0 33.33333%;
   --flex-16: 0 0 16.66666%;
 
-  // header
-
-  --navbar-height: 167px;
-
-  --lang-left: 66px;
-  --lang-width: 88px;
-  --dropbtn-size: 14px;
-
-  --dropdown-border-radius: 10px;
-  --dropdown-a-padding: 12px 16px;
-
-  --menu-item-padding: 40px;
-  --menu-item-a-height: 88px;
-  --menu-item-a-last-radius: 44px;
-  --menu-item-a-last-padding: 0 44px;
-
   // archive-template
-
-  --career-description-top: 180px;
-  --career-description-width: 1358px;
-
-  --filter-search-pb: 220px;
-  --filter-inputs-height: 130px;
-  --filter-input-padding: 50px;
-  --filter-choice-list-width: 912px;
-  --filter-choice-list-padding: 60px;
-  --filter-choice-list-check: 36px;
-  --filter-choice-list-name-pl: 20px;
-  --filter-choice-list-label-br: 12px;
-  --filter-choice-list-wrap-ml: 80px;
-
-  --filter-tabs-list-m: 40px;
-  --filter-tabs-list-btns-w: 80px;
-  --filter-tabs-list-btns-h: 60px;
-  --filter-tabs-list-btns-bqsize: 30px 26px;
-
-  --free-vac-grid-space: 60px;
-  --free-vac-grid-article-br: 40px;
-  --free-vac-grid-article-p: 50px;
-  --free-vac-grid-article-title-m: 25px;
 
   --free-vac-grid-icon-w: auto;
   --free-vac-grid-icon-h: auto;
@@ -111,32 +75,13 @@ $logo_width: 283px;
 
   --footer-pt: 231px;
   --footer-pb: 150px;
-  --footer-subcribe-mt: 80px;
 
+  --info-shape-left: -150;
 
-  // single-template
+  // single template
 
-  --job-intro-mt: 180px;
-  --job-intro-mb: 220px;
+  --benefits-img-w : auto;
 
-  --job-description-m: 200px;
-  --job-description-row-mb: 90px;
-  --job-description-row-ul-mb: 50px;
-  --job-description-list-type-b: 3px;
-  --job-description-list-type-size: 16px;
-  --job-description-list-type-lh: 50px;
-
-  --job-benefits-p: 200px;
-  --job-benefits-title-mb: 100px;
-
-  --job-apply-p: 240px;
-  --job-apply-input-pb: 24px;
-  --job-apply-item-mt: 88px;
-  --job-apply-ageement-mt: 40px;
-  --job-apply-category-mr: 60px;
-
-  --jobs-interested-pt: 189px;
-  --jobs-interested-pb: 221px;
 }
 
 
@@ -146,55 +91,20 @@ $logo_width: 283px;
 
 @media only screen and (min-width: $break-desktop) and (max-width: $break-large) {
 
+
   :root {
 
     //main
+
+    --x: 0.5px;
 
     --container-width: 1170px;
     --single-container-width: 770px;
     --main-font-size: 16px;
     --border-width: 1px;
 
-    // header
-
-    --navbar-height: 83.5px;
-
-    --lang-left: 33px;
-    --lang-width: 44px;
-    --dropbtn-size: 7px;
-
-    --dropdown-border-radius: 5px;
-    --dropdown-a-padding: 12px 16px;
-
-    --menu-item-padding: 20px;
-    --menu-item-a-height: 44px;
-    --menu-item-a-last-radius: 28px;
-    --menu-item-a-last-padding: 0 22px;
-
     // archive-template
 
-    --career-description-top: 90px;
-    --career-description-width: 679px;
-
-    --filter-search-pb: 110px;
-    --filter-inputs-height: 65px;
-    --filter-input-padding: 25px;
-    --filter-choice-list-width: 456px;
-    --filter-choice-list-padding: 30px;
-    --filter-choice-list-check: 18px;
-    --filter-choice-list-name-pl: 10px;
-    --filter-choice-list-label-br: 6px;
-    --filter-choice-list-wrap-ml: 40px;
-
-    --filter-tabs-list-m: 20px;
-    --filter-tabs-list-btns-w: 40px;
-    --filter-tabs-list-btns-h: 30px;
-    --filter-tabs-list-btns-bqsize: 15px 13px;
-
-    --free-vac-grid-space: 30px;
-    --free-vac-grid-article-br: 20px;
-    --free-vac-grid-article-p: 25px;
-    --free-vac-grid-article-title-m: 12px;
 
     --free-vac-grid-icon-w: 10px;
     --free-vac-grid-icon-h: 15px;
@@ -213,32 +123,12 @@ $logo_width: 283px;
 
     --footer-pt: 100px;
     --footer-pb: 80px;
-    --footer-subcribe-mt: 40px;
 
+    --info-shape-left: -100%;
 
-    // single-template
+    // single template
 
-    --job-intro-mt: 90px;
-    --job-intro-mb: 110px;
-
-    --job-description-m: 100px;
-    --job-description-row-mb: 45px;
-    --job-description-row-ul-mb: 25px;
-    --job-description-list-type-b: 1.5px;
-    --job-description-list-type-size: 8px;
-    --job-description-list-type-lh: 25px;
-
-    --job-benefits-p: 100px;
-    --job-benefits-title-mb: 50px;
-
-    --job-apply-p: 120px;
-    --job-apply-input-pb: 12px;
-    --job-apply-item-mt: 44px;
-    --job-apply-ageement-mt: 20px;
-    --job-apply-category-mr: 30px;
-
-    --jobs-interested-pt: 94px;
-    --jobs-interested-pb: 110px;
+    --benefits-img-w : 60px;
   }
 
 }

@@ -30,14 +30,26 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: var(--free-vac-grid-article-title-m);
+      margin-bottom: calc(var(--x) * 25);
+      min-height: calc(var(--x) * 70);
 
 
       .free-vacancy__title {
         font-size: 1.125rem;
         margin-top: 0;
         margin-bottom: 0;
+        display: flex;
+        align-items: center;
 
+        .free-vacancy__title-hot{
+          background-color: rgba(188, 32, 75, 0.1);
+          color: $crimson;
+          font-size:  0.6875rem;
+          font-weight: 400;
+          margin-left: calc(var(--x) * 10);
+          padding: calc(var(--x) * 10) calc(var(--x) * 20);
+          border-radius: calc(var(--x) * 28);
+        }
       }
 
       .client {
@@ -119,12 +131,7 @@
               }
 
               .info-shape {
-                padding: 0 12px;
-                line-height: 26px;
-                -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .05);
-                box-shadow: 0 0 20px rgba(0, 0, 0, .05);
-                border-radius: 28px;
-                left: -50%;
+
 
                 &:before {
                   border-top-color: $light-green;
@@ -143,14 +150,14 @@
   &.open-vac--grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: var(--free-vac-grid-space);
-    grid-row-gap: var(--free-vac-grid-space);
+    grid-column-gap: calc(var(--x) * 60);
+    grid-row-gap: calc(var(--x) * 60);
 
     .free-vacancy {
       background-color: $white;
       border: 1px solid transparent;
-      border-radius: var(--free-vac-grid-article-br);
-      padding: var(--free-vac-grid-article-p);
+      border-radius: calc(var(--x) * 40);
+      padding: calc(var(--x) * 50);
 
       .free-vacancy__footer {
         flex: var(--flex-50);
@@ -170,7 +177,8 @@
 
     .filter__row-headline {
       display: flex;
-      padding: 14px 0;
+      padding-bottom: calc(var(--x) * 14);
+      padding-top: 0;
       border-bottom: var(--border-width) solid $border-grey-opacity;
       flex: var(--flex-100);
 
@@ -206,7 +214,7 @@
     .free-vacancy {
       border-bottom: var(--border-width) solid $border-grey-opacity;
       display: flex;
-      min-height: 77px;
+      min-height: calc(var(--x) * 134);
 
       .free-vacancy__header {
         flex: var(--flex-33);

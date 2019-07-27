@@ -1,6 +1,6 @@
 .job-description{
-  padding-top: var(--job-description-m);
-  padding-bottom: var(--job-description-m);
+  padding-top: calc(var(--x) * 200);
+  padding-bottom: calc(var(--x) * 200);
   font-size:  1.25rem;
   font-weight: 300;
   background-color: $white;
@@ -8,7 +8,8 @@
   .job-description__row{
 
     .job-description__row-content{
-      margin-bottom: var(--job-description-row-mb);
+      margin-bottom: calc(var(--x) * 90);
+      line-height:  calc(var(--x) * 60);
 
     }
 
@@ -18,23 +19,23 @@
       ul{
         opacity: 0.8;
         font-size: 1.063rem;
-        margin-bottom: var(--job-description-row-ul-mb);
+        margin-bottom: calc(var(--x) * 50);
 
         li{
           position: relative;
           padding-left: 2%;
-          line-height: var(--job-description-list-type-lh);
+          line-height: calc(var(--x) * 50);
 
           &:before{
             content: '';
-            width: var(--job-description-list-type-size);
-            height: var(--job-description-list-type-size);;
+            width: calc(var(--x) * 16);
+            height: calc(var(--x) * 16);;
             left: 0;
             position: absolute;
-            border: var(--job-description-list-type-b) solid $list-type-color-red;
+            border: calc(var(--x) * 3) solid $list-type-color-red;
             opacity: 0.8;
             border-radius: 50%;
-            top: var(--job-description-list-type-size);;
+            top: calc(var(--x) * 16);;
           }
         }
       }

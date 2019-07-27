@@ -59,6 +59,11 @@ class Filter
                     <header class="free-vacancy__header">
                         <h2 class="free-vacancy__title">
                             <a href="<?= get_permalink();?>" class="free-vacancy__title-link"><?php the_title(); ?></a>
+                            <?php if (in_array(18, $tags_array)){?>
+                                <span class="free-vacancy__title-hot">Hot</span>
+                            <?php
+                            }?>
+
                         </h2>
                         <div class="client">
                             <?php

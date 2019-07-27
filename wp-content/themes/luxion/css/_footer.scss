@@ -76,7 +76,7 @@
     }
 
     .footer__info-subscribe {
-      margin-top: var(--footer-subcribe-mt);
+      margin-top: calc(var(--x) * 80);
 
       .footer__info-subscribe-title {
         color: $yellow;

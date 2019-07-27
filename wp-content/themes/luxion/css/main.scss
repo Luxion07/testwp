@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  padding-top: var(--navbar-height);
+  padding-top: calc(var(--x) * 167);
 }
 
 input{
@@ -54,11 +54,11 @@ ul{
   background-color: transparent;
   color: $crimson;
   font-size: 0.9375rem;
-  border-radius: var(--menu-item-a-last-radius);
-  padding: var(--menu-item-a-last-padding);
+  border-radius: calc(var(--x) * 44);
+  padding: 0 calc(var(--x) * 44) ;
   display: inline-block;
-  height: var(--menu-item-a-height);
-  line-height: var(--menu-item-a-height);
+  height: calc(var(--x) * 88);
+  line-height: calc(var(--x) * 88);
 
   &:hover{
     background-color: $crimson;
@@ -73,7 +73,9 @@ ul{
 .asterisk{
   color: $asterisk-color;
 }
-
+button{
+  font-family: $font-family;
+}
 @import "header";
 @import "archive-template";
 @import "single-template";

@@ -1,5 +1,5 @@
 .career-description {
-  padding-top: var(--career-description-top);
+  padding-top: calc(var(--x) * 180);
   position: relative;
   z-index: 2;
   background-color: $bg_grey ;

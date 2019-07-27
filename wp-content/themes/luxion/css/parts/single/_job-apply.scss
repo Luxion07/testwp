@@ -1,6 +1,6 @@
 .job-apply {
-  padding-top: var(--job-apply-p);
-  padding-bottom: var(--job-apply-p);
+  padding-top: calc(var(--x) * 240);
+  padding-bottom: calc(var(--x) * 240);
   font-size: 1.063rem;
   background-color: $white;
 
@@ -8,7 +8,7 @@
     color: $crimson;
     font-size: 0.6875rem;
     font-weight: 400;
-    line-height: 25px;
+    line-height: 1.563rem;
   }
 
   .job-apply__row {
@@ -16,7 +16,7 @@
     .job-apply__row-title {
       font-size: 2.813rem;
       font-weight: 300;
-      line-height: 55px;
+      line-height: 3.438rem;
       margin-top: 0;
     }
 
@@ -26,10 +26,10 @@
       }
 
       .apply-form__item {
-        margin-top: var(--job-apply-item-mt);
+        margin-top: calc(var(--x) * 88);
 
         &.agreement {
-          margin-top: var(--job-apply-ageement-mt);
+          margin-top: calc(var(--x) * 40);
         }
 
         &.user-data {
@@ -77,8 +77,8 @@
           border-top: none;
           border-bottom: var(--border-width) solid rgba(61, 57, 53, 0.2);
           font-size: 1.063rem;
-          line-height: 25px;
-          padding-bottom: var(--job-apply-input-pb);
+          line-height: 1.563rem;
+          padding-bottom: calc(var(--x) * 24);
           width: 100%;
 
           &:focus {
@@ -107,16 +107,16 @@
 
           label{
             position: relative;
-            padding-left: 30px;
+            padding-left: calc(var(--x) * 60);
 
             &:before{
               content: '';
               position: absolute;
               left: 0;
               bottom: 0;
-              width: 18px;
-              height: 18px;
-              border-radius: 6px;
+              width: calc(var(--x) * 36);
+              height: calc(var(--x) * 36);
+              border-radius: calc(var(--x) * 12);
               border: var(--border-width) solid $crimson;
             }
 
@@ -150,11 +150,11 @@
             border-right: var(--border-width) solid rgba(61, 57, 53, 0.2);
             width: auto;
             font-size: 0.9375rem;
-            border-radius: var(--menu-item-a-last-radius);
-            padding: var(--menu-item-a-last-padding);
+            border-radius: calc(var(--x) * 44);
+            padding: 0 calc(var(--x) * 44) ;
             display: inline-block;
-            height: var(--menu-item-a-height);
-            line-height: var(--menu-item-a-height);
+            height: calc(var(--x) * 88);
+            line-height: calc(var(--x) * 88);
 
             &:hover{
               cursor: pointer;
@@ -206,7 +206,7 @@
 
           .file__item-category {
             display: flex;
-            margin-bottom: var(--job-apply-ageement-mt);
+            margin-bottom: calc(var(--x) * 40);
 
             .file__items-title {
               margin-right: 0.9375rem;
@@ -225,7 +225,7 @@
             }
 
             span {
-              margin-right: var(--job-apply-category-mr);
+              margin-right: calc(var(--x) * 60);
             }
           }
 
@@ -247,8 +247,8 @@
         font-weight: 400;
         display: inline-block;
         border: none;
-        margin-top: var(--job-apply-item-mt);
-        line-height: 40px;
+        margin-top: calc(var(--x) * 88);
+        line-height: 2.5rem;
         padding-left: 3%;
       }
 
@@ -265,8 +265,8 @@
           position: absolute;
           left: 0;
           top: 30%;
-          width: 18px;
-          height: 18px;
+          width: calc(var(--x) * 36);
+          height: calc(var(--x) * 36);
           background-repeat: no-repeat;
           background-size: contain;
         }

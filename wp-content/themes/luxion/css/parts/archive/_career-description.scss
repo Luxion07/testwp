@@ -1,7 +1,7 @@
 .career-description__row {
   display: flex;
   justify-content: center;
-  width: var(--career-description-width);
+  width: calc(var(--x) * 1358);
 
   .career-description__header {
     text-align: center;
@@ -17,6 +17,7 @@
       font-size: 1.25rem;
       font-weight: 300;
       line-height: 1.875rem;
+      margin-bottom: calc(var(--x) * 80);
     }
   }
 }

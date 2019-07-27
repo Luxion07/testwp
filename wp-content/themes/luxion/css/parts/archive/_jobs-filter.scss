@@ -3,9 +3,9 @@
 .jobs-filter {
 
   .jobs-filter__row {
-    padding-bottom: var(--filter-search-pb);
+    padding-bottom: calc(var(--x) * 220);
     &.jobs-filter-search{
-      padding-bottom: 30px;
+      padding-bottom: calc(var(--x) * 40);
     }
   }
 
@@ -13,7 +13,7 @@
     display: flex;
 
     > div {
-      height: var(--filter-inputs-height);
+      height: calc(var(--x) * 130);
       border: var(--border-width) solid $light-grey;
       background-color: $thin-white1;
       display: flex;
@@ -21,8 +21,8 @@
       font-size: 1.188rem;
       opacity: 0.8;
       font-weight: 300;
-      padding-left: var(--filter-input-padding);
-      padding-right: var(--filter-input-padding);
+      padding-left: calc(var(--x) * 50);
+      padding-right: calc(var(--x) * 50);
 
       &:last-of-type {
         border-top-right-radius: 30px;
@@ -35,7 +35,7 @@
       width: 50%;
       border-top-left-radius: 30px;
       border-bottom-left-radius: 30px;
-      padding-left: calc(var(--filter-input-padding) * 3);
+      padding-left: calc(calc(var(--x) * 50) * 3);
 
       &:focus-within {
         border-color: $crimson;
@@ -46,7 +46,7 @@
         width: 26px;
         height: 28px;
         position: absolute;
-        left: var(--filter-input-padding);
+        left: calc(var(--x) * 50);
         top: calc(50% - 14px);
         background-image: url('../images/icons/-e-search.png');
         background-repeat: no-repeat;
@@ -76,7 +76,7 @@
         height: 6px;
         position: absolute;
         top: calc(50% - 3px);
-        right: var(--filter-input-padding);
+        right: calc(var(--x) * 50);
         background-image: url('../images/icons/-e-arrow.png');
         background-repeat: no-repeat;
         -webkit-background-size: contain;
@@ -117,7 +117,7 @@
       }
 
       &.choice-list--last {
-        min-width: var(--filter-choice-list-width);
+        min-width: calc(var(--x) * 912);
         left: auto;
         right: 0;
 
@@ -125,20 +125,20 @@
           width: 50%;
 
           &.choice-list__wrap--column-right {
-            margin-left: var(--filter-choice-list-wrap-ml);
+            margin-left: calc(var(--x) * 80);
           }
         }
       }
 
       .choice-list__wrap {
         width: 100%;
-        padding: var(--filter-choice-list-padding);
+        padding: calc(var(--x) * 60);
         background-color: $white;
         border-radius: 30px;
         box-shadow: 0 10px 50px rgba(0, 0, 0, 0.07);
         -webkit-box-shadow: 0 10px 50px rgba(0, 0, 0, 0.07);
 
-        margin-top: var(--filter-choice-list-name-pl);
+        margin-top: calc(var(--x) * 20);
 
         .choice-list__title {
           font-size: 0.6875rem;
@@ -165,7 +165,7 @@
             }
 
             .choice-list__label {
-              padding-left: var(--filter-choice-list-check);
+              padding-left: calc(var(--x) * 36);
               position: relative;
               font-size: 1.063rem;
 
@@ -175,9 +175,9 @@
                 top: 18%;
                 left: 0;
                 position: absolute;
-                width: var(--filter-choice-list-check);
-                height: var(--filter-choice-list-check);
-                border-radius: var(--filter-choice-list-label-br);
+                width: calc(var(--x) * 36);
+                height: calc(var(--x) * 36);
+                border-radius: calc(var(--x) * 12);
                 border-width: var(--border-width);
                 border-style: solid;
                 background-repeat: no-repeat;
@@ -194,7 +194,7 @@
               }
 
               .choice-list__label-name {
-                padding-left: var(--filter-choice-list-name-pl);
+                padding-left: calc(var(--x) * 20);
               }
             }
 

@@ -12,6 +12,7 @@ $job_taxonomies = get_object_taxonomies('jobs');
 $departments = array();
 $locations = array();
 $location_parents = array();
+$job_tags_hot = array();
 $job_tags = array();
 $test = array();
 
@@ -46,17 +47,29 @@ foreach ($job_taxonomies as $job_taxonomy) {
 
         } elseif ($job_term->taxonomy == 'job_tags') {
 
-            $job_tags[$job_term->name] = array(
-                'job_count' => $job_term->count,
-                'taxonomy'  => $job_term->taxonomy,
-                'term_id'   => $job_term->term_taxonomy_id
-            );
+            if($job_term->name === 'Hot'){
+                $job_tags_hot[$job_term->name] = array(
+                    'job_count' => $job_term->count,
+                    'taxonomy'  => $job_term->taxonomy,
+                    'term_id'   => $job_term->term_taxonomy_id
+                );
+            }else{
+                $job_tags[$job_term->name] = array(
+                    'job_count' => $job_term->count,
+                    'taxonomy'  => $job_term->taxonomy,
+                    'term_id'   => $job_term->term_taxonomy_id
+                );
+            }
+
 
         }
 
     }
 }
 
+//$job_tags = $job_tags_hot + $job_tags;
+
+//var_dump($job_tags, '</br>');
 set_query_var('departments', $departments);
 set_query_var('locations', $locations);
 set_query_var('location_parents', $location_parents);

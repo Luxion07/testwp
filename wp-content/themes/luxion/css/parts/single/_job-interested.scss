@@ -1,7 +1,7 @@
 .job-interested{
   background-color: $bg-grey;
-  padding-top: var( --jobs-interested-pt);
-  padding-bottom: var( --jobs-interested-pb);
+  padding-top: calc(var(--x) * 189);
+  padding-bottom: calc(var(--x) * 221);
 
   .job-interested__row{
     display: flex;
@@ -10,6 +10,7 @@
       font-size: 1.75rem;
       font-weight: 300;
       line-height: 2.25rem;
+      margin: 0;
     }
 
     .job-interested__social{
@@ -19,6 +20,7 @@
       .social{
         display: flex;
         align-items: center;
+        margin: 0;
 
         .social__item{
           margin-right: 0.516rem;

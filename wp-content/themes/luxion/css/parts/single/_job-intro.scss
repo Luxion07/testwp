@@ -4,8 +4,8 @@
   position: relative;
 
   .job-intro__row{
-    margin-top: var(--job-intro-mt);
-    margin-bottom: var(--job-intro-mb);
+    margin-top: calc(var(--x) * 180);
+    margin-bottom: calc(var(--x) * 220);
 
     &:after{
       @include incline;
@@ -25,12 +25,14 @@
   .job-intro__description{
     font-size: 1.25rem;
     width: 80%;
-
+    line-height: 1.875rem;
+    font-weight: 300;
   }
 
   .job-intro__actions{
     display: flex;
     align-items: center;
+    width: 95%;
 
     .job-intro__actions-location{
       opacity: 0.7;
