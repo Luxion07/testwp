@@ -9,15 +9,99 @@ jQuery(document).ready(function ($) {
     // filter by tabs and dropdowns
 
     $('.choice-list__label, .tabs-list__button').on('click', function () {
+
         var i = 0;
 
-        let filterDropdown = $(this).closest('.jobs-filter-search__dropdown-wrap'),
-            currentList = $(this).closest('li'),
+        $(this).closest('li').toggleClass('checked'); // if click current list add checked className
+
+        let element = $(this);
+
+        updateInput(element);
+
+        dropdownSearch();
+
+        liveSearch();
+
+    });
+
+    // filter by search input
+
+    $('.jobs-filter-search__input').on('keyup', function () {
+
+        let searchKeywords = $(this).val();
+
+        liveSearch(searchKeywords);
+
+        if(searchKeywords ===  '') {
+            $('.jobs-filter-search__input-close').hide();
+        }else{
+            $('.jobs-filter-search__input-close').show();
+        }
+
+    });
+
+
+    // select all filter dropdowns
+
+    $('.choice-list-select-all').on('click', function(){
+
+        let choiceList = $(this).closest('.choice-list__menu');
+        choiceList.find('.choice-list__item').each(function(){
+            $(this).addClass('checked');
+            updateInput($(this));
+
+        });
+
+        dropdownSearch();
+
+        liveSearch();
+
+        $(this).hide();
+        choiceList.find('.choice-list-deselect-all').show();
+    });
+
+
+    $('.choice-list-deselect-all').on('click', function(){
+
+        let choiceList = $(this).closest('.choice-list__menu');
+
+        choiceList.find('.choice-list__item').each(function(){
+            $(this).removeClass('checked');
+            updateInput($(this));
+        });
+
+        dropdownSearch();
+
+        liveSearch();
+
+        $(this).hide();
+        choiceList.find('.choice-list-select-all').show();
+    });
+
+    //live search function (ajax call)
+
+    function liveSearch($keyword) {
+
+        let data = {
+            action: 'filter_jobs',
+            searchData: $keyword,
+            taxData: queryTaxArray
+        };
+
+        $.post(MyAjax.ajaxurl, data, function (response) {
+            $('.free-vacancies__items-wrap').html(response);// Set data to page as search result
+            countVacancies();
+        });
+
+
+    }
+
+    function updateInput (element){
+
+        let filterDropdown = element.closest('.jobs-filter-search__dropdown-wrap'),
             filterDropdownName = filterDropdown.data('filter-category'); // get original name of field (const)
 
-        currentList.toggleClass('checked'); // if click current list add checked className
-
-        labelName = $(this).find('.choice-list__label-name').text();
+        labelName = element.find('.choice-list__label-name').text();
 
         if (filterDropdownName === 'All departments') {
             var idx = $.inArray(labelName, departmentNewName);
@@ -29,6 +113,10 @@ jQuery(document).ready(function ($) {
             }
 
             let newDropdown = departmentNewName.sort().join(", ");
+
+            if (newDropdown[0] === ',') {
+                newDropdown = newDropdown.substr(1);
+            }
 
             if (newDropdown !== '') {
                 $("[data-filter-category='All departments'] .jobs-filter-search__dropdown").text(newDropdown);
@@ -47,6 +135,10 @@ jQuery(document).ready(function ($) {
 
             let newLocation = locationNewName.sort().join(", ");
 
+            if (newLocation[0] === ',') {
+                newLocation = newLocation.substr(1);
+            }
+
             if (newLocation !== '') {
                 $("[data-filter-category='All locations'] .jobs-filter-search__dropdown").text(newLocation);
             } else {
@@ -54,6 +146,11 @@ jQuery(document).ready(function ($) {
             }
 
         }
+    }
+
+    function dropdownSearch (){
+
+        var i = 0;
 
         $('.jobs-filter__row .checked').each(function () { // get all checked items
 
@@ -77,42 +174,7 @@ jQuery(document).ready(function ($) {
 
         queryTaxArray['relation'] = 'OR'; // add relation for multiply filter posts
 
-        liveSearch();
-
-    });
-
-    // filter by search input
-
-    $('.jobs-filter-search__input').on('keyup', function () {
-
-        let searchKeywords = $(this).val();
-
-        liveSearch(searchKeywords);
-
-        if(searchKeywords ===  '') {
-            $('.jobs-filter-search__input-close').hide();
-        }else{
-            $('.jobs-filter-search__input-close').show();
-        }
-
-    });
-
-
-    //live search function (ajax call)
-    function liveSearch($keyword) {
-
-        let data = {
-            action: 'filter_jobs',
-            searchData: $keyword,
-            taxData: queryTaxArray
-        };
-
-        $.post(MyAjax.ajaxurl, data, function (response) {
-            $('.free-vacancies__items-wrap').html(response);// Set data to page as search result
-            countVacancies();
-        });
-
-
+        return queryTaxArray;
     }
 
     /* Other functional*/

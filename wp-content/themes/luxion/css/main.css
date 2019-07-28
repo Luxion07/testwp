@@ -345,7 +345,7 @@ button {
 .career-description .jobs-filter .jobs-filter-search > div {
   height: calc(var(--x) * 130);
   border: var(--border-width) solid #e1e1de;
-  background-color: #fafaf8;
+  background-color: #f9f9f9;
   display: flex;
   align-items: center;
   font-size: 1.188rem;
@@ -549,6 +549,12 @@ button {
 }
 .career-description .jobs-filter .jobs-filter-search .choice-list .choice-list__wrap.all-locations {
   display: flex;
+}
+.career-description .jobs-filter .jobs-filter-search .jobs-filter-search__dropdown {
+  clear: both;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 90%;
 }
 @media only screen and (max-width: 768px) {
   .career-description .jobs-filter .jobs-filter__row.jobs-filter-search {

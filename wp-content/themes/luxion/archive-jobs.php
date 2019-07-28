@@ -61,15 +61,17 @@ foreach ($job_taxonomies as $job_taxonomy) {
                 );
             }
 
-
         }
 
     }
 }
 
-//$job_tags = $job_tags_hot + $job_tags;
+uasort($job_tags, function($a, $b) {
+    return $b['job_count'] - $a['job_count'];
+});
 
-//var_dump($job_tags, '</br>');
+$job_tags = $job_tags_hot + $job_tags;
+
 set_query_var('departments', $departments);
 set_query_var('locations', $locations);
 set_query_var('location_parents', $location_parents);

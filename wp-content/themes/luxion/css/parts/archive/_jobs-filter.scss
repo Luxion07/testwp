@@ -13,9 +13,10 @@
     display: flex;
 
     > div {
+
       height: calc(var(--x) * 130);
       border: var(--border-width) solid $light-grey;
-      background-color: $thin-white1;
+      background-color: $thin-white;
       display: flex;
       align-items: center;
       font-size: 1.188rem;
@@ -283,6 +284,13 @@
           display: flex;
         }
       }
+    }
+
+    .jobs-filter-search__dropdown{
+      clear: both;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 90%;
     }
   }
 }
