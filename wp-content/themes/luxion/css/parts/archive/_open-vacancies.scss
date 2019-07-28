@@ -265,3 +265,30 @@
 
   }
 }
+
+@media only screen  and (max-width: $break-tablet) {
+
+    .open-vac{
+
+      &.open-vac--grid{
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+}
+
+@media only screen  and (max-width: $break-medium) {
+
+    .open-vac{
+
+      &.open-vac--grid{
+        grid-template-columns: 1fr;
+        overflow: hidden;
+      }
+
+      &.open-vac--list{
+        display: none;
+      }
+    }
+
+}

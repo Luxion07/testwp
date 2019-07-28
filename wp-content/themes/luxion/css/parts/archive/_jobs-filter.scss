@@ -61,7 +61,25 @@
         width: 100%;
         border: none;
         outline: none;
-        height: 98%;
+        height: 97%;
+        background-color: transparent;
+      }
+
+      .jobs-filter-search__input-close{
+        display: none;
+        background-image: url(../images/icons/-e-clear.png);
+        background-repeat: no-repeat;
+        -webkit-background-size: contain;
+        background-size: contain;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        left: 95%;
+        top: calc(50% - 6px);
+
+        &:hover{
+          cursor: pointer;
+        }
       }
     }
 
@@ -263,6 +281,40 @@
 
         &.all-locations {
           display: flex;
+        }
+      }
+    }
+  }
+}
+
+@media only screen  and (max-width: $break-medium) {
+
+  .jobs-filter{
+
+    .jobs-filter__row{
+      &.jobs-filter-search{
+        flex-flow: wrap;
+
+        .jobs-filter-search__input-wrap{
+          width: 100%;
+          -webkit-border-radius: 30px;
+          -moz-border-radius: 30px;
+          border-radius: 30px;
+        }
+
+        .jobs-filter-search__dropdown-wrap{
+          width: 100%;
+          -webkit-border-radius: 30px;
+          -moz-border-radius: 30px;
+          border-radius: 30px;
+          margin-top: 2vw;
+          margin-bottom: 0;
+
+          &:hover{
+            .choice-list{
+              min-width: auto;
+            }
+          }
         }
       }
     }

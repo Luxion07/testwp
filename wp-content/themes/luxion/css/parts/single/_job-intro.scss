@@ -51,7 +51,33 @@
       margin-left: auto;
     }
   }
+}
 
+@media only screen  and (max-width: $break-medium) {
 
+  .job-intro{
+    .job-intro__actions{
+      flex-flow: wrap;
 
+      .job-intro__actions-apply{
+        width: 100%;
+      }
+
+      .job-intro__actions-location{
+        width: 100%;
+        margin: 0;
+        margin-top: 2vw;
+
+      }
+
+      .job-intro__actions-job-tags{
+        width: 100%;
+      }
+
+      .job-intro__actions-client{
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
 }

@@ -97,6 +97,7 @@ set_query_var('job_tags', $job_tags);
 
                 <div class="jobs-filter-search__input-wrap">
                     <input class="jobs-filter-search__input" type="text" placeholder="Search job openings">
+                    <span class="jobs-filter-search__input-close"></span>
                 </div>
 
                 <?php get_template_part('parts/filter', 'department'); ?>

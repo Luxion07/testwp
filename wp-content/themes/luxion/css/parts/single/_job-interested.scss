@@ -45,3 +45,24 @@
 
   }
 }
+
+@media only screen  and (max-width: $break-small) {
+
+  .job-interested{
+    .job-interested__row{
+      flex-flow: wrap;
+
+      .job-interested__title{
+        width: 100%;
+        text-align: center;
+      }
+
+      .job-interested__social{
+        width: 100%;
+        margin-top: 3vw;
+        justify-content: center;
+      }
+
+    }
+  }
+}

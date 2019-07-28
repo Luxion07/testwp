@@ -275,3 +275,37 @@
 
   }
 }
+
+@media only screen  and (max-width: $break-tablet-min) {
+
+  .job-apply{
+    .job-apply__row{
+      .apply-form{
+
+        .apply-form__item{
+          &.user-data{
+            grid-template-columns: 1fr ;
+            grid-row-gap: 15%;
+          }
+
+          &.agreement{
+            label{
+              display: -webkit-box;
+            }
+          }
+        }
+
+        .file{
+          grid-template-columns: 1fr;
+          margin-top: 4vw;
+
+          .active{
+            padding-bottom: 4vw;
+          }
+
+        }
+
+      }
+    }
+  }
+}

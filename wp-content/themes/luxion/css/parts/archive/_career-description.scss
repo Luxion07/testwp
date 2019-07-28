@@ -21,3 +21,11 @@
     }
   }
 }
+
+@media only screen  and (max-width: $break-medium) {
+
+    .career-description__row{
+      width: 90vw;
+    }
+
+}

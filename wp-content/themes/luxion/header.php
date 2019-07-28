@@ -53,6 +53,20 @@
             ?>
         </div>
 
+        <div class="mobile-btn">
+            <span class="burger">
+                <i class="fa fa-bars"></i>
+            </span>
+        </div>
+    </div>
 
+    <div class="mobile-menu">
+
+        <?php
+        wp_nav_menu($args);
+        ?>
+        <span class="close-menu">
+            <i class="fa fa-times"></i>
+        </span>
     </div>
 </header>

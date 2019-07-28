@@ -16,9 +16,10 @@
     font-weight: $font-weight-light;
 
 
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
+
     .select-lang {
       position: relative;
       padding-left: calc(var(--x) * 66);
@@ -97,11 +98,11 @@
 
             a {
               border-radius: calc(var(--x) * 44);
-              padding: 0 calc(var(--x) * 44) ;
+              padding: 0 calc(var(--x) * 44);
               border: 1px solid $crimson;
               color: $crimson;
 
-              &:hover{
+              &:hover {
                 background-color: $crimson;
                 color: $white;
               }
@@ -114,15 +115,34 @@
         display: flex;
       }
     }
+
+    .mobile-btn{
+      display: none;
+    }
+  }
+
+  .mobile-menu {
+    display: none;
+
+    .close-menu{
+      margin-left: auto;
+      margin-right: 2vw;
+      line-height: 2rem;
+      margin-top: 16px;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: $crimson;
+
+      &:hover{
+        cursor: pointer;
+      }
+    }
+
   }
 }
 
 
-@media only screen and (min-width: $break-large) and (max-width: $break-extra-large) {
-
-}
-
-@media only screen and (min-width: $break-desktop) and (max-width: $break-large) {
+@media only screen and (max-width: $break-large) {
 
   .container {
     .logo {
@@ -135,11 +155,60 @@
 
 }
 
-@media only screen and (min-width: $break-tablet) and (max-width: $break-desktop) {
+@media only screen and (max-width: $break-desktop) {
+  .container {
+    .logo {
+      img {
+        width: 14vw;
+        height: auto;
+      }
+    }
+  }
+
+
 
 }
 
-@media only screen and (min-width: $break-medium) and (max-width: $break-tablet) {
+@media only screen  and (max-width: $break-tablet) {
+
+  .main-header {
+
+    .navbar {
+
+      .main-menu {
+        display: none;
+      }
+
+      .mobile-btn{
+        display: block;
+        margin-left: auto;
+      }
+    }
+
+    .mobile-menu {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      z-index: 2;
+      background-color: $bg-grey;
+      top: 0;
+      padding-left: 2vw;
+
+      .menu-item{
+        font-size: 1.5rem;
+        line-height: 2rem;
+
+        a{
+          color: $crimson;
+        }
+      }
+
+      &.active{
+        display: flex;
+      }
+
+    }
+  }
 
 }
 

@@ -4,6 +4,7 @@ $break-extra-large: 2800px;
 $break-large: 2000px;
 $break-desktop: 1200px;
 $break-tablet: 967px;
+$break-tablet-min: 600px;
 $break-medium: 768px;
 $break-small: 540px;
 $break-extra-small: 320px;
@@ -89,7 +90,7 @@ $logo_width: 283px;
 
 }
 
-@media only screen and (min-width: $break-desktop) and (max-width: $break-large) {
+@media only screen  and (max-width: $break-large) {
 
 
   :root {
@@ -133,13 +134,15 @@ $logo_width: 283px;
 
 }
 
-@media only screen and (min-width: $break-tablet) and (max-width: $break-desktop) {
+@media only screen  and (max-width: $break-desktop) {
 
   :root {
 
     //main
 
-    --container-width: 800px;
+    --container-width: 90vw;
+    --single-container-width: 80vw;
+    --main-font-size: 14px;
 
   }
 }
@@ -150,7 +153,7 @@ $logo_width: 283px;
 
     //main
 
-    --container-width: 600px;
+
 
   }
 }
@@ -160,7 +163,7 @@ $logo_width: 283px;
 
     //main
 
-    --container-width: 500px;
+
 
   }
 
@@ -172,7 +175,9 @@ $logo_width: 283px;
 
     //main
 
-    --container-width: 100%;
+    --container-width: 90vw;
+    --single-container-width: 80vw;
+
 
   }
 }

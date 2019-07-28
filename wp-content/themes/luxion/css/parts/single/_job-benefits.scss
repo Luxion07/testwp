@@ -42,3 +42,19 @@
 
   }
 }
+
+@media only screen  and (max-width: $break-tablet-min) {
+
+  .job-benefits{
+    .job-benefits__row{
+      .job-benefits__row-collection{
+        grid-template-columns: 1fr;
+        grid-row-gap: unset;
+
+        .job-benefits__row-item{
+          margin-bottom: 3vw;
+        }
+      }
+    }
+  }
+}

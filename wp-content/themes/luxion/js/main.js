@@ -89,6 +89,12 @@ jQuery(document).ready(function ($) {
 
         liveSearch(searchKeywords);
 
+        if(searchKeywords ===  '') {
+            $('.jobs-filter-search__input-close').hide();
+        }else{
+            $('.jobs-filter-search__input-close').show();
+        }
+
     });
 
 
@@ -141,6 +147,32 @@ jQuery(document).ready(function ($) {
     let footerHeight = $('.footer').outerHeight();
     $('.career-description').css({'margin-bottom': footerHeight});
     $('.job-single__description').css({'margin-bottom': footerHeight});
+
+
+    // mobile menu func
+
+    $('.close-menu').on('click', function (){
+        $(this).closest('.mobile-menu').removeClass('active');
+    });
+
+    $('.mobile-btn .burger').on('click', function () {
+       $(this).closest('.main-header').find('.mobile-menu').addClass('active');
+    });
+
+
+    // filter form delete input
+
+    $('.jobs-filter-search__input-close').on('click', function () {
+
+       $(this).hide();
+
+       $(this).closest('.jobs-filter-search__input-wrap').find('input').val('');
+
+        liveSearch('');
+
+
+    });
+
 
 
 

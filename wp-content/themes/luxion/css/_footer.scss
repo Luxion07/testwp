@@ -127,3 +127,39 @@
     }
   }
 }
+
+@media only screen  and (max-width: $break-medium) {
+  .footer{
+
+    .footer__row{
+      grid-template-columns: 1fr;
+      text-align: center;
+
+      .footer__info{
+
+        .footer__info-socials{
+
+          .social{
+            justify-content: center;
+            margin-top: 3vw;
+
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@media only screen  and (max-width: $break-small) {
+  .footer{
+
+    .footer__row{
+
+      .footer__menu{
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+}

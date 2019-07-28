@@ -43,3 +43,17 @@
   }
 
 }
+
+@media only screen  and (max-width: $break-medium) {
+  .job-description{
+    .job-description__row{
+      .job-description__row-info{
+        ul{
+          li{
+            padding-left: 3vw;
+          }
+        }
+      }
+    }
+  }
+}
