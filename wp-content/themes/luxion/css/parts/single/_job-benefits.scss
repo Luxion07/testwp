@@ -9,20 +9,21 @@
       font-size: 2.188rem;
       font-weight: 300;
       margin-top: 0;
-      //margin-bottom: calc(var(--x) * 100);
-      margin-bottom: calc(var(--x) * 2);
+      margin-bottom: calc(var(--x) * 80);
+      //margin-bottom: calc(var(--x) * 2);
 
     }
 
     .job-benefits__row-collection{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-row-gap: 25%;
+        //grid-row-gap: 25%;
         grid-column-gap: 5%;
 
       .job-benefits__row-item{
         display: flex;
         align-items: center;
+        margin-bottom: 2vw;
 
         .job-benefits__row-item-icon{
           height: auto;

@@ -60,9 +60,7 @@ foreach ($job_taxonomies as $job_taxonomy) {
                     'term_id'   => $job_term->term_taxonomy_id
                 );
             }
-
         }
-
     }
 }
 

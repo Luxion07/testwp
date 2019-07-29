@@ -602,6 +602,7 @@ button {
   border-width: var(--border-width);
   border-style: solid;
   border-radius: 30px;
+  border-color: rgba(61, 57, 53, 0.15);
   background-color: transparent;
   font-size: 0.875rem;
   padding: calc(var(--x) * 12) calc(var(--x) * 20);
@@ -640,6 +641,7 @@ button {
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
   border-right-width: 0;
+  border-color: rgba(61, 57, 53, 0.15);
   background-position: 60% 50%;
   background-image: url("../images/icons/-e-grid.png");
 }
@@ -647,6 +649,7 @@ button {
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   margin-left: -2px;
+  border-color: rgba(61, 57, 53, 0.15);
   background-position: 40% 50%;
   background-image: url("../images/icons/-e-list.png");
 }
@@ -1029,17 +1032,17 @@ button {
   font-size: 2.188rem;
   font-weight: 300;
   margin-top: 0;
-  margin-bottom: calc(var(--x) * 2);
+  margin-bottom: calc(var(--x) * 80);
 }
 .job-single .job-benefits .job-benefits__row .job-benefits__row-collection {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-row-gap: 25%;
   grid-column-gap: 5%;
 }
 .job-single .job-benefits .job-benefits__row .job-benefits__row-collection .job-benefits__row-item {
   display: flex;
   align-items: center;
+  margin-bottom: 2vw;
 }
 .job-single .job-benefits .job-benefits__row .job-benefits__row-collection .job-benefits__row-item .job-benefits__row-item-icon {
   height: auto;
