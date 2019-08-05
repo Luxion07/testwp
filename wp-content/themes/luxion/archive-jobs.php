@@ -29,16 +29,16 @@ foreach ($job_taxonomies as $job_taxonomy) {
 
             $departments[$job_term->name] = array(
                 'job_count' => $job_term->count,
-                'taxonomy'  => $job_term->taxonomy,
-                'term_id'   => $job_term->term_taxonomy_id
+                'taxonomy' => $job_term->taxonomy,
+                'term_id' => $job_term->term_taxonomy_id
             );
 
         } elseif ($job_term->taxonomy == 'location' && $job_term->parent !== 0) {
 
             $locations[$job_term->parent][$job_term->name] = array(
                 'job_count' => $job_term->count,
-                'taxonomy'  => $job_term->taxonomy,
-                'term_id'   => $job_term->term_taxonomy_id
+                'taxonomy' => $job_term->taxonomy,
+                'term_id' => $job_term->term_taxonomy_id
             );
 
         } elseif ($job_term->taxonomy == 'location' && $job_term->parent == 0) {
@@ -47,24 +47,24 @@ foreach ($job_taxonomies as $job_taxonomy) {
 
         } elseif ($job_term->taxonomy == 'job_tags') {
 
-            if($job_term->name === 'Hot'){
+            if ($job_term->name === 'Hot') {
                 $job_tags_hot[$job_term->name] = array(
                     'job_count' => $job_term->count,
-                    'taxonomy'  => $job_term->taxonomy,
-                    'term_id'   => $job_term->term_taxonomy_id
+                    'taxonomy' => $job_term->taxonomy,
+                    'term_id' => $job_term->term_taxonomy_id
                 );
-            }else{
+            } else {
                 $job_tags[$job_term->name] = array(
                     'job_count' => $job_term->count,
-                    'taxonomy'  => $job_term->taxonomy,
-                    'term_id'   => $job_term->term_taxonomy_id
+                    'taxonomy' => $job_term->taxonomy,
+                    'term_id' => $job_term->term_taxonomy_id
                 );
             }
         }
     }
 }
 
-uasort($job_tags, function($a, $b) {
+uasort($job_tags, function ($a, $b) {
     return $b['job_count'] - $a['job_count'];
 });
 
@@ -117,19 +117,28 @@ set_query_var('job_tags', $job_tags);
 
         <section class="jobs-contact-us">
             <div class="jobs-contact-us__row">
-                <span class="jobs-contact-us__title">Don’t see a role that fits?</span>
+                <span class="jobs-contact-us__title">
+                    <?php the_field('career_contact_question', 'option'); ?>
+                </span>
                 <span class="jobs-contact-us__action">
-                    <a class="beetroot-btn" href="#">Contact us</a>
+
+                    <?php
+
+                    $contact_link = get_field('career_contact_link', 'option');
+
+                    if ($contact_link) { ?>
+
+                        <a class="beetroot-btn" href="<?php echo esc_url($contact_link['url']); ?>"><?php echo esc_html($contact_link['title']); ?></a>
+
+                        <?php
+                    }
+                    ?>
+
                 </span>
             </div>
         </section>
     </section>
 </main>
-
-<?php
-
-
-?>
 
 <?php get_footer(); ?>
 

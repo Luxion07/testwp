@@ -1,6 +1,6 @@
 <?php
 /**
- * Шаблон обычной страницы (page.php)
+ * Page template (page.php)
  * @package WordPress
  * @subpackage
  */

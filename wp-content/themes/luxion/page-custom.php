@@ -1,9 +1,9 @@
 <?php
 /**
- * Страница с кастомным шаблоном (page-custom.php)
+ * Page with custom template (page-custom.php)
  * @package WordPress
  * @subpackage
- * Template Name: Страница с кастомным шаблоном
+ * Template Name: Page with custom template
  */
 get_header(); ?>
 <section>

@@ -26,7 +26,7 @@ $job_client = get_field('job_client');
                     <a href="#job-apply" class="beetroot-btn">Apply now</a>
                 </span>
                     <span class="job-intro__actions-location">
-                    <?= $loc_array[0]; ?>
+                    <?php echo $loc_array[0]; ?>
                 </span>
                     <ul class="job-intro__actions-job-tags">
                         <?php
@@ -36,11 +36,11 @@ $job_client = get_field('job_client');
                             ?>
                             <li class="tags__item">
                                 <div class="tags__name info-shape">
-                                    <span class="info-shape__text"><?= $tag_icon['alt'] ?></span>
+                                    <span class="info-shape__text"><?php echo $tag_icon['alt'] ?></span>
                                 </div>
                                 <img class="tags__icon"
-                                     src="<?= $tag_icon['url']; ?>"
-                                     alt="<?= $tag_icon['alt']; ?>">
+                                     src="<?php echo $tag_icon['url']; ?>"
+                                     alt="<?php echo $tag_icon['alt']; ?>">
                             </li>
                             <?php
                         }
@@ -50,7 +50,7 @@ $job_client = get_field('job_client');
                         <?php
 
                         if ($job_client) { ?>
-                            <img src="<?= $job_client ?>" alt="Jobs Client">
+                            <img src="<?php echo $job_client ?>" alt="Jobs Client">
                             <?php
                         }
 
@@ -101,50 +101,76 @@ $job_client = get_field('job_client');
 
         </section>
 
-        <section class="job-benefits">
-            <div class="job-benefits__row single-container">
-                <h3 class="job-benefits__row-title">Benefits</h3>
-                <ul class="job-benefits__row-collection">
-                    <?php
+        <?php
 
-                    if (have_rows('benefits')):
+        if (have_rows('benefits_section')):
 
-                        while (have_rows('benefits')) : the_row(); ?>
-                            <li class="job-benefits__row-item">
+            while (have_rows('benefits_section')) : the_row(); ?>
 
-                                <img src="<?php the_sub_field('benefit_icon'); ?>" class="job-benefits__row-item-icon">
+                <section class="job-benefits">
+                    <div class="job-benefits__row single-container">
+                        <h3 class="job-benefits__row-title">
+                            <?php the_sub_field('benefits_title'); ?>
+                        </h3>
+                        <ul class="job-benefits__row-collection">
+                            <?php
 
-                                <span class="job-benefits__row-item-text">
-                    <?php the_sub_field('benefit_description'); ?>
-                </span>
+                            if (have_rows('benefits')):
 
-                            </li>
+                                while (have_rows('benefits')) : the_row(); ?>
+                                    <li class="job-benefits__row-item">
+
+                                        <img src="<?php the_sub_field('benefit_icon'); ?>"
+                                             class="job-benefits__row-item-icon">
+
+                                        <span class="job-benefits__row-item-text">
+                                            <?php the_sub_field('benefit_description'); ?>
+                                        </span>
+
+                                    </li>
+                                <?php
+                                endwhile;
+
+                            endif; ?>
+                        </ul>
+                    </div>
+                </section>
+
+            <?php
+            endwhile;
+
+        endif;
 
 
-                        <?php
-                        endwhile;
+        if (have_rows('apply_section')):
 
-                    endif; ?>
-                </ul>
-            </div>
-        </section>
+        while (have_rows('apply_section')) : the_row(); ?>
 
         <section id="job-apply" class="job-apply">
             <div class="job-apply__row single-container">
-                <h3 class="job-apply__row-title">Apply for this position</h3>
+                <h3 class="job-apply__row-title">
+                    <?php the_sub_field('apply_title'); ?>
+                </h3>
 
-                <?php echo do_shortcode('[contact-form-7 html_class="job-apply__row-form apply-form" title="Apply Job"]')?>
+                <?php echo do_shortcode('[contact-form-7 html_class="job-apply__row-form apply-form" title="Apply Job"]') ?>
 
             </div>
         </section>
 
+        <?php
+            endwhile;
+        endif;
+        ?>
+
         <section class="job-interested">
             <div class="job-interested__row single-container">
-                <h4 class="job-interested__title">Know someone who might be interested?</h4>
+                <h4 class="job-interested__title">
+                    <?php the_field('know_someone', 'options'); ?>
+                </h4>
 
                 <div class="job-interested__social">
 
-                    <?php  get_template_part('parts/share', 'socials'); ?>
+                    <?php get_template_part('parts/share', 'socials'); ?>
 
                 </div>
             </div>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Шаблон сайдбара (sidebar.php)
+ * Sidebar template (sidebar.php)
  * @package WordPress
  * @subpackage
  */

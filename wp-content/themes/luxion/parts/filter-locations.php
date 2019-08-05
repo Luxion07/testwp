@@ -5,9 +5,8 @@
  */
 ?>
 <?php
-
 $choice_right = '';
-$location_parents = array_reverse($location_parents, true);
+$location_parents = array_reverse( $location_parents, true );
 ?>
 
 <div class="jobs-filter-search__dropdown-wrap" data-filter-category="All locations">
@@ -20,30 +19,28 @@ $location_parents = array_reverse($location_parents, true);
         <section class="choice-list__wrap all-locations">
 
             <?php
-            foreach ($location_parents as $location_parent_key => $location_parent_value) {
-                $choice_right = ($location_parent_value === 'Academies') ? 'choice-list__wrap--column-right' : '';
-
+            foreach ( $location_parents as $location_parent_key => $location_parent_value ) {
+                $choice_right = ( $location_parent_value === 'Academies' ) ? 'choice-list__wrap--column-right' : '';
                 ?>
-                <div class="choice-list__wrap--column <?= $choice_right; ?>">
-                    <h3 class="choice-list__title"><?= $location_parent_value; ?></h3>
+                <div class="choice-list__wrap--column <?php echo $choice_right; ?>">
+                    <h3 class="choice-list__title"><?php echo $location_parent_value; ?></h3>
                     <ul class="choice-list__menu locations" role="menu">
 
                         <?php
-                        foreach ($locations[$location_parent_key] as $location_name => $location_coll) { ?>
-
+                        foreach ( $locations[$location_parent_key] as $location_name => $location_coll ) {
+                            ?>
                             <li class="choice-list__item" role="menuitem"
-                                data-filter-tax="<?= $location_coll['taxonomy']; ?>"
-                                data-filter-termId="<?= $location_coll['term_id']; ?>">
+                                data-filter-tax="<?php echo $location_coll['taxonomy']; ?>"
+                                data-filter-termId="<?php echo $location_coll['term_id']; ?>">
                                 <input id="location-checkbox-0" type="checkbox"
                                        class="choice-list__input" data-filter="development"
                                        data-filter-type="location">
                                 <label for="location-checkbox-0"
                                        class="choice-list__label">
-                                    <span class="choice-list__label-name"><?= $location_name; ?></span>
+                                    <span class="choice-list__label-name"><?php echo $location_name; ?></span>
                                 </label>
-                                <span class="choice-list__vac-count"><?= $location_coll['job_count'] ?></span>
+                                <span class="choice-list__vac-count"><?php echo $location_coll['job_count']; ?></span>
                             </li>
-
                             <?php
                         }
                         ?>

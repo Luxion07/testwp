@@ -1,6 +1,6 @@
 <?php
 /**
- * Шаблон подвала (footer.php)
+ * Footer template (footer.php)
  * @package WordPress
  * @subpackage
  */
@@ -43,7 +43,7 @@
             </div>
             <div class="footer__info-subscribe">
                 <h5 class="footer__info-subscribe-title">Subscribe to news</h5>
-                <form action="<?= get_home_url(); ?>/thank-you" method="post" class="footer__info-subscribe-form">
+                <form action="<?php echo get_home_url(); ?>/thank-you" method="post" class="footer__info-subscribe-form">
                     <div class="footer__info-subscribe-form__wrap">
                         <input type="email" value="" name="email-subscribe" class="footer__info-subscribe-input"
                                placeholder="Email Address">

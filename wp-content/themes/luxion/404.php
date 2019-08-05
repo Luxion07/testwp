@@ -1,6 +1,6 @@
 <?php
 /**
- * Страница 404 ошибки (404.php)
+ * Page 404 (404.php)
  * @package WordPress
  * @subpackage
  */
@@ -9,8 +9,7 @@ get_header(); ?>
 	<div class="container">
 		<div class="row">
 			<div class="<?php content_class_by_sidebar(); ?>">
-				<h1>Ой, это 404!</h1>
-				<p>Блаблабла 404 Блаблабла</p>
+				<h1>404!</h1>
 			</div>
 			<?php get_sidebar(); ?>
 		</div>

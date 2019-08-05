@@ -1,6 +1,6 @@
 <?php
 /**
- * Шаблон рубрики (category.php)
+ * Category template (category.php)
  * @package WordPress
  * @subpackage
  */
@@ -13,7 +13,7 @@ get_header(); ?>
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					<?php get_template_part('loop'); ?>
 				<?php endwhile;
-				else: echo '<p>Нет записей.</p>'; endif; ?>	 
+				else: echo '<p>No posts.</p>'; endif; ?>
 				<?php pagination(); ?>
 			</div>
 			<?php get_sidebar(); ?>

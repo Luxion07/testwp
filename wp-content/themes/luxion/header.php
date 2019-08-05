@@ -1,6 +1,6 @@
 <?php
 /**
- * Шаблон шапки (header.php)
+ * Header template (header.php)
  * @package WordPress
  * @subpackage
  */
@@ -11,7 +11,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php /* RSS и всякое */ ?>
+    <?php /* RSS */ ?>
     <link rel="alternate" type="application/rdf+xml" title="RDF mapping" href="<?php bloginfo('rdf_url'); ?>">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="<?php bloginfo('rss_url'); ?>">
     <link rel="alternate" type="application/rss+xml" title="Comments RSS"
@@ -65,6 +65,7 @@
         <?php
         wp_nav_menu($args);
         ?>
+
         <span class="close-menu">
             <i class="fa fa-times"></i>
         </span>

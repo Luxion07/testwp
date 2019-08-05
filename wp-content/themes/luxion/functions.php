@@ -1,6 +1,5 @@
 <?php
 /**
- * Функции шаблона (function.php)
  * @package WordPress
  * @subpackage
  */
@@ -22,8 +21,8 @@ add_theme_support('custom-logo', [
 ]);
 
 register_nav_menus(array(
-    'top' => 'Верхнее',
-    'bottom' => 'Внизу'
+    'top' => 'Top',
+    'bottom' => 'Bottom'
 ));
 
 add_theme_support('post-thumbnails');
@@ -31,9 +30,9 @@ set_post_thumbnail_size(250, 150);
 add_image_size('big-thumb', 400, 400, true);
 
 register_sidebar(array(
-    'name' => 'Сайдбар',
+    'name' => 'Sidebar',
     'id' => "sidebar",
-    'description' => 'Обычная колонка в сайдбаре',
+    'description' => 'Sidebar column',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => "</div>\n",
     'before_title' => '<span class="widgettitle">',
@@ -77,47 +76,7 @@ function beetroot_widgets_init()
 add_action('widgets_init', 'beetroot_widgets_init');
 
 
-if (!class_exists('clean_comments_constructor')) {
-    class clean_comments_constructor extends Walker_Comment
-    {
-        public function start_lvl(&$output, $depth = 0, $args = array())
-        {
-            $output .= '<ul class="children">' . "\n";
-        }
 
-        public function end_lvl(&$output, $depth = 0, $args = array())
-        {
-            $output .= "</ul><!-- .children -->\n";
-        }
-
-        protected function comment($comment, $depth, $args)
-        {
-            $classes = implode(' ', get_comment_class()) . ($comment->comment_author_email == get_the_author_meta('email') ? ' author-comment' : '');
-            echo '<li id="comment-' . get_comment_ID() . '" class="' . $classes . ' media">' . "\n";
-            echo '<div class="media-left">' . get_avatar($comment, 64, '', get_comment_author(), array('class' => 'media-object')) . "</div>\n";
-            echo '<div class="media-body">';
-            echo '<span class="meta media-heading">Автор: ' . get_comment_author() . "\n";
-            //echo ' '.get_comment_author_email();
-            echo ' ' . get_comment_author_url();
-            echo ' Добавлено ' . get_comment_date('F j, Y в H:i') . "\n";
-            if ('0' == $comment->comment_approved) echo '<br><em class="comment-awaiting-moderation">Ваш комментарий будет опубликован после проверки модератором.</em>' . "\n";
-            echo "</span>";
-            comment_text() . "\n";
-            $reply_link_args = array(
-                'depth' => $depth,
-                'reply_text' => 'Ответить',
-                'login_text' => 'Вы должны быть залогинены'
-            );
-            echo get_comment_reply_link(array_merge($args, $reply_link_args));
-            echo '</div>' . "\n";
-        }
-
-        public function end_el(&$output, $comment, $depth = 0, $args = array())
-        {
-            $output .= "</li><!-- #comment-## -->\n";
-        }
-    }
-}
 
 if (!function_exists('pagination')) {
     function pagination()
@@ -129,8 +88,8 @@ if (!function_exists('pagination')) {
             'format' => '?paged=%#%',
             'current' => max(1, get_query_var('paged')),
             'type' => 'array',
-            'prev_text' => 'Назад',
-            'next_text' => 'Вперед',
+            'prev_text' => 'Back',
+            'next_text' => 'Forward',
             'total' => $wp_query->max_num_pages,
             'show_all' => false,
             'end_size' => 15,
@@ -239,6 +198,17 @@ if (function_exists('acf_add_options_page')) {
         'capability' => 'edit_posts',
         'parent_slug' => 'edit.php?post_type=jobs',
         'redirect' => false
+        )
+    );
+
+    acf_add_options_page(
+        array(
+            'page_title' => 'Single Job',
+            'menu_title' => 'Single Job Settings',
+            'menu_slug' => 'single-job',
+            'capability' => 'edit_posts',
+            'parent_slug' => 'edit.php?post_type=jobs',
+            'redirect' => false
         )
     );
 

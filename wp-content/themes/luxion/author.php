@@ -1,6 +1,6 @@
 <?php
 /**
- * Страница автора (author.php)
+ * Author page (author.php)
  * @package WordPress
  * @subpackage
  */
@@ -10,7 +10,7 @@ get_header(); ?>
 		<div class="row">
 			<div class="<?php content_class_by_sidebar();  ?>">
 			    <?php $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author)); ?>
-				<h1>Посты автора <?php echo $curauth->nickname; ?></h1>
+				<h1>Author posts <?php echo $curauth->nickname; ?></h1>
 				<div class="media">
 					<div class="media-left">
 						<?php echo get_avatar($curauth->ID, 64, '', $curauth->nickname, array('class' => 'media-object')); ?>
@@ -25,7 +25,7 @@ get_header(); ?>
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					<?php get_template_part('loop'); ?>
 				<?php endwhile;
-				else: echo '<p>Нет записей.</p>'; endif; ?>	 
+				else: echo '<p>No posts.</p>'; endif; ?>
 				<?php pagination(); ?>
 			</div>
 			<?php get_sidebar(); ?>

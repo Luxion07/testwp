@@ -1,6 +1,6 @@
 <?php
 /**
- * Шаблон поиска (search.php)
+ * Search template (search.php)
  * @package WordPress
  * @subpackage
  */
@@ -9,11 +9,11 @@ get_header(); ?>
 	<div class="container">
 		<div class="row">
 			<div class="<?php content_class_by_sidebar(); ?>">
-				<h1><?php printf('Поиск по строке: %s', get_search_query()); ?></h1>
+				<h1><?php printf('Search on string: %s', get_search_query()); ?></h1>
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					<?php get_template_part('loop'); ?>
 				<?php endwhile;
-				else: echo '<p>Нет записей.</p>'; endif; ?>	 
+				else: echo '<p>No posts.</p>'; endif; ?>
 				<?php pagination(); ?>
 			</div>
 			<?php get_sidebar(); ?>

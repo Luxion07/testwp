@@ -9,9 +9,8 @@ if($_POST['email-subscribe']){
 ?>
 
 <section class="thank-you">
-    <?= $subscription; ?>
+    <?php echo $subscription; ?>
 </section>
-
 
 <?php get_footer(); ?>
 
