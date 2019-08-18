@@ -10,12 +10,17 @@ jQuery(document).ready(function ($) {
 
     $('.choice-list__label, .tabs-list__button').on('click', function () {
         var element = $(this);
-
+        var searchKeywords = $('.jobs-filter-search__input').val();
         $(this).closest('li').toggleClass('checked'); // if click current list add checked className
 
         updateInput(element);
         dropdownSearch();
-        liveSearch();
+
+        if(searchKeywords !== ''){
+            liveSearch(searchKeywords);
+        }else{
+            liveSearch();
+        }
     });
 
     // filter by search input

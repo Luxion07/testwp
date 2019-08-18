@@ -129,7 +129,7 @@ if (!function_exists('add_styles')) {
     {
         if (is_admin()) return false;
         wp_enqueue_style('load-fa', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-        wp_enqueue_style('maincss', get_template_directory_uri() . '/css/main.css');
+        wp_enqueue_style('main-css', get_template_directory_uri() . '/css/main.css');
         wp_enqueue_style('main', get_template_directory_uri() . '/style.css');
     }
 }

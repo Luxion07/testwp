@@ -72,28 +72,7 @@ $job_client = get_field('job_client');
                     </div>
                 <?php
                 endwhile;
-
                 endif;
-
-                if (have_rows('job_description')):
-
-                    while (have_rows('job_description')) : the_row(); ?>
-
-                        <div class="job-description__row-info">
-                            <?php
-
-                            the_sub_field('description_type');
-                            the_sub_field('description_list');
-
-                            ?>
-                        </div>
-
-
-                    <?php
-                    endwhile;
-
-                endif;
-
                 ?>
 
             </div>

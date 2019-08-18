@@ -959,6 +959,7 @@ button {
   padding: 0;
 }
 .job-single .job-intro .job-intro__actions .job-intro__actions-client {
+  max-width: 160px;
   margin-left: auto;
 }
 @media only screen and (max-width: 768px) {
@@ -991,21 +992,23 @@ button {
 .job-single .job-description .job-description__row .job-description__row-content {
   margin-bottom: calc(var(--x) * 90);
   line-height: calc(var(--x) * 60);
+  overflow: hidden;
 }
-.job-single .job-description .job-description__row .job-description__row-info {
+.job-single .job-description .job-description__row .job-description__row-content h3 {
   font-size: 2.188rem;
+  font-weight: 300;
 }
-.job-single .job-description .job-description__row .job-description__row-info ul {
+.job-single .job-description .job-description__row .job-description__row-content ul {
   opacity: 0.8;
   font-size: 1.063rem;
   margin-bottom: calc(var(--x) * 50);
 }
-.job-single .job-description .job-description__row .job-description__row-info ul li {
+.job-single .job-description .job-description__row .job-description__row-content ul li {
   position: relative;
   padding-left: 2%;
   line-height: calc(var(--x) * 50);
 }
-.job-single .job-description .job-description__row .job-description__row-info ul li:before {
+.job-single .job-description .job-description__row .job-description__row-content ul li:before {
   content: "";
   width: calc(var(--x) * 16);
   height: calc(var(--x) * 16);
@@ -1017,7 +1020,7 @@ button {
   top: calc(var(--x) * 16);
 }
 @media only screen and (max-width: 768px) {
-  .job-single .job-description .job-description__row .job-description__row-info ul li {
+  .job-single .job-description .job-description__row .job-description__row-content ul li {
     padding-left: 3vw;
   }
 }

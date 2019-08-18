@@ -10,11 +10,12 @@
     .job-description__row-content{
       margin-bottom: calc(var(--x) * 90);
       line-height:  calc(var(--x) * 60);
+      overflow: hidden;
 
-    }
-
-    .job-description__row-info{
-      font-size: 2.188rem;
+      h3{
+        font-size: 2.188rem;
+        font-weight: 300;
+      }
 
       ul{
         opacity: 0.8;
@@ -47,7 +48,7 @@
 @media only screen  and (max-width: $break-medium) {
   .job-description{
     .job-description__row{
-      .job-description__row-info{
+      .job-description__row-content{
         ul{
           li{
             padding-left: 3vw;
