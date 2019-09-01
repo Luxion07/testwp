@@ -98,21 +98,8 @@
 
 @media only screen  and (max-width: $break-desktop) {
   .tabs-list {
-
     .tabs-list__item {
       margin-top: 2vw;
-    }
-  }
-}
-
-@media only screen  and (max-width: $break-medium) {
-
-  .tabs-list{
-    .tabs-list__item{
-
-      &.view-buttons{
-        display: none;
-      }
     }
   }
 }

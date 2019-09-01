@@ -185,10 +185,18 @@ jQuery(document).ready(function ($) {
 
     // get height footer variable
 
-    var footerHeight = $('.footer').outerHeight();
+    function getFooterHeight () {
+        var footerHeight = $('.footer').outerHeight();
 
-    $('.career-description').css({'margin-bottom': footerHeight});
-    $('.job-single__description').css({'margin-bottom': footerHeight});
+        $('.career-description').css({'margin-bottom': footerHeight});
+        $('.job-single__description').css({'margin-bottom': footerHeight});
+    }
+
+    getFooterHeight ();
+
+    $(window).on('resize', function(){
+        getFooterHeight ();
+    });
 
     // mobile menu func
 
@@ -211,13 +219,18 @@ jQuery(document).ready(function ($) {
 
     // APPLY FORM  validation
 
-    $('.apply-form input').on('input', function () {
+    $('.apply-form .wpcf7-form-control ').on('input', function () {
         if ($(this).val() !== '') {
-            $(this).closest('.user-data__field').find('.apply-label').hide();
+           $(this).closest('.user-data__field').find('.apply-label').hide();
         } else {
-            $(this).closest('.user-data__field').find('.apply-label').show();
+           $(this).closest('.user-data__field').find('.apply-label').show();
         }
     });
+
+    document.addEventListener( 'wpcf7mailsent', function( event ) {
+        $('.apply-form .apply-label').show();
+        $('.apply-form .agreement').find('label').removeClass('checked');
+    }, false );
 
     $('.apply-form .attach').on('click', function () {
         $(this).closest('.file__item-main').find('.file__item-upload').toggleClass('active');
@@ -233,3 +246,4 @@ jQuery(document).ready(function ($) {
         agreementLabel.toggleClass('checked');
     });
 });
+

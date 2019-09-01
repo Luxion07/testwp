@@ -8,8 +8,18 @@ get_header(); ?>
 global $post;
 
 $loc_array = wp_get_post_terms($post->ID, 'location', array('fields' => 'names'));
+$loc_array_all = wp_get_post_terms( $post->ID, 'location', array('fields' => 'all') );
 $tags_array = wp_get_post_terms($post->ID, 'job_tags', array('fields' => 'ids'));
 $job_client = get_field('job_client');
+
+$term_parent = $loc_array_all[0]->parent;
+$loc_parent_name = get_term($term_parent, 'location')->name;
+
+if ( $loc_parent_name === 'Academies' ) {
+    $loc_class_color = 'green';
+} else {
+    $loc_class_color = 'red';
+}
 ?>
 
 <main class="site-content job-single">
@@ -28,7 +38,7 @@ $job_client = get_field('job_client');
                     <span class="job-intro__actions-location">
                     <?php echo $loc_array[0]; ?>
                 </span>
-                    <ul class="job-intro__actions-job-tags">
+                    <ul class="job-intro__actions-job-tags <?php echo $loc_class_color; ?>">
                         <?php
                         foreach ($tags_array as $tag_item) {
                             $tag_icon = get_field('tags_icon', 'job_tags_' . $tag_item);

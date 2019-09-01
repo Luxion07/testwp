@@ -38,7 +38,7 @@
   --benefits-img-w: auto;
 }
 
-@media only screen and (max-width: 2000px) {
+@media only screen and (max-width: 2800px) {
   :root {
     --x: 0.5px;
     --container-width: 1170px;
@@ -390,6 +390,11 @@ button {
   height: 97%;
   background-color: transparent;
 }
+.career-description .jobs-filter .jobs-filter-search .jobs-filter-search__input-wrap input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
 .career-description .jobs-filter .jobs-filter-search .jobs-filter-search__input-wrap .jobs-filter-search__input-close {
   display: none;
   background-image: url(../images/icons/-e-clear.png);
@@ -658,11 +663,6 @@ button {
     margin-top: 2vw;
   }
 }
-@media only screen and (max-width: 768px) {
-  .career-description .tabs-list .tabs-list__item.view-buttons {
-    display: none;
-  }
-}
 .career-description .open-vac .filter__row-headline {
   display: none;
 }
@@ -848,8 +848,11 @@ button {
     grid-template-columns: 1fr;
     overflow: hidden;
   }
-  .career-description .open-vac.open-vac--list {
-    display: none;
+  .career-description .open-vac.open-vac--list .free-vacancy .free-vacancy__footer .cpt-item__client img {
+    width: 100%;
+  }
+  .career-description .open-vac.open-vac--list .free-vacancy .free-vacancy__footer .tags {
+    flex-direction: column;
   }
 }
 .career-description .jobs-contact-us {
@@ -957,6 +960,12 @@ button {
   display: flex;
   position: relative;
   padding: 0;
+}
+.job-single .job-intro .job-intro__actions .job-intro__actions-job-tags.green .info-shape {
+  background-color: #7bceb1;
+}
+.job-single .job-intro .job-intro__actions .job-intro__actions-job-tags.green .info-shape:before {
+  border-top-color: #7bceb1;
 }
 .job-single .job-intro .job-intro__actions .job-intro__actions-client {
   max-width: 160px;

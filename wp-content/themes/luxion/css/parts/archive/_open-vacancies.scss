@@ -286,8 +286,20 @@
         overflow: hidden;
       }
 
-      &.open-vac--list{
-        display: none;
+      &.open-vac--list {
+        .free-vacancy {
+          .free-vacancy__footer {
+            .cpt-item__client {
+              img {
+                width: 100%;
+              }
+            }
+
+            .tags{
+              flex-direction: column;
+            }
+          }
+        }
       }
     }
 

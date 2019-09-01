@@ -124,7 +124,7 @@ set_query_var('job_tags', $job_tags);
 
                     <?php
 
-                    $contact_link = get_field('career_contact_link', 'option');
+                    $contact_link = get_field('career_confree-vacancytact_link', 'option');
 
                     if ($contact_link) { ?>
 

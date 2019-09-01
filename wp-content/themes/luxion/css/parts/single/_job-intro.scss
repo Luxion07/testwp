@@ -45,6 +45,16 @@
       display: flex;
       position: relative;
       padding: 0;
+
+      &.green{
+        .info-shape{
+          background-color: $light-green;
+
+          &:before{
+            border-top-color: $light-green;
+          }
+        }
+      }
     }
 
     .job-intro__actions-client{
